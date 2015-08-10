@@ -1,0 +1,104 @@
+{
+	"title": "MIA",
+	"creator": "/u/GoingAnywhereButHere",
+	"filters": [ "clean", "no-preamble", "jverse-mia", "typography" ],
+	"cover": {
+		"html": "jverse-mia.xhtml",
+		"css": "cover.css"
+	},
+	"contents":
+	[
+		{
+			"title": "1. Awakening",
+			"url": "https://www.reddit.com/r/HFY/comments/36bgna/oc_jenkinsverse_mia_chapter_1_awakening/"
+		},
+		{
+			"title": "2. Profiling",
+			"url": "https://www.reddit.com/r/HFY/comments/36bjm9/ocjenkinsverse_mia_chapter_2_profiling/"
+		},
+		{
+			"title": "3. Briefing",
+			"url": "https://www.reddit.com/r/HFY/comments/36bq38/ocjenkinsverse_mia_chapter_3_briefing/"
+		},
+		{
+			"title": "4. Augmenting",
+			"url": "https://www.reddit.com/r/HFY/comments/36tf7e/oc_jenkinsverse_mia_chapter_4_augmenting/"
+		},
+		{
+			"title": "5. Tracking",
+			"url": "https://www.reddit.com/r/HFY/comments/36tmp4/oc_jenkinsverse_mia_chapter_5_tracking/"
+		},
+		{
+			"title": "6. The Chase",
+			"url": "https://www.reddit.com/r/HFY/comments/371oyp/ocjenkinsverse_mia_chapter_6_the_chase/"
+		},
+		{
+			"title": "7. Challenges",
+			"url": "https://www.reddit.com/r/HFY/comments/375csv/ocjenkinsverse_mia_chapter_7_challenges/"
+		},
+		{
+			"title": "8. Demons",
+			"url": "https://www.reddit.com/r/HFY/comments/37cckg/ocjenkinsverse_mia_chapter_8_demons/"
+		},
+		{
+			"title": "9. Unleashed",
+			"url": "https://www.reddit.com/r/HFY/comments/37gl8o/ocjenkinsverse_mia_chapter_9_unleashed/"
+		},
+		{
+			"title": "10. Seeds of Rebellion",
+			"url": "https://www.reddit.com/r/HFY/comments/37lwix/ocjenkinsverse_mia_chapter_10_seeds_of_rebellion/"
+		},
+		{
+			"title": "11. The Army Rises",
+			"url": "https://www.reddit.com/r/HFY/comments/37qptl/ocjenkinsverse_mia_11_the_army_rises/"
+		},
+		{
+			"title": "12. Timing",
+			"url": "https://www.reddit.com/r/HFY/comments/37uyx6/ocjenkinsverse_mia_chapter_12_timing/"
+		},
+		{
+			"title": "13. The Plunge",
+			"url": "https://www.reddit.com/r/HFY/comments/381yll/ocjenkinsverse_mia_chapter_13_the_plunge/"
+		},
+		{
+			"title": "14. Firestorm (pt. 1)",
+			"url": "https://www.reddit.com/r/HFY/comments/389mvs/ocjenkinsverse_mia_chapter_14_firestorm_part_1/"
+		},
+		{
+			"title": "14. Firestorm (pt. 2)",
+			"url": "https://www.reddit.com/r/HFY/comments/38h1gs/ocjenkinsverse_mia_chapter_14_firestorm_part_2/"
+		},
+		{
+			"title": "14. Firestorm (pt. 3)",
+			"url": "https://www.reddit.com/r/HFY/comments/38qytc/ocjenkinsverse_mia_chapter_14_firestorm_part_3/"
+		},
+		{
+			"title": "15. Paranoia",
+			"url": "http://www.reddit.com/r/HFY/comments/39hzdd/ocjenkinsverse_mia_chapter_15_paranoia/"
+		},
+		{
+			"title": "16. Suspicion",
+			"url": "http://www.reddit.com/r/HFY/comments/39ypxx/ocjenkinsverse_mia_chapter_16_suspicion/"
+		},
+		{
+			"title": "17. Back and Forth",
+			"url": "http://www.reddit.com/r/HFY/comments/3an2tr/ocjenkinsverse_mia_chapter_17_back_and_forth/"
+		},
+		{
+			"title": "18. Blood and Lies",
+			"url": "http://www.reddit.com/r/HFY/comments/3bs0g2/ocjenkinsverse_mia_chapter_18_blood_and_lies/"
+		},
+		{
+			"title": "19. Into the Fire",
+			"url": "http://www.reddit.com/r/HFY/comments/3dnpz6/ocjenkinsverse_mia_chapter_19_into_the_fire/"
+		},
+		{
+			"title": "20. Misdirection",
+			"url": "http://www.reddit.com/r/HFY/comments/3f1u8q/ocjenkinsverse_mia_chapter_20_misdirection/"
+		},
+		{
+			"title": "21. Idle Hands",
+			"url": "http://www.reddit.com/r/HFY/comments/3g1fu6/ocjenkinsverse_mia_chapter_21_idle_hands/"
+		}
+	]
+}

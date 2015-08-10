@@ -1,0 +1,20 @@
+{
+	"title": "Title",
+	"creator": "Author",
+	"filters": [ "clean", "no-preamble", "typography" ],
+	"cover": {
+		"html": "example.xhtml",
+		"css": "cover.css"
+	},
+	"contents":
+	[
+		{
+			"title": "Chapter 1",
+			"url": "https://www.reddit.com/r/..."
+		},
+		{
+			"title": "Chapter 2",
+			"url": "https://www.reddit.com/r/..."
+		}
+	]
+}

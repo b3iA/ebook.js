@@ -1,0 +1,137 @@
+body
+{
+	color: black;
+	background-color: white;
+	font-family: Palatino, Georgia, serif;
+	font-size: 1em;
+	line-height: 1.4;
+	text-align: left;
+	text-indent: 0em;
+	border: 0 none;
+	margin: 0em;
+	padding: 1em;
+	text-align: left;
+	-epub-word-break: keep-all;
+	-webkit-nbsp-mode: space;
+	-webkit-line-break: after-white-space;
+	oeb-column-number: 1; /* Never display in multiple columns */
+}
+
+#main-body
+{
+	margin-top: 2em;
+	margin-bottom: 6em;
+}
+
+h1
+{
+	font-size: 1.5em;
+	line-height: 1em;
+	font-weight: bold;
+	margin-top: 0em;
+	margin-bottom: 0.1em;
+	text-align: left;
+}
+
+p
+{
+	text-indent: 0em;
+	margin-top: 0.5em;
+	margin-bottom: 1.0em;
+}
+
+pre
+{
+	font-family: monospace;
+	font-size: 0.85em;
+	line-height: 1.2em;
+	text-align: left;
+	white-space: pre-wrap;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 1em;
+	border: 0;
+	text-align: left;
+}
+
+ol, ul
+{
+	margin: 0.5em 2em 2em 3em;
+	padding: 0em;
+}
+
+dl
+{
+	margin: 0.5em 2em 0.5em 2em;
+}
+
+table
+{
+	font-size: 1em;
+	line-height: 1.4em;
+	margin-top: 1em;
+}
+
+li, dt, dd
+{
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+	text-align: left;
+}
+
+dt
+{
+	font-weight: bold;
+}
+
+div
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+center
+{
+	text-align: center;
+}
+
+a
+{
+	color: #02e;
+	text-decoration: none;
+	outline: none;
+}
+
+a:link
+{
+	color: #02e;
+	text-decoration: none;
+	outline: none;
+}
+
+a:visited
+{
+	color: #02e;
+	text-decoration: none;
+	outline: none;
+}
+
+.author
+{
+	color: gray;
+	text-align: left;
+}
+
+.pbreak
+{
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 2.0em;
+	font-weight: bold;
+}
+
+.center
+{
+	text-align: center;
+}
