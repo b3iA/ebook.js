@@ -17,7 +17,7 @@ body
 	oeb-column-number: 1; /* Never display in multiple columns */
 }
 
-#main-body
+.chapter
 {
 	margin-top: 2em;
 	margin-bottom: 6em;

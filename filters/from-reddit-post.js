@@ -60,19 +60,19 @@ UriCache.prototype.uriToId = function(uri)
 
 UriCache.prototype.get = function(chap, callback)
 {
-    var id = this.uriToId(chap.url);
+    var id = this.uriToId(chap.src);
 
     chap.id = id;
 
     if(this.cache.indexOf(id) > -1)
     {
         console.log('[\033[92mCached\033[0m] ' + id);
-        chap.dom.load(fs.readFileSync(__dirname + '/../cache/' + id, encoding = 'utf-8'), { decodeEntities: false });
+        chap.dom = cheerio.load(fs.readFileSync(__dirname + '/../cache/' + id, encoding = 'utf-8'), { decodeEntities: false });
         callback();
         return;
     }
 
-    request({ uri: chap.url + '.json' }, function(chap, callback, uri_cache) { return function(error, response, body)
+    request({ uri: chap.src + '.json' }, function(chap, callback, uri_cache) { return function(error, response, body)
     {
         if(response.statusCode === 503)
         {
@@ -86,7 +86,7 @@ UriCache.prototype.get = function(chap, callback)
 
         var md = getPostMarkdown(JSON.parse(body));
 
-        chap.dom.load(marked(md), { decodeEntities: false });
+        chap.dom = cheerio.load(marked(md), { decodeEntities: false });
         fs.writeFileSync(__dirname + '/../cache/' + chap.id, unescape(chap.dom.html()), encoding = 'utf-8');
         // fs.writeFileSync(__dirname + '/cache/' + chap.id + '.md', md, encoding = 'utf-8');
         callback();

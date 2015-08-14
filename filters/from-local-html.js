@@ -5,9 +5,9 @@ var fs = require('fs');
 function apply(params, next)
 {
     var chap = params.chap;
-    var md = fs.readFileSync(__dirname + '/../' + chap.url, encoding = 'utf-8');
+    var md = fs.readFileSync(__dirname + '/../' + chap.src, encoding = 'utf-8');
 
-    console.log('[\033[92mLoading\033[0m] ' + chap.url);
+    console.log('[\033[92mLoading\033[0m] ' + chap.src);
     chap.dom.load(marked(md), { decodeEntities: false });
     next();
 }

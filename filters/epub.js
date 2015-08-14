@@ -107,7 +107,7 @@ function createXHTML(spec, chap)
         '  <body>',
         '    <h1>' + chap.title + '</h1>',
         '    <p class="author">By ' + spec.creator + '</p>',
-        '    <div id="main-body">\n'
+        '    <div class="chapter">\n'
     ].join('\n');
 
     xml += unescape(chap.dom.xml());
@@ -123,14 +123,13 @@ function createXHTML(spec, chap)
 function apply(params, next)
 {
     var spec = params.spec;
-
-    debugger;
     var uid = uuid.v4();
     var zip = require('node-zip')();
+    var oname = spec.title + '.epub';
 
     spec.uuid = uid;
 
-    console.log('Building EPUB.');
+    console.log('Building ' + oname);
 
     zip.file('mimetype', 'application/epub+zip', { compression: 'STORE' });
     zip.folder('META-INF');
@@ -153,7 +152,7 @@ function apply(params, next)
         zip.file('OEBPS/' + chap.id + '.xhtml', createXHTML(spec, chap), { compression: 'DEFLATE' });
     }
 
-    fs.writeFileSync(spec.title + '.epub', zip.generate({ base64: false }), 'binary');
+    fs.writeFileSync(oname, zip.generate({ base64: false }), 'binary');
     next();
 }
 

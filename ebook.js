@@ -35,22 +35,6 @@ FilterManager.prototype.get = function(fid)
     return filter.apply;
 };
 
-var filter_mgr = new FilterManager();
-var spec = JSON.parse(fs.readFileSync(__dirname + '/' + process.argv[2]));
-
-spec.loaded = 0;
-
-function Finalize(params)
-{
-    var spec = params.spec;
-
-    if(++spec.loaded === spec.contents.length)
-    {
-        if(typeof(spec.output) === 'string')
-            filter_mgr.get(spec.output)(params, function(){});
-    }
-}
-
 function Sequence(ops, params)
 {
     if(ops.length < 2)
@@ -63,6 +47,36 @@ function Sequence(ops, params)
 
     last();
 }
+
+var filter_mgr = new FilterManager();
+
+function Finalize(params)
+{
+    var spec = params.spec;
+
+    if(++spec.loaded === spec.contents.length)
+    {
+        params.chap = null;
+
+        if(spec.output.constructor === String)
+            filter_mgr.get(spec.output)(params, function(){});
+        else if(spec.output instanceof Array)
+        {
+            var ops = [];
+
+            for(var i = 0; i < spec.output.length; i++)
+                ops.push(filter_mgr.get(spec.output[i]));
+
+            Sequence(ops, params);
+        }
+        else
+            console.log('[\033[91mError\033[0m]: Unable to interpret the output filter reference. It must be either a string or array of strings.');
+    }
+}
+
+var spec = JSON.parse(fs.readFileSync(__dirname + '/' + process.argv[2]));
+
+spec.loaded = 0;
 
 for(var i = 0; i < spec.contents.length; i++)
 {
