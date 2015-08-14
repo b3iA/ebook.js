@@ -3,7 +3,7 @@ var fs = require('fs');
 
 if(process.argv.length < 3)
 {
-    console.log('Usage: reddit2epub.js <spec.json>');
+    console.log('Usage: ebook.js <spec.json>');
     return;
 }
 
@@ -37,15 +37,14 @@ FilterManager.prototype.get = function(fid)
 
 var filter_mgr = new FilterManager();
 var spec = JSON.parse(fs.readFileSync(__dirname + '/' + process.argv[2]));
-var load_count = 0;
+
+spec.loaded = 0;
 
 function Finalize(params)
 {
     var spec = params.spec;
 
-    load_count++;
-
-    if(load_count === spec.contents.length)
+    if(++spec.loaded === spec.contents.length)
     {
         if(typeof(spec.output) === 'string')
             filter_mgr.get(spec.output)(params, function(){});
