@@ -1,5 +1,8 @@
-function apply($, chap)
+function apply(params, next)
 {
+	var chap = params.chap;
+	var $ = chap.dom;
+
 	$('p strong').each(function(i, e)
 	{
 		var el = $(e);
@@ -30,6 +33,8 @@ function apply($, chap)
 		$(ps[ps.length - 2]).remove();
 		$(ps[ps.length - 3]).remove();
 	}
+
+	next();
 }
 
 module.exports =

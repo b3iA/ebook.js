@@ -1,5 +1,8 @@
-function apply($, chap)
+function apply(params, next)
 {
+	var chap = params.chap;
+	var $ = chap.dom;
+
 	$('p strong').each(function(i, e)
 	{
 		var el = $(e);
@@ -38,6 +41,8 @@ function apply($, chap)
 		for(var i = 0; i < 4; i++)
 			$(ps[ps.length - (i + 1)]).remove();
 	}
+
+	next();
 }
 
 module.exports =

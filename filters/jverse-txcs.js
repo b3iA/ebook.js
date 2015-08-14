@@ -1,5 +1,7 @@
-function apply($, chap)
+function apply(params, next)
 {
+    var $ = params.chap.dom;
+
     $('p').each(function(i, e)
     {
         var el = $(e);
@@ -8,6 +10,8 @@ function apply($, chap)
         if(txt === '&amp;nbsp;' || txt === '&nbsp;')
             el.remove();
     });
+
+    next();
 }
 
 module.exports =

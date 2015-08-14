@@ -1,5 +1,6 @@
-function apply($)
+function apply(params, next)
 {
+    var $ = params.chap.dom;
     var hrs = $('hr');
 
     if(hrs.length)
@@ -17,6 +18,8 @@ function apply($)
         if(pa)
             pa.remove();
     }
+
+    next();
 }
 
 module.exports =

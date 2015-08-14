@@ -1,7 +1,8 @@
 {
 	"title": "Title",
 	"creator": "Author",
-	"filters": [ "clean", "no-preamble", "typography" ],
+	"filters": [ "from-reddit-post", "clean", "no-preamble", "typography" ],
+	"output": "epub",
 	"cover": {
 		"html": "example.xhtml",
 		"css": "cover.css"

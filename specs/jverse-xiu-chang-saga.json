@@ -1,7 +1,8 @@
 {
 	"title": "The Xiù Chang Saga",
 	"creator": "/u/hume_reddit",
-	"filters": [ "clean", "no-preamble", "jverse-txcs", "typography" ],
+	"filters": [ "from-reddit-post", "clean", "no-preamble", "jverse-txcs", "typography" ],
+	"output": "epub",
 	"cover": {
 		"html": "jverse-xiu-chang-saga.xhtml",
 		"css": "cover.css"

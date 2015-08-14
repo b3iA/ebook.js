@@ -1,5 +1,6 @@
-function apply($)
+function apply(params, next)
 {
+    var $ = params.chap.dom;
     var break_test = /[^\+\n .]/;
 
     // Deathworlders, Salvage: <p>[^\+.]</p> -> <hr/>
@@ -14,6 +15,8 @@ function apply($)
             e.children = [];
         }
     });
+
+    next();
 }
 
 module.exports =

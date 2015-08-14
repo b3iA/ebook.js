@@ -1,7 +1,8 @@
 {
 	"title": "Chronicles of Clint Stone - Rebellion",
 	"creator": "someguynamedted",
-	"filters": [ "clean", "no-preamble", "clint-stone-rebellion", "typography" ],
+	"filters": [ "from-reddit-post", "clean", "no-preamble", "clint-stone-rebellion", "typography" ],
+	"output": "epub",
 	"cover": {
 		"html": "clint-stone-rebellion.xhtml",
 		"css": "cover.css"

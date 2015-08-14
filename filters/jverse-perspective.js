@@ -1,5 +1,8 @@
-function apply($, chap)
+function apply(params, next)
 {
+	var chap = params.chap;
+	var $ = chap.dom;
+
 	if(chap.title === 'Chapter 1')
 		$('h2').remove();
 
@@ -29,6 +32,8 @@ function apply($, chap)
 			$(cn[cn.length - 1]).remove();
 		}
 	}
+
+	next();
 }
 
 module.exports =

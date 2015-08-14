@@ -1,5 +1,8 @@
-function apply($, chap)
+function apply(params, next)
 {
+    var chap = params.chap;
+    var $ = chap.dom;
+
     if(chap.title === 'Humans don\’t make good pets 7')
     {
         var ps = $('p');
@@ -35,6 +38,8 @@ function apply($, chap)
         e.name = 'p';
         delete e.attribs['id'];
     });
+
+    next();
 }
 
 module.exports =

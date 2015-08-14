@@ -1,7 +1,8 @@
 {
 	"title": "Humans don’t make good pets",
 	"creator": "/u/guidosbestfriend",
-	"filters": [ "clean", "no-preamble", "jverse-hdmgp", "typography" ],
+	"filters": [ "from-reddit-post", "clean", "no-preamble", "jverse-hdmgp", "typography" ],
+	"output": "epub",
 	"cover": {
 		"html": "jverse-hdmgp.xhtml",
 		"css": "cover.css"

@@ -12,9 +12,11 @@ function trim(s)
 	return s.substring(l, r+1);
 }
 
-function apply($, chap)
+function apply(params, next)
 {
-    var t0 = chap.title[0];
+    var chap = params.chap;
+	var $ = chap.dom;
+	var t0 = chap.title[0];
 
 	if(t0 === '1')
 	{
@@ -63,6 +65,8 @@ function apply($, chap)
 		if(el.text().toLowerCase().indexOf('part ') === 0)
 			el.remove();
 	});
+
+	next();
 }
 
 module.exports =

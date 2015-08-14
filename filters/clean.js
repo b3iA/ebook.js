@@ -14,8 +14,10 @@ function startsWith(s, r)
     return s.substring(0, r.length) === r;
 }
 
-function apply($)
+function apply(params, next)
 {
+    var $ = params.chap.dom;
+
     // Remove all classes
     $('*').each(function(i, e)
     {
@@ -39,6 +41,8 @@ function apply($)
             }
         }
     });
+
+    next();
 }
 
 module.exports =

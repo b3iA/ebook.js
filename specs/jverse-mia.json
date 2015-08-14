@@ -1,7 +1,8 @@
 {
 	"title": "MIA",
 	"creator": "/u/GoingAnywhereButHere",
-	"filters": [ "clean", "no-preamble", "jverse-mia", "typography" ],
+	"filters": [ "from-reddit-post", "clean", "no-preamble", "jverse-mia", "typography" ],
+	"output": "epub",
 	"cover": {
 		"html": "jverse-mia.xhtml",
 		"css": "cover.css"

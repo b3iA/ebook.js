@@ -1,151 +1,6 @@
-var request = require('request');
-var cheerio = require('cheerio');
-var crypto = require('crypto');
 var uuid = require('node-uuid');
-var marked = require('marked');
+var zip = require('node-zip');
 var fs = require('fs');
-
-if(process.argv.length < 3)
-{
-    console.log('Usage: reddit2epub.js <spec.json>');
-    return;
-}
-
-function rmdirSync(path)
-{
-    if(fs.existsSync(path))
-    {
-        fs.readdirSync(path).forEach(function(file,index)
-        {
-            var curPath = path + "/" + file;
-
-            if(fs.lstatSync(curPath).isDirectory())
-                rmdirSync(curPath);
-            else
-                fs.unlinkSync(curPath);
-        });
-
-        fs.rmdirSync(path);
-    }
-}
-
-function getContinuations(set, author)
-{
-    // Recursively search through comments, looking for plausible continuations
-    for(var key in set)
-    {
-        var c = set[key].data;
-
-        if(c.author === author && c.body_html.length > 1000)
-        {
-            var html = '\n\n\n------\n\n\n' + c.body;
-
-            if(c.replies.data)
-                html += getContinuations(c.replies.data.children, author);
-
-            return html;
-        }
-    }
-
-    return '';
-}
-
-function unescape(html)
-{
-    return html.replace(/&quot;/g, '"')
-               .replace(/&#39;/g, '\'')
-               .replace(/&apos;/g, '\'')
-               .replace(/&amp;/g, '&');
-}
-
-function getPostMarkdown(json)
-{
-    var post = json[0].data.children[0].data;
-    var author = post.author;
-    var md = post.selftext + getContinuations(json[1].data.children, author);
-
-    return md;
-}
-
-function UriCache()
-{
-    this.cache = [];
-
-    var files = fs.readdirSync(__dirname + '/cache');
-
-    for(var i = 0; i < files.length; i++)
-        this.cache.push(files[i]);
-}
-
-UriCache.prototype.uriToId = function(uri)
-{
-    var tokens = uri.split('/');
-
-    return tokens.slice(4, tokens.length - 1).join('_');
-};
-
-UriCache.prototype.get = function(chap, callback)
-{
-    var id = this.uriToId(chap.url);
-
-    chap.id = id;
-
-    if(this.cache.indexOf(id) > -1)
-    {
-        console.log('[\033[92mCached\033[0m] ' + id);
-        var $ = cheerio.load(fs.readFileSync(__dirname + '/cache/' + id, encoding = 'utf-8'), { decodeEntities: false });
-
-        chap.dom = $;
-        callback($);
-        return;
-    }
-
-    request({ uri: chap.url + '.json' }, function(chap, callback, uri_cache) { return function(error, response, body)
-    {
-        if(response.statusCode === 503)
-        {
-            console.log('[\033[91mRetrying\033[0m] ' + chap.id);
-            uri_cache.get(chap, callback);
-            return;
-        }
-
-        console.log('[\033[93mFetched\033[0m] ' + chap.id);
-        uri_cache.cache.push(chap.id);
-
-        var json = JSON.parse(body);
-        var md = getPostMarkdown(json);
-        var $ = cheerio.load(marked(md), { decodeEntities: false });
-        var html = unescape($.html());
-
-        chap.dom = $;
-        fs.writeFileSync(__dirname + '/cache/' + chap.id, html, encoding = 'utf-8');
-        // fs.writeFileSync(__dirname + '/cache/' + chap.id + '.md', md, encoding = 'utf-8');
-        callback($);
-    }}(chap, callback, this));
-};
-
-function FilterManager()
-{
-    this.filters = {};
-
-    var files = fs.readdirSync(__dirname + '/filters');
-
-    for(var i = 0; i < files.length; i++)
-    {
-        var fname = files[i];
-        var fid = fname.substr(0, fname.length - 3);
-
-        this.filters[fid] = require('./filters/' + fid);
-    }
-}
-
-FilterManager.prototype.apply = function(chap, fid, dom)
-{
-    var filter = this.filters[fid];
-
-    if(filter)
-        filter.apply(dom, chap);
-};
 
 function createContents(spec)
 {
@@ -238,7 +93,7 @@ function createTOC(spec)
     return xml + '  </navMap>\n</ncx>';
 }
 
-function createXHTML(chap)
+function createXHTML(spec, chap)
 {
     var xml = [
         '<?xml version="1.0" encoding="utf-8"?>',
@@ -265,14 +120,17 @@ function createXHTML(chap)
     return xml;
 }
 
-function buildEPUB(spec)
+function apply(params, next)
 {
+    var spec = params.spec;
+
+    debugger;
     var uid = uuid.v4();
     var zip = require('node-zip')();
 
     spec.uuid = uid;
 
-    console.log('All files loaded. Building EPUB.');
+    console.log('Building EPUB.');
 
     zip.file('mimetype', 'application/epub+zip', { compression: 'STORE' });
     zip.folder('META-INF');
@@ -292,56 +150,14 @@ function buildEPUB(spec)
     {
         var chap = spec.contents[ci];
 
-        zip.file('OEBPS/' + chap.id + '.xhtml', createXHTML(chap), { compression: 'DEFLATE' });
+        zip.file('OEBPS/' + chap.id + '.xhtml', createXHTML(spec, chap), { compression: 'DEFLATE' });
     }
 
     fs.writeFileSync(spec.title + '.epub', zip.generate({ base64: false }), 'binary');
+    next();
 }
 
-var filter_mgr = new FilterManager();
-var uri_cache = new UriCache();
-var spec = JSON.parse(fs.readFileSync(__dirname + '/' + process.argv[2]));
-var load_count = 0;
-
-(function checkForReduntantEntries()
+module.exports =
 {
-    var uris = {};
-
-    for(var i = 0; i < spec.contents.length; i++)
-    {
-        var url = spec.contents[i].url;
-
-        if(url in uris)
-        {
-            console.log('\033[91mError\033[0m: The URL "' + url + '" has already been referenced.');
-            process.exit(1);
-        }
-        else
-            uris[url] = true;
-    }
-})();
-
-for(var i = 0; i < spec.contents.length; i++)
-{
-    var chap = spec.contents[i];
-
-    chap.id = '';
-    chap.dom = null;
-
-    uri_cache.get(chap, function(dom)
-    {
-        for(var fi = 0; fi < spec.filters.length; fi++)
-            filter_mgr.apply(chap, spec.filters[fi], dom);
-
-        if(chap.filters)
-        {
-            for(var fi = 0; fi < chap.filters.length; fi++)
-                filter_mgr.apply(chap, chap.filters[fi], dom);
-        }
-
-        load_count++;
-
-        if(load_count === spec.contents.length)
-            buildEPUB(spec);
-    }.bind(chap));
-}
+    apply: apply
+};

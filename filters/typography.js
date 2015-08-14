@@ -6,8 +6,9 @@ var ENT_NDASH = '–';
 var ENT_ASTER = '⁂';
 var ENT_ELLIP = '…';
 
-function apply($)
+function apply(params, next)
 {
+    var $ = params.chap.dom;
     var last_open = false;
     var last_open_s = false;
     var last_char = '';
@@ -100,6 +101,8 @@ function apply($)
         else
             el.replaceWith('<p><center>' + ENT_ASTER + '</center></p>');
     });
+
+    next();
 }
 
 module.exports =

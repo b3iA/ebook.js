@@ -1,7 +1,8 @@
 {
 	"title": "Chronicles of Clint Stone - Freedom",
 	"creator": "someguynamedted",
-	"filters": [ "clean", "no-preamble", "clint-stone-freedom", "typography" ],
+	"filters": [ "from-reddit-post", "clean", "no-preamble", "clint-stone-freedom", "typography" ],
+	"output": "epub",
 	"cover": {
 		"html": "clint-stone-freedom.xhtml",
 		"css": "cover.css"

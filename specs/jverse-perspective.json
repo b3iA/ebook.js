@@ -1,7 +1,8 @@
 {
 	"title": "Perspective",
 	"creator": "/u/steampoweredfishcake",
-	"filters": [ "clean", "no-preamble", "jverse-perspective", "typography" ],
+	"filters": [ "from-reddit-post", "clean", "no-preamble", "jverse-perspective", "typography" ],
+	"output": "epub",
 	"cover": {
 		"html": "jverse-perspective.xhtml",
 		"css": "cover.css"
