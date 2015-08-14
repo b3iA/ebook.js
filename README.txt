@@ -7,7 +7,7 @@ Run 'npm install' to install the dependencies, and you're good to go.
 Usage
 -----
 
-reddit2epub.js <spec.json>
+ebook.js <spec.json>
 
 
 Notes
@@ -21,8 +21,20 @@ in 'specs/covers'. Each specification is a simple JSON file that contains the bo
 title (also used as the output filename), content creator, a list of content
 transformation filters which are applied sequentially, cover files (if any) and
 book contents. The contents are a list of objects, with each entry specifying the
-title and Reddit URL of a chapter. Chapters will be emitted in the order they're
-specified.
+title and URI of the data comprising a chapter. The exact nature of the URI depends
+on the chosen input filter. The names of available input filters start by 'from-' by
+convention and are typically specified as the first element in each filter chain.
 
-This has only been tested on Linux, but should work equally well on OSX. If you want
-to run this on Windows, well... Good luck.
+The following input filters are included:
+
+* from-reddit-post: The source is a valid HTTP or HTTPS Reddit post URL.
+* from-local-markdown: The source is a filename relative to the location of ebook.js
+* from-local-html: The source is a filename relative to the location of ebook.js
+
+As well as the following output filters:
+
+* epub: The output will be written to an epub file in the same location as ebook.js
+        with the name derived from the specified book title.
+
+* html: The output will be written to a merged self-contained HTML file in the same
+        location as ebook.js with the name derived from the specified book title.
