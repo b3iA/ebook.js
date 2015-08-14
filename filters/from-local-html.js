@@ -8,7 +8,7 @@ function apply(params, next)
     var md = fs.readFileSync(__dirname + '/../' + chap.src, encoding = 'utf-8');
 
     console.log('[\033[92mLoading\033[0m] ' + chap.src);
-    chap.dom.load(marked(md), { decodeEntities: false });
+    chap.dom = cheerio.load(marked(md), { decodeEntities: false });
     next();
 }
 
