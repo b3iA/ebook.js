@@ -1,2 +1,3 @@
 *.epub
+cache
 node_modules
