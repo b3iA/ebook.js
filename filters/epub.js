@@ -72,14 +72,14 @@ function createTOC(spec)
             '      <navLabel>',
             '        <text>' + title + '</text>',
             '      </navLabel>',
-            '      <content src="' + id + '.xhtml"/>',
+            '      <content src="' + id + '"/>',
             '    </navPoint>\n'
         ].join('\n');
     };
 
     if(spec.cover)
     {
-        add_np('cover', 'Cover', 0);
+        add_np(spec.cover.html, 'Cover', 0);
         po_ofs = 1;
     }
 
@@ -87,7 +87,7 @@ function createTOC(spec)
     {
         var chap = spec.contents[i];
 
-        add_np(chap.id, chap.title, i + po_ofs);
+        add_np(chap.id + '.xhtml', chap.title, i + po_ofs);
     }
 
     return xml + '  </navMap>\n</ncx>';
