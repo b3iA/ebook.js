@@ -35,19 +35,6 @@ FilterManager.prototype.get = function(fid)
     return filter.apply;
 };
 
-function Sequence(ops, params)
-{
-    if(ops.length < 2)
-        throw new Exception('Cannot create a sequence of less than two operations.');
-
-    var last = function(params) { return function() { Finalize(params); }; }(params);
-
-    for(var i = ops.length - 1; i >= 0; i--)
-        last = function(cur, nxt) { return function() { cur(params, nxt); }; }(ops[i], last);
-
-    last();
-}
-
 var filter_mgr = new FilterManager();
 
 function Finalize(params)
@@ -72,6 +59,19 @@ function Finalize(params)
         else
             console.log('[\033[91mError\033[0m]: Unable to interpret the output filter reference. It must be either a string or array of strings.');
     }
+}
+
+function Sequence(ops, params)
+{
+    if(ops.length < 2)
+        throw new Exception('Cannot create a sequence of less than two operations.');
+
+    var last = function(params) { return function() { Finalize(params); }; }(params);
+
+    for(var i = ops.length - 1; i >= 0; i--)
+        last = function(cur, nxt) { return function() { cur(params, nxt); }; }(ops[i], last);
+
+    last();
 }
 
 var spec = JSON.parse(fs.readFileSync(__dirname + '/' + process.argv[2]));
