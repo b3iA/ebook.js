@@ -1,7 +1,12 @@
 {
 	"title": "Quod Erat Demonstrandum",
 	"creator": "/u/devourerkwi",
-	"filters": [ "from-reddit-post", "clean", "jverse-qed", "typography" ],
+	"filters": [
+		"from-reddit-post",
+		"clean-reddit",
+		"jverse-qed",
+		"typography"
+	],
 	"output": "epub",
 	"cover": {
 		"html": "jverse-qed.xhtml",
