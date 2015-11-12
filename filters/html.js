@@ -27,7 +27,7 @@ function apply(params, next)
 
         html += [
             '    <h1>' + chap.title + '</h1>',
-            '    <p class="author">By ' + spec.creator + '</p>',
+            '    ' + (chap.byline ? '<p class="author">By ' + chap.byline + '</p>' : ''),
             '    <div class="chapter">',
             unescape(chap.dom.xml()),
             '    </div>\n'

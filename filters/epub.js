@@ -106,7 +106,7 @@ function createXHTML(spec, chap)
         '  </head>',
         '  <body>',
         '    <h1>' + chap.title + '</h1>',
-        '    <p class="author">By ' + spec.creator + '</p>',
+        '    ' + (chap.byline ? '<p class="author">By ' + chap.byline + '</p>' : '<p><br/></p><p><br/></p>'),
         '    <div class="chapter">\n'
     ].join('\n');
 
