@@ -1,0 +1,20 @@
+{
+	"title": "Origin",
+	"creator": "b3iA",
+	"filters": [
+		"from-local-markdown",
+		"typography"
+	],
+	"output": "epub",
+	"cover": {
+		"html": "origin.xhtml",
+		"css": "cover.css"
+	},
+	"contents":
+	[
+		{
+			"title": "Origin",
+			"src": "../../../Documents/origin/1-origin.md"
+		}
+	]
+}
