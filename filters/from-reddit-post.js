@@ -24,15 +24,6 @@ function getContinuations(set, author)
     return '';
 }
 
-function unescape(html)
-{
-    return html.replace(/&quot;/g, '"')
-               .replace(/&amp;#39;/g, '\'')
-               .replace(/&apos;/g, '\'')
-               .replace(/&#39;/g, '\'')
-               .replace(/&amp;/g, '&');
-}
-
 function getPostMarkdown(json)
 {
     var post = json[0].data.children[0].data;
