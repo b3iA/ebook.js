@@ -29,6 +29,7 @@ function unescape(html)
     return html.replace(/&quot;/g, '"')
                .replace(/&#39;/g, '\'')
                .replace(/&apos;/g, '\'')
+               .replace(/&#39;/g, '\'')
                .replace(/&amp;/g, '&');
 }
 

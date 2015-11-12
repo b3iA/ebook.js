@@ -21,12 +21,6 @@ function apply(params, next)
 
     console.log('Building ' + oname);
 
-    if(spec.cover)
-    {
-        var c_html = fs.readFileSync('specs/covers/' + spec.cover.html, 'utf-8');
-        var c_dom = cheerio.load(c_html, { decodeEntities: false });
-    }
-
     for(var i = 0; i < spec.contents.length; i++)
     {
         var chap = spec.contents[i];

@@ -2,7 +2,7 @@ var uuid = require('node-uuid');
 var zip = require('node-zip');
 var fs = require('fs');
 
-function createContents(spec)
+function createContents(spec, uuid)
 {
     var xml = [
         '<?xml version="1.0"?>',
@@ -10,7 +10,7 @@ function createContents(spec)
         '  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">',
         '    <dc:title>' + spec.title + '</dc:title>',
         '    <dc:language>en</dc:language>',
-        '    <dc:identifier id="BookId" opf:scheme="UUID">' + spec.uuid + '</dc:identifier>',
+        '    <dc:identifier id="BookId" opf:scheme="UUID">' + uuid + '</dc:identifier>',
         '    <dc:creator opf:file-as="' + spec.creator + '" opf:role="aut">' + spec.creator + '</dc:creator>',
         '  </metadata>\n'
     ].join('\n');
@@ -48,13 +48,13 @@ function createContents(spec)
     return xml + '  </spine>\n</package>';
 }
 
-function createTOC(spec)
+function createTOC(spec, uuid)
 {
     var xml = [
         '<?xml version="1.0" encoding="utf-8"?>',
         '<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">',
         '  <head>',
-        '    <meta content="' + spec.uuid + '" name="dtb:uid"/>',
+        '    <meta content="' + uuid + '" name="dtb:uid"/>',
         '    <meta content="1" name="dtb:depth"/>',
         '    <meta content="0" name="dtb:totalPageCount"/>',
         '    <meta content="0" name="dtb:maxPageNumber"/>',
@@ -127,16 +127,14 @@ function apply(params, next)
     var zip = require('node-zip')();
     var oname = spec.title + '.epub';
 
-    spec.uuid = uid;
-
     console.log('Building ' + oname);
 
     zip.file('mimetype', 'application/epub+zip', { compression: 'STORE' });
     zip.folder('META-INF');
     zip.folder('OEBPS');
     zip.file('META-INF/container.xml', '<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>', { compression: 'DEFLATE' });
-    zip.file('OEBPS/toc.ncx', createTOC(spec), { compression: 'DEFLATE' });
-    zip.file('OEBPS/content.opf', createContents(spec), { compression: 'DEFLATE' });
+    zip.file('OEBPS/toc.ncx', createTOC(spec, uid), { compression: 'DEFLATE' });
+    zip.file('OEBPS/content.opf', createContents(spec, uid), { compression: 'DEFLATE' });
     zip.file('OEBPS/style.css', fs.readFileSync('templates/style.css', 'utf-8'), { compression: 'DEFLATE' });
 
     if(spec.cover)
