@@ -74,6 +74,11 @@ function Sequence(ops, params)
     last();
 }
 
+// Ensure the cache directory exists. Create it if it does not.
+if(!fs.lstatSync(__dirname + '/cache').isDirectory)
+    fs.mkdirSync(__dirname + '/cache');
+
+// Load the spec. Start processing.
 var spec = JSON.parse(fs.readFileSync(__dirname + '/' + process.argv[2]));
 
 spec.loaded = 0;
@@ -85,7 +90,7 @@ for(var i = 0; i < spec.contents.length; i++)
         chap: spec.contents[i]
     };
 
-    params.chap.id = '';
+    params.chap.id = '' + i;
     params.chap.dom = cheerio.load('');
 
     var ops = [];
