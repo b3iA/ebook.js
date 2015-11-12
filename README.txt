@@ -1,40 +1,189 @@
-Installation
+INSTALLATION
 ------------
 
-Run 'npm install' to install the dependencies, and you're good to go.
+Run 'npm install' to install the dependencies, and you should be good to go.
 
 
-Usage
+USAGE
 -----
 
 ebook.js <spec.json>
 
-
-Notes
------
-
 PLEASE DO NOT DISTRIBUTE THE RESULTING EPUB FILES UNLESS YOU ARE THE AUTHOR OF OR OWNS
-THE RIGHTS TO ALL THE MATERIAL THEY CONTAIN.
+THE RIGHTS TO ALL MATERIAL THEY CONTAIN.
 
-Ebook specifications should be placed in the 'specs' directory and cover-related files
-in 'specs/covers'. Each specification is a simple JSON file that contains the book
-title (also used as the output filename), content creator, a list of content
-transformation filters which are applied sequentially, cover files (if any) and
-book contents. The contents are a list of objects, with each entry specifying the
-title and URI of the data comprising a chapter. The exact nature of the URI depends
-on the chosen input filter. The names of available input filters start by 'from-' by
-convention and are typically specified as the first element in each filter chain.
 
-The following input filters are included:
+INSTRUCTIONS
+------------
 
-* from-reddit-post: The source is a valid HTTP or HTTPS Reddit post URL.
-* from-local-markdown: The source is a filename relative to the location of ebook.js
-* from-local-html: The source is a filename relative to the location of ebook.js
+This script will generate one or more ebooks when given a simple JSON file. These
+files will be referred to as 'specs', and have the following format:
 
-As well as the following output filters:
+"title" (string):
+    Used as the book title and as the basis for the output filename.
 
-* epub: The output will be written to an epub file in the same location as ebook.js
-        with the name derived from the specified book title.
+"creator" (string):
+    The name of the author. Embedded into output meta-data and used for by-lines.
 
-* html: The output will be written to a merged self-contained HTML file in the same
-        location as ebook.js with the name derived from the specified book title.
+"cover" (object, optional):
+    If specified, the cover object must contain two keys: "html" and "css", both
+    values being a filename relative to the 'specs/covers' directory. These will
+    be automatically included as the first page of EPUBs and embedded into generated
+    HTML files.
+
+"filters" (array of strings):
+    Names of filters to be appled to each chapter sequentially. The name of a filter
+    is equivalent to its filename, sans extension. While filters are executed
+    sequentially, chapters are processes in parallel.
+    Typically each filter chain will begin with an input filter that obtains the
+    material for each chapter and makes it available for further processing by
+    subsequent filters. These have names beginning with 'from-' by convention.
+
+    The following filters are included:
+
+    * "from-local-html"
+        Read the chapter data from a local (X)HTML file, given a filename relative
+        to the root directory.
+
+    * "from-local-markdown"
+        Read the chapter data from a local Markdown file, given a filename relative
+        to the root directory.
+
+    * "from-reddit-post"
+        Downloads and caches the chapter contents from a Reddit post given a source
+        URL. Since Reddits JSON API is used - so that post tagged NSFW can be
+        automatically retrieved - URL-shorteners (like http://redd.it) are not
+        supported. To use such resources, first resolve the actual Reddit link
+        by visiting the URL in a browser.
+
+        Submission continuations in comments are automatically detected and
+        concatenated with the main submission text before further processing.
+
+    * "clean-reddit"
+        Removes HTML comment elements, CSS classes on any other element and
+        replaces any HTTP/HTTPS link to reddit with its text. Links to other
+        domains are retained.
+
+    * "custom-break-to-hr"
+        Different series use a variety of ways to indicate breaks / segments or pauses
+        in the text. This filter harmonizes all known instances of this into <hr />
+        elements, which can then be further processed by the typography
+        filter (see below)
+
+    * "no-preable"
+        Removes any post content preceding the first horizontal rule, if the total
+        length of the content does not exceed 2500 characters.
+
+    * "typography"
+        Replaces opening and closing quotes and apostrophes with right / left versions,
+        replaces '...' with proper ellipsis, removes redundant, leading or trailing
+        horizontal rules and replaces the ones remaining with asterisms. Note that
+        unicode characters are used rather than HTML entities, since practically
+        all EPUB readers have problems rendering these correctly. Conversely,
+        not using entites can be correctly handled by all modern browsers.
+
+    * Per-series filters for the following:
+
+        * Client Stone: Freedom
+        * Client Stone: Rebellion
+        * Perspective
+        * The Deathworlders
+        * The Xiu Chang Saga
+
+"output" (string or array of strings):
+    Used to specify one or more integrations filters that build output files based
+    on the filtered chapter contents. If only a single type of output is desired,
+    a single filter can be specified, i.e. "epub". Multiple output files can
+    be generated by specifying a filter chain, i.e. ["epub", "html"]. Output filters
+    are processed in order, just like per-chapter filter chains. The following
+    output filters are included:
+
+        * epub:
+            Emits an EPUB file in the root directory with the name [title].epub
+
+        * html:
+            Emits a HTML file in the root directory with the name [title].html. The
+            generated file has no external dependencies and can be uploaded or viewed
+            as-is.
+
+"content" (array of objects):
+    Each element of the array is an object describing a chapter. Each of these
+    instances contains the following fields:
+
+        * "title" (string):
+            The chapter title. Used to generate headings and when building TOCs.
+
+        * "src" (string):
+            The source location of the material for the given chapter. This can
+            be any value appropriate to the chosen input filter (see above).
+
+
+AUTHORING FILTERS
+-----------------
+
+Each filter is implemented as a Node.JS module, and placed in the "filters"
+directory. Each filter module must export exactly one function:
+
+    function apply(params, next);
+
+    * "params" (object)
+        Represents the current task to be performed by the filter. Has two members:
+
+        * "spec" (object)
+            Represents the loaded specification file and contains members data as
+            described above.
+
+        * "chap" (object)
+            A reference to the spec.contents elements this filter is to process (if
+            used as a chapter filter), or null (if used as an output filter).
+
+            In addition to the fields from above, it will be decorated by the
+            following members:
+
+            * "dom" (object)
+                A Cheerio DOM object. For more information on how to work with
+                Cheerio, refer to the documentation at:
+
+                https://github.com/cheeriojs/cheerio
+
+    * "next" (function())
+        A function that must be called by the filter when it completes and any
+        modifications to "params.chap.dom" have been completed.
+
+Thus, a minimal valid filter implementation is:
+
+    function apply(params, next)
+    {
+        next();
+    }
+
+    module.exports =
+    {
+        apply: apply
+    };
+
+Any subsequent filter will not be applied until the preceding filter
+calls its supplied "next" function. Consequently, the following is valid:
+
+    function apply(params, next)
+    {
+        setTimeout(next, 1000);
+    }
+
+If the filter is written to be used as an input - the first filter in a chain -
+it's name should begin with 'from-', and it has two additional responsibilities:
+
+    function apply(params, next)
+    {
+        var chap = params.chap;
+
+        // Create the HTML DOM subsequent filters will operate on:
+        chap.dom = cheerio.load('');
+
+        // Create a unique (per book) id. This will be used both
+        // as an XML/HTML element identifier and as a chapter filename
+        // in the case of EPUB output, and is thus subject to the
+        // union of the restriction imposed on all of the above. I suggest
+        // ensuring that it contains only alphanumerics, dashes and underscores.
+        chap.id = sanitize(chap.src);
+    }
