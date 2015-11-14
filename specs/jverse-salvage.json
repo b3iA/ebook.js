@@ -6,6 +6,7 @@
 		"clean-reddit",
 		"custom-break-to-hr",
 		"no-preamble",
+        "jverse-salvage",
 		"typography"
 	],
 	"output": "epub",
@@ -337,7 +338,7 @@
 		},
 		{
 			"title": "81. Crossing Paths",
-			"src": "http://www.reddit.com/r/HFY/comments/37gl8o/ocjenkinsverse_mia_chapter_9_unleashed/"
+			"src": "http://www.reddit.com/r/HFY/comments/37l84a/ocjenkinsverse_salvage_chapter_81_crossing_paths/"
 		},
 		{
 			"title": "82. Dark Heart",
