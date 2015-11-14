@@ -93,7 +93,7 @@ function createTOC(spec, uuid)
     return xml + '  </navMap>\n</ncx>';
 }
 
-function createXHTML(spec, chap)
+function createXHTML(params, chap)
 {
     var xml = [
         '<?xml version="1.0" encoding="utf-8"?>',
@@ -110,7 +110,7 @@ function createXHTML(spec, chap)
         '    <div class="chapter">\n'
     ].join('\n');
 
-    xml += unescape(chap.dom.xml());
+    xml += params.unescape_html(chap.dom.xml());
     xml += [
         '    </div>',
         '  </body>',
@@ -147,7 +147,7 @@ function apply(params, next)
     {
         var chap = spec.contents[ci];
 
-        zip.file('OEBPS/' + chap.id + '.xhtml', createXHTML(spec, chap), { compression: 'DEFLATE' });
+        zip.file('OEBPS/' + chap.id + '.xhtml', createXHTML(params, chap), { compression: 'DEFLATE' });
     }
 
     fs.writeFileSync(oname, zip.generate({ base64: false }), 'binary');

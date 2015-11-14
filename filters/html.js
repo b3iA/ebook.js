@@ -29,7 +29,7 @@ function apply(params, next)
             '    <h1>' + chap.title + '</h1>',
             '    ' + (chap.byline ? '<p class="author">By ' + chap.byline + '</p>' : ''),
             '    <div class="chapter">',
-            unescape(chap.dom.xml()),
+            params.unescape_html(chap.dom.xml()),
             '    </div>\n'
         ].join('\n');
     }

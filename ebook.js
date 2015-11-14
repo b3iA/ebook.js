@@ -7,13 +7,14 @@ if(process.argv.length < 3)
     return;
 }
 
-function unescape(html)
+function unescape_html(html)
 {
-    return html.replace(/&quot;/g, '"')
-               .replace(/&amp;#39;/g, '\'')
-               .replace(/&apos;/g, '\'')
-               .replace(/&#39;/g, '\'')
-               .replace(/&amp;/g, '&');
+    return html.replace(/&amp;/g, '&')
+    	       .replace(/&quot;/g, '"')
+    	       .replace(/&apos;/g, '\'')
+    	       .replace(/&#39;/g, '\'')
+    	       .replace(/&amp;#39;/g, '\'')
+    	       .replace(/&amp;/g, '&');
 }
 
 function FilterManager()
@@ -96,7 +97,8 @@ for(var i = 0; i < spec.contents.length; i++)
 {
     var params = {
         spec: spec,
-        chap: spec.contents[i]
+        chap: spec.contents[i],
+    	unescape_html: unescape_html
     };
 
     params.chap.id = '' + i;
