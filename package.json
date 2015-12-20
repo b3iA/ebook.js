@@ -1,11 +1,11 @@
 {
-  "name": "reddit2epub",
+  "name": "ebook.js",
   "version": "0.0.1",
-  "description": "Creates EPUB ebooks from lists of Reddit posts.",
+  "description": "Creates EPUB ebooks from filtered Markdown sources.",
   "homepage": "https://www.reddit.com/r/hfy",
   "author": "https://www.reddit.com/u/b3iAAoLZOH9Y265cujFhhLoXl",
   "license": "MIT",
-  "main": "reddit2epub.js",
+  "main": "ebook.js",
   "dependencies": {
     "cheerio": "^0.19.0",
     "marked": "^0.3.3",
