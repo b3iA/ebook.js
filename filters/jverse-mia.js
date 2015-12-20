@@ -1,17 +1,3 @@
-function trim(s)
-{
-	var l = 0;
-    var r = s.length - 1;
-
-	while(l < s.length && s[l] === ' ')
-        l++;
-
-	while(r > l && s[r] === ' ')
-	   r-=1;
-
-	return s.substring(l, r+1);
-}
-
 function apply(params, next)
 {
     var chap = params.chap;
@@ -27,9 +13,9 @@ function apply(params, next)
 	            return;
 
 	        var el = $(e);
-	        var tx = trim(el.text());
+	        var tx = el.text().trim();
 
-	        if(tx === '&nbsp;')
+	        if(tx === '&amp;nbsp;')
 	            el.remove();
 	    });
 	}

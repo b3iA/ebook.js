@@ -32,7 +32,20 @@ function apply(params, next)
 			$(cn[cn.length - 1]).remove();
 		}
 	}
+	
+	$('p').each(function(i, e)
+	{
+		$(e).find('br').remove();
+	});
 
+	$('p strong').each(function(i, e)
+	{
+		var el = $(e);
+		
+		if(el.text().indexOf('D BV') > -1)
+			el.after($('<p></p><br/>'));
+	});
+	
 	next();
 }
 
