@@ -8,7 +8,7 @@
 		"bats",
 		"typography"
 	],
-	"output": "epub",
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "bats.xhtml",
 		"css": "cover.css"

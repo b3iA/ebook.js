@@ -7,7 +7,7 @@
 		"jverse-qed",
 		"typography"
 	],
-	"output": "epub",
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "jverse-qed.xhtml",
 		"css": "cover.css"

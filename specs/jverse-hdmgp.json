@@ -8,7 +8,7 @@
 		"jverse-hdmgp",
 		"typography"
 	],
-	"output": "epub",
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "jverse-hdmgp.xhtml",
 		"css": "cover.css"

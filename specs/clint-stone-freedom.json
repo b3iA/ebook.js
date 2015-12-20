@@ -8,7 +8,7 @@
 		"clint-stone-freedom",
 		"typography"
 	],
-	"output": "epub",
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "clint-stone-freedom.xhtml",
 		"css": "cover.css"

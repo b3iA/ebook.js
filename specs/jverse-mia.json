@@ -8,7 +8,7 @@
 		"jverse-mia",
 		"typography"
 	],
-	"output": "epub",
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "jverse-mia.xhtml",
 		"css": "cover.css"

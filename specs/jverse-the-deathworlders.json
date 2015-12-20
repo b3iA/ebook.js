@@ -19,7 +19,7 @@
 			"typography"
 		]
 	},
-	"output": ["epub", "latex"],
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "jverse-the-deathworlders.xhtml",
 		"css": "cover.css"

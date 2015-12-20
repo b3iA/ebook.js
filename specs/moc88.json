@@ -7,7 +7,7 @@
 		"no-preamble",
 		"typography"
 	],
-	"output": "epub",
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "moc88.xhtml",
 		"css": "cover.css"

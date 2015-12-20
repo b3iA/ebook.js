@@ -8,7 +8,7 @@
 		"jverse-perspective",
 		"typography"
 	],
-	"output": "epub",
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "jverse-perspective.xhtml",
 		"css": "cover.css"

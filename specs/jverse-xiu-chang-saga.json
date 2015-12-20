@@ -8,7 +8,7 @@
 		"jverse-txcs",
 		"typography"
 	],
-	"output": "epub",
+	"output": ["epub", "latex", "html"],
 	"cover": {
 		"html": "jverse-xiu-chang-saga.xhtml",
 		"css": "cover.css"
