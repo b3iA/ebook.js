@@ -1,4 +1,5 @@
 *.epub
 *.html
+*.pdf
 cache
 node_modules
