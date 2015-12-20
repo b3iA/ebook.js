@@ -13,8 +13,8 @@ PLEASE DO NOT DISTRIBUTE THE RESULTING EPUB FILES UNLESS YOU ARE THE AUTHOR OF O
 THE RIGHTS TO ALL MATERIAL THEY CONTAIN.
 
 
-INSTRUCTIONS
-------------
+CONFIGURATION
+-------------
 
 This script will generate one or more ebooks when given a simple JSON file. These
 files will be referred to as 'specs', and have the following format:
@@ -31,64 +31,77 @@ files will be referred to as 'specs', and have the following format:
     be automatically included as the first page of EPUBs and embedded into generated
     HTML files.
 
-"filters" (array of strings):
-    Names of filters to be appled to each chapter sequentially. The name of a filter
-    is equivalent to its filename, sans extension. While filters are executed
-    sequentially, chapters are processes in parallel.
-    Typically each filter chain will begin with an input filter that obtains the
-    material for each chapter and makes it available for further processing by
-    subsequent filters. These have names beginning with 'from-' by convention.
+"filters" (array of strings OR object of named filter arrays):
+    Names of filters to be appled to each chapter sequentially, or a set of named
+    filter name arrays. When the latter option is used, each chapter must include
+    a "filter" reference. The name of a filter is equivalent to its filename, sans
+    extension. While filters are executed sequentially, chapters are processes in parallel.
+    Each filter chain should begin with an input filter that obtains the
+    material for each chapter and makes it available for further processing by subsequent
+    filters. Source filters  have names beginning with 'from-' by convention.
 
     The following filters are included:
 
-    * "from-local-html"
-        Read the chapter data from a local (X)HTML file, given a filename relative
-        to the root directory.
+    SOURCES:
+    
+		* "from-local-html"
+		    Read the chapter data from a local (X)HTML file, given a filename relative
+		    to the root directory.
 
-    * "from-local-markdown"
-        Read the chapter data from a local Markdown file, given a filename relative
-        to the root directory.
+		* "from-local-markdown"
+		    Read the chapter data from a local Markdown file, given a filename relative
+		    to the root directory.
 
-    * "from-reddit-post"
-        Downloads and caches the chapter contents from a Reddit post given a source
-        URL. Since Reddits JSON API is used - so that post tagged NSFW can be
-        automatically retrieved - URL-shorteners (like http://redd.it) are not
-        supported. To use such resources, first resolve the actual Reddit link
-        by visiting the URL in a browser.
+		* "from-reddit-post"
+		    Downloads and caches the chapter contents from a Reddit post given a source
+		    URL. Since Reddits JSON API is used - so that post tagged NSFW can be
+		    automatically retrieved - URL-shorteners (like http://redd.it) are not
+		    supported. To use such resources, first resolve the actual Reddit link
+		    by visiting the URL in a browser.
 
-        Submission continuations in comments are automatically detected and
-        concatenated with the main submission text before further processing.
+		    Submission continuations in comments are automatically detected and
+		    concatenated with the main submission text before further processing.
 
-    * "clean-reddit"
-        Removes HTML comment elements, CSS classes on any other element and
-        replaces any HTTP/HTTPS link to reddit with its text. Links to other
-        domains are retained.
+		* "from-hfy-archive"
+		    Downloads and caches the chapter contents from a HFY Archive post given
+		    a source URL.
+	
+	FILTERS:
+		* "clean-reddit"
+		    Removes HTML comment elements, CSS classes on any other element and
+		    replaces any HTTP/HTTPS link to reddit with its text. Links to other
+		    domains are retained.
 
-    * "custom-break-to-hr"
-        Different series use a variety of ways to indicate breaks / segments or pauses
-        in the text. This filter harmonizes all known instances of this into <hr />
-        elements, which can then be further processed by the typography
-        filter (see below)
+		* "custom-break-to-hr"
+		    Different series use a variety of ways to indicate breaks / segments or pauses
+		    in the text. This filter harmonizes all known instances of this into <hr />
+		    elements, which can then be further processed by the typography
+		    filter (see below)
 
-    * "no-preable"
-        Removes any post content preceding the first horizontal rule, if the total
-        length of the content does not exceed 2500 characters.
+		* "no-preable"
+		    Removes any post content preceding the first horizontal rule, if the total
+		    length of the content does not exceed 2500 characters.
 
-    * "typography"
-        Replaces opening and closing quotes and apostrophes with right / left versions,
-        replaces '...' with proper ellipsis, removes redundant, leading or trailing
-        horizontal rules and replaces the ones remaining with asterisms. Note that
-        unicode characters are used rather than HTML entities, since practically
-        all EPUB readers have problems rendering these correctly. Conversely,
-        not using entites can be correctly handled by all modern browsers.
+		* "typography"
+		    Replaces opening and closing quotes and apostrophes with right / left versions,
+		    replaces '...' with proper ellipsis, removes redundant, leading or trailing
+		    horizontal rules and replaces the ones remaining with asterisms. Note that
+		    unicode characters are used rather than HTML entities, since practically
+		    all EPUB readers have problems rendering these correctly. Conversely,
+		    not using entites can be correctly handled by all modern browsers.
 
-    * Per-series filters for the following:
+		* Series-specific filters for the following:
 
-        * Client Stone: Freedom
-        * Client Stone: Rebellion
-        * Perspective
-        * The Deathworlders
-        * The Xiu Chang Saga
+		    * Blessed Are The Simple
+		    * Client Stone: Freedom
+		    * Client Stone: Rebellion
+		    * Humans Don't Make Good Pets
+		    * MIA
+		    * Perspective
+		    * QED
+		    * Salvage
+		    * The Deathworlders
+		    * The Xiu Chang Saga
 
 "output" (string or array of strings):
     Used to specify one or more integrations filters that build output files based
@@ -101,6 +114,12 @@ files will be referred to as 'specs', and have the following format:
         * epub:
             Emits an EPUB file in the root directory with the name [title].epub
 
+        * latex:
+            Emits a TEX file with the name [title].tex. The format is optimized for
+            processing with xelatex, but pdflatex can be used. If a Patreon link is
+            included in the cover XHTML file, it is automatically extracted and added
+            to the cover page and thus also included in generated PDFs.
+            
         * html:
             Emits a HTML file in the root directory with the name [title].html. The
             generated file has no external dependencies and can be uploaded or viewed
@@ -117,6 +136,10 @@ files will be referred to as 'specs', and have the following format:
             The source location of the material for the given chapter. This can
             be any value appropriate to the chosen input filter (see above).
 
+		* "filter" (string, optional):
+			If a set of filter chains have been specified, this reference to a chain
+			by name is mandatory. This feature can be used to support multi-source
+			or variably filtered content.
 
 AUTHORING FILTERS
 -----------------
@@ -187,3 +210,11 @@ it's name should begin with 'from-', and it has two additional responsibilities:
         // ensuring that it contains only alphanumerics, dashes and underscores.
         chap.id = sanitize(chap.src);
     }
+    
+PERFORMANCE
+-----------
+
+Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current corpus (5141 pages) can
+be retrieved from cache, filterred, typeset and emitted to finish epub, latex and
+html in 31 seconds. A 2-pass build of pdf files takes an additional 1 minute and 4 seconds,
+resulting in a total of 36.4Mb of output data in 44 files.
