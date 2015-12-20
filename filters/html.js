@@ -4,7 +4,7 @@ var fs = require('fs');
 function apply(params, next)
 {
     var spec = params.spec;
-    var oname = spec.title + '.html';
+    var oname = 'output/' + spec.title + '.html';
     var html = [
         '<?xml version="1.0" encoding="utf-8"?>',
         '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">',

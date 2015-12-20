@@ -125,7 +125,7 @@ function apply(params, next)
     var spec = params.spec;
     var uid = uuid.v4();
     var zip = require('node-zip')();
-    var oname = spec.title + '.epub';
+    var oname = 'output/' + spec.title + '.epub';
 
     console.log('Building ' + oname);
 

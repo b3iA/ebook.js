@@ -115,9 +115,17 @@ function Sequence(ops, params)
     last();
 }
 
-// Ensure the cache directory exists. Create it if it does not.
-if(!fs.lstatSync(__dirname + '/cache').isDirectory)
-    fs.mkdirSync(__dirname + '/cache');
+function ensure_dir(dir)
+{
+	dir = __dirname + '/' + dir;
+	
+	if(!fs.existsSync(dir))
+		fs.mkdirSync(dir);
+}
+
+// Ensure the 'cache' and 'output' directories exists. Create them if they do not.
+ensure_dir('cache');
+ensure_dir('output');
 
 // Load the spec. Start processing.
 var spec = JSON.parse(fs.readFileSync(__dirname + '/' + process.argv[2]));

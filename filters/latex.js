@@ -97,19 +97,17 @@ function tolatex(p, $, e, brk)
 function apply(params, next)
 {
     var spec = params.spec;
-    var oname = spec.title + '.tex';
+    var oname = 'output/' + spec.title + '.tex';
     var c_dom = spec.cover.html ? cheerio.load(fs.readFileSync('specs/covers/' + spec.cover.html, 'utf8')) : null;
     var c_latex = c_dom && c_dom('.patreon') ? tolatex(params, c_dom, c_dom('p.patreon')) : null;
     var latex = [
 		'\\documentclass[a4paper,10pt]{article}',
 		'',
 		'\\usepackage{fontspec,xunicode}',
-		'\\usepackage{hyperref}',
 		'\\usepackage{ifxetex}',
 		'\\usepackage{tocloft}',
 		'\\usepackage{stackengine}',
-		'',
-		'\\hypersetup{pdfborder = {0 0 0}}',
+		'\\usepackage[colorlinks = true, linkcolor = blue, urlcolor = blue, pdfborder = {0 0 0}]{hyperref}',
 		'',
 		'\\ifxetex',
 		'  \\usepackage{fontspec}',
@@ -138,9 +136,8 @@ function apply(params, next)
 		'\\begin{document}',
 		'',
 		'\\title{' + l_esc(spec.title) + '}',
-		'\\author{' + l_esc(spec.creator) + '}',
+		'\\author{' + l_esc(spec.creator) + (c_latex ? '\\\\ ' + c_latex.replace(/\\(begin|end)\{center\}/g, '') : '') + '}',
 		'\\date{}',
-		'\\thanks{' + (c_latex ? c_latex.replace(/\\(begin|end)\{center\}/g, '') : '') + '}',
 		'',
 		'\\maketitle',
 		'\\pagestyle{empty}',
