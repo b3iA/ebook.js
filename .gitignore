@@ -1,5 +1,5 @@
-*.epub
-*.html
-*.pdf
 cache
+output
 node_modules
+build-pdfs
+build-all
