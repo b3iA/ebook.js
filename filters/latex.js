@@ -7,6 +7,16 @@ var fs = require('fs');
 // Linux Biolinum
 var typeface = 'Noto Serif';
 
+function l_esc(txt)
+{
+	return txt.replace(/%/g, '\\%')
+			  .replace(/\$/g, '\\$')
+			  .replace(/#/g, '\\#')
+			  .replace(/_/g, '\\_')
+			  .replace(/\{/g, '\\{')
+			  .replace(/\}/g, '\\}');
+}
+
 function filter(p, txt)
 {
 	return p.unescape_html(txt).replace(/&lt;/g, '<')
@@ -58,7 +68,7 @@ function tolatex(p, $, e, brk)
 			else if(el.name === 'pre' || el.name === 'code')
 				latex += '\\texttt{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'a')
-				latex += '\\href{' + el.attribs['href'] + '}{' + filter(p, el.children[0]['data']) + '}';
+				latex += '\\href{' + l_esc(el.attribs['href']) + '}{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'p')
 			{
 				var t = tolatex(p, $, elem);
@@ -67,6 +77,10 @@ function tolatex(p, $, e, brk)
 			}
 			else if(el.name === 'span')
 				latex += tolatex(p, $, elem);
+			else if(el.name === 'li')
+				latex += '\\item ' + tolatex(p, $, elem);
+			else if(el.name === 'ul')
+				latex += '\\begin{itemize}' + tolatex(p, $, elem) + '\n\\end{itemize}';
 			else if(el.name === 'br')
 				latex += '\n';
 			else
@@ -104,8 +118,7 @@ function apply(params, next)
 		'  \\usepackage[utf8]{inputenc}',	
 		'\\fi',
 		'',
-		'\\def\\asterism{\\par\\vspace{1em}{\\centering\\scalebox{0.75}{%',
-		'  \\stackon[-0.5pt]{\\bfseries*~*}{\\bfseries*}}\\par}\\vspace{.5em}\\par}',
+		'\\def\\asterism{\\par\\begin{center}\\scalebox{2}{$\\cdots$}\\end{center}}',
 		'',
 		'\\setlength{\\parskip}{\\baselineskip}',
 		'\\setlength{\\parindent}{0pt}',
@@ -122,8 +135,8 @@ function apply(params, next)
 		'',
 		'\\begin{document}',
 		'',
-		'\\title{' + spec.title + '}',
-		'\\author{' + spec.creator + '}',
+		'\\title{' + l_esc(spec.title) + '}',
+		'\\author{' + l_esc(spec.creator) + '}',
 		'\\date{}',
 		'',
 		'\\maketitle',
@@ -147,7 +160,7 @@ function apply(params, next)
     {
         var chap = spec.contents[i];
 
-        latex += '\\clearpage\n\\section{' + chap.title + '}\n';
+        latex += '\\clearpage\n\\section{' + l_esc(chap.title) + '}\n';
         latex += tolatex(params, chap.dom, chap.dom.root());
     }
 
