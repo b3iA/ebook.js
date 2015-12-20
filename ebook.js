@@ -44,7 +44,8 @@ function unescape_html(html)
     	                  .replace(/&apos;/g, '\'')
     	                  .replace(/&#39;/g, '\'')
     	                  .replace(/&amp;#39;/g, '\'')
-    	                  .replace(/&amp;/g, '&');
+    	                  .replace(/&amp;/g, '&')
+    	                  .replace(/&nbsp;/g, ' ');
 }
 
 function FilterManager()
