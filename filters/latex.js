@@ -98,6 +98,8 @@ function apply(params, next)
 {
     var spec = params.spec;
     var oname = spec.title + '.tex';
+    var c_dom = spec.cover.html ? cheerio.load(fs.readFileSync('specs/covers/' + spec.cover.html, 'utf8')) : null;
+    var c_latex = c_dom && c_dom('.patreon') ? tolatex(params, c_dom, c_dom('p.patreon')) : null;
     var latex = [
 		'\\documentclass[a4paper,10pt]{article}',
 		'',
@@ -138,6 +140,7 @@ function apply(params, next)
 		'\\title{' + l_esc(spec.title) + '}',
 		'\\author{' + l_esc(spec.creator) + '}',
 		'\\date{}',
+		'\\thanks{' + (c_latex ? c_latex.replace(/\\(begin|end)\{center\}/g, '') : '') + '}',
 		'',
 		'\\maketitle',
 		'\\pagestyle{empty}',
