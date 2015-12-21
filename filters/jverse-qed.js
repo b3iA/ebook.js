@@ -6,6 +6,14 @@ function apply(params, next)
     for(var i = 0; i < 3; i++)
         $(ps[i]).remove();
 
+    $('li p').each(function(i, e)
+    {
+    	var el = $(e);
+    	
+    	el.parent().append(el.contents());
+    	el.remove();
+    });
+    
     next();
 }
 
