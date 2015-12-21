@@ -134,7 +134,7 @@ function apply(params, next)
 		'\\begin{document}',
 		'',
 		'\\title{' + l_esc(spec.title).replace(/\n/g, '\\\\\n') + '}',
-		'\\author{' + l_esc(spec.creator) + (spec.patreon ? '\\\\ Donate securely to the author at \\href{Patreon}{' + l_esc(spec.patreon) + '}' : '') + '}',
+		'\\author{' + l_esc(spec.creator) + (spec.patreon ? '\\\\ Donate securely to the author at \\href{' + l_esc(spec.patreon) + '}{Patreon}' : '') + '}',
 		'\\date{}',
 		'',
 		'\\maketitle',
