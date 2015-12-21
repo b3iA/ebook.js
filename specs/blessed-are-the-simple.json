@@ -9,10 +9,6 @@
 		"typography"
 	],
 	"output": ["epub", "latex", "html"],
-	"cover": {
-		"html": "bats.xhtml",
-		"css": "cover.css"
-	},
 	"contents":
 	[
 		{
@@ -114,6 +110,18 @@
 		{
 			"title": "How Easy it is to Get Lost",
 			"src": "http://www.reddit.com/r/HFY/comments/3h81s6/blessed_are_the_simple_xxv_how_easy_it_is_to_get/"
+		},
+		{
+			"title": "I've Been Doing this for Over Half a Year Now",
+			"src": "http://www.reddit.com/r/HFY/comments/3j4rkn/blessed_are_the_simple_xxvi_or_ive_been_doing/"
+		},
+		{
+			"title": "He is the Get Out of Jail Free Card",
+			"src": "http://www.reddit.com/r/HFY/comments/3mgk3z/blessed_are_the_simple_xxvii_or_he_is_the_get_out/"
+		},
+		{
+			"title": "I Don't Intend on Making this the Last of the Year",
+			"src": "http://www.reddit.com/r/HFY/comments/3vfhf3/blessed_are_the_simple_xxviii_or_i_dont_intend_on/"
 		}
 	]
 }

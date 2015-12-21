@@ -1,6 +1,6 @@
 {
 	"title": "Memories of Creature 88",
-	"creator": "/u/RegalLegalEagle",
+	"creator": "RegalLegalEagle",
 	"filters": [
 		"from-reddit-post",
 		"clean-reddit",
@@ -8,10 +8,6 @@
 		"typography"
 	],
 	"output": ["epub", "latex", "html"],
-	"cover": {
-		"html": "moc88.xhtml",
-		"css": "cover.css"
-	},
 	"contents":
 	[
 		{

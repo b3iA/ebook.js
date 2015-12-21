@@ -98,8 +98,6 @@ function apply(params, next)
 {
     var spec = params.spec;
     var oname = 'output/' + spec.title + '.tex';
-    var c_dom = spec.cover.html ? cheerio.load(fs.readFileSync('specs/covers/' + spec.cover.html, 'utf8')) : null;
-    var c_latex = c_dom && c_dom('.patreon') ? tolatex(params, c_dom, c_dom('p.patreon')) : null;
     var latex = [
 		'\\documentclass[a4paper,10pt]{article}',
 		'',
@@ -136,7 +134,7 @@ function apply(params, next)
 		'\\begin{document}',
 		'',
 		'\\title{' + l_esc(spec.title) + '}',
-		'\\author{' + l_esc(spec.creator) + (c_latex ? '\\\\ ' + c_latex.replace(/\\(begin|end)\{center\}/g, '') : '') + '}',
+		'\\author{' + l_esc(spec.creator) + (spec.patreon ? '\\\\ Donate securely to the author at \\href{Patreon}{' + l_esc(spec.patreon) + '}' : '') + '}',
 		'\\date{}',
 		'',
 		'\\maketitle',
@@ -161,6 +159,7 @@ function apply(params, next)
         var chap = spec.contents[i];
 
         latex += '\\clearpage\n\\section{' + l_esc(chap.title) + '}\n';
+        // TODO: Add byline support.
         latex += tolatex(params, chap.dom, chap.dom.root());
     }
 

@@ -9,10 +9,6 @@
 		"typography"
 	],
 	"output": ["epub", "latex", "html"],
-	"cover": {
-		"html": "clint-stone-rebellion.xhtml",
-		"css": "cover.css"
-	},
 	"contents":
 	[
 		{

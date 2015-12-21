@@ -1,6 +1,6 @@
 {
 	"title": "The Deathworlders",
-	"creator": "/u/Hambone3110",
+	"creator": "Hambone3110",
 	"filters": {
 		"reddit": [
 			"from-reddit-post",
@@ -20,10 +20,6 @@
 		]
 	},
 	"output": ["epub", "latex", "html"],
-	"cover": {
-		"html": "jverse-the-deathworlders.xhtml",
-		"css": "cover.css"
-	},
 	"contents":
 	[
 		{

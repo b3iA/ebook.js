@@ -1,6 +1,6 @@
 {
 	"title": "Salvage",
-	"creator": "/u/Rantarian",
+	"creator": "Rantarian",
 	"filters": [
 		"from-reddit-post",
 		"clean-reddit",
@@ -10,10 +10,6 @@
 		"typography"
 	],
 	"output": ["epub", "latex", "html"],
-	"cover": {
-		"html": "jverse-salvage.xhtml",
-		"css": "cover.css"
-	},
 	"contents":
 	[
 		{

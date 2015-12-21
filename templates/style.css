@@ -95,28 +95,14 @@ center
 	text-align: center;
 }
 
-a
+a, a:link, a:visited
 {
 	color: #02e;
 	text-decoration: none;
 	outline: none;
 }
 
-a:link
-{
-	color: #02e;
-	text-decoration: none;
-	outline: none;
-}
-
-a:visited
-{
-	color: #02e;
-	text-decoration: none;
-	outline: none;
-}
-
-.author
+.byline
 {
 	color: gray;
 	text-align: left;
