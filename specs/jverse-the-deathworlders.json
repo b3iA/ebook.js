@@ -19,6 +19,7 @@
 			"typography"
 		]
 	},
+	"filename": "The Deathworlders",
 	"output": ["epub", "latex", "html"],
 	"contents":
 	[

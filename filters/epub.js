@@ -105,6 +105,17 @@ function createXHTML(params, chap)
     return xml;
 }
 
+function createTitle(title)
+{
+	var html = '';
+	var lines = title.split('\n');
+	
+	for(var i = 0; i < lines.length; i++)
+		html += '        <p class="center"><center><div class="title">' + lines[i] + '</div></center></p>\n';
+
+	return html;
+}
+
 function createCover(params)
 {
 	var spec = params.spec;
@@ -122,7 +133,7 @@ function createCover(params)
 		'        </style>',
 		'    </head>',
 		'    <body>',
-		'        <p class="center"><center><div class="title">' + spec.title + '</div></center></p>',
+		createTitle(spec.title),
 		'        <p class="center"><center><div class="author">By ' + spec.creator + '</div></center></p>',
 	].join('\n');
 
@@ -137,7 +148,7 @@ function apply(params, next)
     var spec = params.spec;
     var uid = uuid.v4();
     var zip = require('node-zip')();
-    var oname = 'output/' + spec.title + '.epub';
+    var oname = 'output/' + spec.filename + '.epub';
 
     console.log('Building ' + oname);
 

@@ -8,6 +8,7 @@
 		"jverse-hdmgp",
 		"typography"
 	],
+	"filename": "Humans don’t make good pets",
 	"output": ["epub", "latex", "html"],
 	"contents":
 	[

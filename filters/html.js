@@ -4,7 +4,7 @@ var fs = require('fs');
 function apply(params, next)
 {
     var spec = params.spec;
-    var oname = 'output/' + spec.title + '.html';
+    var oname = 'output/' + spec.filename + '.html';
     var vspace = '    <p><br/</p><p><br/</p><p><br/</p>\n';
     var html = [
         '<?xml version="1.0" encoding="utf-8"?>',
@@ -18,11 +18,11 @@ function apply(params, next)
 		'		.title { font-size: 2.5em; line-height: 1em; font-weight: bold; margin: 0; }',
 		'		.author { font-size: 1.2em; line-height: 1em; font-weight: bold; margin: 0; }',
 		'		.patreon { font-size: 1.2em; line-height: 1em; margin: 0; }',
-		'		.toc-item { line-height: 2em; margin: 0; margin-left: 40pt; }',
+		'		.toc-item { line-height: 2em; margin: 0; margin-left: 60pt; }',
         '    </style>',
         '  </head>',
         '  <body>\n',
-		'    <p class="center"><center><div class="title">' + spec.title + '</div></center></p>',
+		'    <p class="center"><center><div class="title">' + spec.title.replace(/\n/g, '<br/>') + '</div></center></p>',
 		'    <p class="center"><center><div class="author">By ' + spec.creator + '</div></center></p>',
     ].join('\n');
 
@@ -32,7 +32,7 @@ function apply(params, next)
 		html += '    <p class="center"><center><div class="patreon">Donate securely to the author at <a href="' + spec.patreon + '">patreon.com</a></div></center></p>\n';
     
 	html += vspace;
-	html += '    <h1>Table of contents</h1><br />\n';
+	html += '    <h1 class="toc-item">Table of contents</h1><br />\n';
 
     for(var i = 0; i < spec.contents.length; i++)
     {

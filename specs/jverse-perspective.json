@@ -8,6 +8,7 @@
 		"jverse-perspective",
 		"typography"
 	],
+	"filename": "Perspective",
 	"output": ["epub", "latex", "html"],
 	"contents":
 	[

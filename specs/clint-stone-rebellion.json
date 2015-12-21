@@ -1,5 +1,5 @@
 {
-	"title": "Chronicles of Clint Stone - Rebellion",
+	"title": "Chronicles of Clint Stone\nRebellion",
 	"creator": "someguynamedted",
 	"filters": [
 		"from-reddit-post",
@@ -8,6 +8,7 @@
 		"clint-stone-rebellion",
 		"typography"
 	],
+	"filename": "Chronicles of Clint Stone - Rebellion",
 	"output": ["epub", "latex", "html"],
 	"contents":
 	[

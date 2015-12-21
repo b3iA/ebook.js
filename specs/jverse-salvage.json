@@ -9,6 +9,7 @@
         "jverse-salvage",
 		"typography"
 	],
+	"filename": "Salvage",
 	"output": ["epub", "latex", "html"],
 	"contents":
 	[

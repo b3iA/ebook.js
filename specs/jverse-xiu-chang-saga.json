@@ -8,6 +8,7 @@
 		"jverse-txcs",
 		"typography"
 	],
+	"filename": "The Xiù Chang Saga",
 	"output": ["epub", "latex", "html"],
 	"contents":
 	[

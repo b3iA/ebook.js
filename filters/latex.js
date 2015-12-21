@@ -97,7 +97,7 @@ function tolatex(p, $, e, brk)
 function apply(params, next)
 {
     var spec = params.spec;
-    var oname = 'output/' + spec.title + '.tex';
+    var oname = 'output/' + spec.filename + '.tex';
     var latex = [
 		'\\documentclass[a4paper,10pt]{article}',
 		'',
@@ -133,7 +133,7 @@ function apply(params, next)
 		'',
 		'\\begin{document}',
 		'',
-		'\\title{' + l_esc(spec.title) + '}',
+		'\\title{' + l_esc(spec.title).replace(/\n/g, '\\\\\n') + '}',
 		'\\author{' + l_esc(spec.creator) + (spec.patreon ? '\\\\ Donate securely to the author at \\href{Patreon}{' + l_esc(spec.patreon) + '}' : '') + '}',
 		'\\date{}',
 		'',

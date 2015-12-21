@@ -8,6 +8,7 @@
 		"jverse-mia",
 		"typography"
 	],
+	"filename": "MIA",
 	"output": ["epub", "latex", "html"],
 	"contents":
 	[
