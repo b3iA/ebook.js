@@ -9,7 +9,8 @@
 			"custom-break-to-hr",
 			"no-preamble",
 			"jverse-the-deathworlders",
-			"typography"
+			"typography",
+			"finalize"
 		],
 		"hfy-archive": [
 			"from-hfy-archive",
@@ -17,7 +18,8 @@
 			"custom-break-to-hr",
 			"no-preamble",
 			"jverse-the-deathworlders",
-			"typography"
+			"typography",
+			"finalize"
 		]
 	},
 	"filename": "The Deathworlders",

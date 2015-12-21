@@ -6,7 +6,8 @@
 		"clean-reddit",
 		"no-preamble",
 		"builders-in-the-void",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Builders In The Void 1 - Peace",
 	"output": ["epub", "latex", "html"],

@@ -6,7 +6,8 @@
 		"clean-reddit",
 		"no-preamble",
 		"clint-stone-rebellion",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Chronicles of Clint Stone 2 - Rebellion",
 	"output": ["epub", "latex", "html"],

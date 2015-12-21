@@ -8,7 +8,8 @@
 		"custom-break-to-hr",
 		"no-preamble",
         "jverse-salvage",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Salvage",
 	"output": ["epub", "latex", "html"],

@@ -6,7 +6,8 @@
 		"clean-reddit",
 		"no-preamble",
 		"jverse-perspective",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Perspective",
 	"output": ["epub", "latex", "html"],

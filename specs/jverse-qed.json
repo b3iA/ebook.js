@@ -5,7 +5,8 @@
 		"from-reddit-post",
 		"clean-reddit",
 		"jverse-qed",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Quod Erat Demonstrandum",
 	"output": ["epub", "latex", "html"],

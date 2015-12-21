@@ -6,7 +6,8 @@
 		"clean-reddit",
 		"no-preamble",
 		"jverse-mia",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "MIA",
 	"output": ["epub", "latex", "html"],

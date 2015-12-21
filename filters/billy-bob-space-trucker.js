@@ -20,8 +20,8 @@ function apply(params, next)
 	});
 	
 	// Harmonize catch-phrase formatting.
-	if(chap.title === 'Un' || chap.title === 'Duex' /* LOL */)
-		$('pre').replaceWith($('<p><strong>Billy-Bob Space Trucker</strong></p>'));
+	if(chap.title === 'Un' || chap.title === 'Deux')
+		$('pre').replaceWith($('<p><strong>Billy-Bob Space Trucker</strong></p>\n'));
 	else if(chap.title === 'Trois')
 		$.root().find('p strong').text('Billy-Bob Space Trucker');
 	

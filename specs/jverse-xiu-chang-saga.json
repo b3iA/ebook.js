@@ -6,7 +6,8 @@
 		"clean-reddit", 
 		"no-preamble",
 		"jverse-txcs",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "The Xiù Chang Saga",
 	"output": ["epub", "latex", "html"],

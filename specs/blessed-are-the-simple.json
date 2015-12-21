@@ -6,7 +6,8 @@
 		"clean-reddit",
 		"no-preamble",
 		"bats",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Blessed are the Simple",
 	"output": ["epub", "latex", "html"],

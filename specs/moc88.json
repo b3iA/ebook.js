@@ -6,7 +6,8 @@
 		"from-reddit-post",
 		"clean-reddit",
 		"no-preamble",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Memories of Creature 88",
 	"output": ["epub", "latex", "html"],

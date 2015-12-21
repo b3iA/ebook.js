@@ -6,7 +6,8 @@
 		"clean-reddit",
 		"no-preamble",
 		"jverse-hdmgp",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Humans don’t make good pets",
 	"output": ["epub", "latex", "html"],

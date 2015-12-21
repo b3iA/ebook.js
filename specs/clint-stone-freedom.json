@@ -6,7 +6,8 @@
 		"clean-reddit",
 		"no-preamble",
 		"clint-stone-freedom",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Chronicles of Clint Stone 1 - Freedom",
 	"output": ["epub", "latex", "html"],

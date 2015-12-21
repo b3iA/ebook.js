@@ -5,7 +5,7 @@ function apply(params, next)
 {
     var spec = params.spec;
     var oname = 'output/' + spec.filename + '.html';
-    var vspace = '    <p><br/</p><p><br/</p><p><br/</p>\n';
+    var vspace = '\n    <p><br/</p><p><br/</p><p><br/</p>\n\n';
     var html = [
         '<?xml version="1.0" encoding="utf-8"?>',
         '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">',
@@ -14,14 +14,14 @@ function apply(params, next)
         '    <title>' + spec.title + '</title>',
         '    <meta content="application/xhtml+xml; charset=utf-8" http-equiv="Content-Type"/>',
         '    <style type="text/css">',
-        fs.readFileSync('templates/style.css', 'utf-8').replace(/^/g, '\t\t'),
-		'		.title { font-size: 2.5em; line-height: 1em; font-weight: bold; margin: 0; }',
-		'		.author { font-size: 1.2em; line-height: 1em; font-weight: bold; margin: 0; }',
-		'		.patreon { font-size: 1.2em; line-height: 1em; margin: 0; }',
-		'		.toc-item { line-height: 2em; margin: 0; margin-left: 60pt; }',
+        fs.readFileSync('templates/style.css', 'utf-8').replace(/^/g, '      ').replace(/\n/g, '\n      '),
+		'      .title { font-size: 2.5em; line-height: 1em; font-weight: bold; margin: 0; }',
+		'      .author { font-size: 1.2em; line-height: 1em; font-weight: bold; margin: 0; }',
+		'      .patreon { font-size: 1.2em; line-height: 1em; margin: 0; }',
+		'      .toc-item { line-height: 2em; margin: 0; margin-left: 60pt; }',
         '    </style>',
         '  </head>',
-        '  <body>\n',
+        '  <body>',
 		'    <p class="center"><center><div class="title">' + spec.title.replace(/\n/g, '<br/>') + '</div></center></p>',
 		'    <p class="center"><center><div class="author">By ' + spec.creator + '</div></center></p>',
     ].join('\n');
@@ -47,13 +47,14 @@ function apply(params, next)
     {
         var chap = spec.contents[i];
 
-        html += [
-            '    <h1 id="' + chap.id + '">' + chap.title + '</h1>',
-            '    ' + (chap.byline ? '<p class="byline">By ' + chap.byline + '</p>' : ''),
-            '    <div class="chapter">',
-            params.unescape_html(chap.dom.xml()),
-            '    </div>\n'
-        ].join('\n');
+        html += '    <h1 id="' + chap.id + '">' + chap.title + '</h1>\n';
+        
+        if(chap.byline)
+	        html += '    <p class="byline">By ' + chap.byline + '</p>\n';
+	    
+        html += '    <div class="chapter">\n';
+        html += params.unescape_html(chap.dom.xml()).replace(/^/g, '      ').replace(/\n/g, '\n      ') + '\n';
+        html += '    </div>\n' + (i < spec.contents.length - 1 ? '\n' : '');
     }
 
     html += [

@@ -7,7 +7,8 @@
 		"clean-reddit",
 		"no-preamble",
 		"billy-bob-space-trucker",
-		"typography"
+		"typography",
+		"finalize"
 	],
 	"filename": "Billy-Bob Space Trucker",
 	"output": ["epub", "latex", "html"],
@@ -18,7 +19,7 @@
 			"src": "http://www.reddit.com/r/HFY/comments/2gmgmt/oc_billybob_space_trucker/"
 		},
 		{
-			"title": "Duex",
+			"title": "Deux",
 			"src": "http://www.reddit.com/r/HFY/comments/2gpyhg/oc_billybob_space_trucker_chapitre_deux/"
 		},
 		{
