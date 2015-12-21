@@ -1,21 +1,18 @@
-INSTALLATION
+Installation
 ------------
-
 Run 'npm install' to install the dependencies, and you should be good to go.
 
 
-USAGE
+Usage
 -----
-
-ebook.js <spec.json>
+node ebook.js <spec.json>
 
 PLEASE DO NOT DISTRIBUTE THE RESULTING EPUB FILES UNLESS YOU ARE THE AUTHOR OF OR OWNS
 THE RIGHTS TO ALL MATERIAL THEY CONTAIN.
 
 
-CONFIGURATION
+Configuration
 -------------
-
 This script will generate one or more ebooks when given a simple JSON file. These
 files will be referred to as 'specs', and have the following format:
 
@@ -24,12 +21,6 @@ files will be referred to as 'specs', and have the following format:
 
 "creator" (string):
     The name of the author. Embedded into output meta-data and used for by-lines.
-
-"cover" (object, optional):
-    If specified, the cover object must contain two keys: "html" and "css", both
-    values being a filename relative to the 'specs/covers' directory. These will
-    be automatically included as the first page of EPUBs and embedded into generated
-    HTML files.
 
 "filters" (array of strings OR object of named filter arrays):
     Names of filters to be appled to each chapter sequentially, or a set of named
@@ -103,6 +94,10 @@ files will be referred to as 'specs', and have the following format:
 		    * The Deathworlders
 		    * The Xiu Chang Saga
 
+"filename" (string):
+	Specifies the base name for emitted output files. Omits extension, since that
+	is appended by each output plugin (see below) as appropriate.
+	
 "output" (string or array of strings):
     Used to specify one or more integrations filters that build output files based
     on the filtered chapter contents. If only a single type of output is desired,
@@ -132,6 +127,11 @@ files will be referred to as 'specs', and have the following format:
         * "title" (string):
             The chapter title. Used to generate headings and when building TOCs.
 
+        * "byline" (string, optional):
+            If specified, this will add an author byline to this chapter. This can
+            be used to support collected content by various authors with full
+            per-chapter attribution.
+
         * "src" (string):
             The source location of the material for the given chapter. This can
             be any value appropriate to the chosen input filter (see above).
@@ -141,9 +141,9 @@ files will be referred to as 'specs', and have the following format:
 			by name is mandatory. This feature can be used to support multi-source
 			or variably filtered content.
 
-AUTHORING FILTERS
------------------
 
+Authoring Filters
+-----------------
 Each filter is implemented as a Node.JS module, and placed in the "filters"
 directory. Each filter module must export exactly one function:
 
@@ -210,11 +210,11 @@ it's name should begin with 'from-', and it has two additional responsibilities:
         // ensuring that it contains only alphanumerics, dashes and underscores.
         chap.id = sanitize(chap.src);
     }
+ 
     
-PERFORMANCE
+Performance
 -----------
-
 Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current corpus (5141 pages) can
 be retrieved from cache, filterred, typeset and emitted to finish epub, latex and
-html in 31 seconds. A 2-pass build of pdf files takes an additional 1 minute and 4 seconds,
+html in 32 seconds. A 2-pass build of pdf files takes an additional 1 minute and 4 seconds,
 resulting in a total of 36.4Mb of output data in 44 files.
