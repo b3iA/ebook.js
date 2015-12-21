@@ -49,7 +49,7 @@ function apply(params, next)
 
         html += [
             '    <h1 id="' + chap.id + '">' + chap.title + '</h1>',
-            '    ' + (chap.byline ? '<p class="author">By ' + chap.byline + '</p>' : ''),
+            '    ' + (chap.byline ? '<p class="byline">By ' + chap.byline + '</p>' : ''),
             '    <div class="chapter">',
             params.unescape_html(chap.dom.xml()),
             '    </div>\n'

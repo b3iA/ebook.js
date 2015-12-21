@@ -107,8 +107,8 @@ a, a:link, a:visited
 
 .byline
 {
-	color: gray;
 	text-align: left;
+	margin-bottom: 1em;
 }
 
 .pbreak
