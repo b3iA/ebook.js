@@ -81,6 +81,8 @@ function tolatex(p, $, e, brk)
 				latex += '\\item ' + tolatex(p, $, elem);
 			else if(el.name === 'ul')
 				latex += '\\begin{itemize}' + tolatex(p, $, elem) + '\n\\end{itemize}';
+			else if(el.name === 'ol')
+				latex += '\\begin{enumerate}' + tolatex(p, $, elem) + '\n\\end{enumerate}';
 			else if(el.name === 'br')
 				latex += '\n';
 			else
