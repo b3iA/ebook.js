@@ -7,12 +7,20 @@ Usage
 -----
 node ebook.js <spec.json>
 
-PLEASE DO NOT DISTRIBUTE THE RESULTING EPUB FILES UNLESS YOU ARE THE AUTHOR OF OR OWNS
+PLEASE DO NOT DISTRIBUTE THE RESULTING OUTPUT FILES UNLESS YOU ARE THE AUTHOR OF OR OWNS
 THE RIGHTS TO ALL MATERIAL THEY CONTAIN.
+
+
+Licence:
+--------
+MIT
 
 
 Configuration
 -------------
+All input files are expected to be encoded as UTF-8. Similarly, intermediary and output
+data is also encoded as UTF-8.
+
 This script will generate one or more ebooks when given a simple JSON file. These
 files will be referred to as 'specs', and have the following format:
 
@@ -83,6 +91,7 @@ files will be referred to as 'specs', and have the following format:
 
 		* Series-specific filters for the following:
 
+		    * Billy-Bob Space Trucker
 		    * Blessed Are The Simple
 		    * Client Stone: Freedom
 		    * Client Stone: Rebellion
@@ -214,7 +223,10 @@ it's name should begin with 'from-', and it has two additional responsibilities:
     
 Performance
 -----------
-Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current corpus (5141 pages) can
-be retrieved from cache, filterred, typeset and emitted to finish epub, latex and
-html in 32 seconds. A 2-pass build of pdf files takes an additional 1 minute and 4 seconds,
-resulting in a total of 36.4Mb of output data in 44 files.
+Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current corpus (5507 pages) can
+be retrieved from cache, filterred, typeset and emitted to finished epub, latex and
+html in 36 seconds. A 2-pass build of pdf files takes an additional 1 minute and 15 seconds,
+resulting in a total of 39.7Mb of output data in 48 files.
+
+In short, unless you require sustained throughput of more than three average length books
+per minute, any desktop machine or reasonable laptop should suffice.
