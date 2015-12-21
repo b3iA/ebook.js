@@ -56,8 +56,11 @@ pre
 
 ol, ul
 {
+	list-style-position: inside;
 	margin: 0.5em 2em 2em 3em;
-	padding: 0em;
+	padding: 0;
+	padding-left: 1em;
+	text-indent: -1em;
 }
 
 dl
@@ -74,8 +77,8 @@ table
 
 li, dt, dd
 {
-	margin-top: 0.25em;
-	margin-bottom: 0.25em;
+	margin: 0;
+	margin-bottom: 1em;
 	text-align: left;
 }
 
