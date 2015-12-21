@@ -93,8 +93,8 @@ files will be referred to as 'specs', and have the following format:
 
 		    * Billy-Bob Space Trucker
 		    * Blessed Are The Simple
-		    * Client Stone: Freedom
-		    * Client Stone: Rebellion
+		    * Builders In The Void: Peace / War
+		    * Client Stone: Freedom / Rebellion
 		    * Humans Don't Make Good Pets
 		    * MIA
 		    * Perspective
@@ -223,10 +223,10 @@ it's name should begin with 'from-', and it has two additional responsibilities:
     
 Performance
 -----------
-Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current corpus (5507 pages) can
-be retrieved from cache, filterred, typeset and emitted to finished epub, latex and
-html in 36 seconds. A 2-pass build of pdf files takes an additional 1 minute and 15 seconds,
-resulting in a total of 39.7Mb of output data in 48 files.
+Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current corpus (5645 pages when
+typeset af PDF) can be retrieved from cache, filterred, typeset and emitted to finished epub,
+latex and html in 36 seconds. A 2-pass build of pdf files takes an additional 1 minute and
+15 seconds using XeTeX, resulting in a total of 40.7Mb of output data in 56 files.
 
 In short, unless you require sustained throughput of more than three average length books
-per minute, any desktop machine or reasonable laptop should suffice.
+per minute, any desktop machine or reasonable laptop will suffice.
