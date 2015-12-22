@@ -1,6 +1,7 @@
 function apply(params, next)
 {
-    var $ = params.chap.dom;
+    var chap = params.chap;
+    var $ = chap.dom;
 
     // Remove 'continued in' paragraphs
     $('p span').each(function(i, e)
@@ -46,6 +47,24 @@ function apply(params, next)
 		    	p.remove();
 	    }
     });
+    
+    if(chap.title.indexOf('Warhorse') > -1)
+    {
+    	var ws_re = /[ \t\r\n]+/g;
+    	
+    	$('p').each(function(i, e)
+    	{
+    		var cont = $(e).contents();
+    		
+    		for(var i = 0; i < cont.length; i++)
+    		{
+    			var c = cont[i];
+    			
+    			if(c.type === 'text')
+    				c.data = c.data.replace(ws_re, ' ');
+    		}
+    	});
+    }
     
     next();
 }
