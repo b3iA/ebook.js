@@ -6,17 +6,9 @@ function apply(params, next)
 	
 	// Remove spurious chapter headings without removing body text that may
 	// share an enclosing paragraph with the heading.
-	$('p').each(function(i, e)
+	params.filter_text($, $.root(), function(txt)
 	{
-		var cont = $(e).contents();
-		
-		for(var i = 0; i < cont.length; i++)
-		{
-			var c = cont[i];
-			
-			if(c.type === 'text' && c.data.search(c_re) > -1)
-				c.data = c.data.replace(c_re, '');
-		}
+		return txt.replace(c_re, '');
 	});
 	
 	// Harmonize catch-phrase formatting.
