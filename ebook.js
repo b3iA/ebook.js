@@ -9,6 +9,18 @@ if(process.argv.length < 3)
     return;
 }
 
+function ensure_dir(dir)
+{
+	dir = __dirname + '/' + dir;
+	
+	if(!fs.existsSync(dir))
+		fs.mkdirSync(dir);
+}
+
+// Ensure the 'cache' and 'output' directories exists. Create them if they do not.
+ensure_dir('cache');
+ensure_dir('output');
+
 function decode_cr(cr)
 {
 	var cp = 0;
@@ -42,10 +54,25 @@ function unescape_html(html)
     return decode_crs(html.replace(/&amp;/g, '&'))
                           .replace(/&quot;/g, '"')
     	                  .replace(/&apos;/g, '\'')
+    	                  .replace(/&nbsp;/g, ' ')
     	                  .replace(/&#39;/g, '\'')
     	                  .replace(/&amp;#39;/g, '\'')
-    	                  .replace(/&amp;/g, '&')
-    	                  .replace(/&nbsp;/g, ' ');
+    	                  .replace(/&amp;/g, '&');
+}
+
+function filter_text(dom, element, lambda)
+{
+	var cont = element.contents();
+	
+	for(var i = 0; i < cont.length; i++)
+	{
+		var c = cont[i];
+		
+		if(c.type === 'text')
+			c_data = lambda(c.data);
+		else if(c.type === 'tag')
+			filter_text(dom, dom(c), lambda);
+	}
 }
 
 function FilterManager()
@@ -115,18 +142,6 @@ function Sequence(ops, params)
     last();
 }
 
-function ensure_dir(dir)
-{
-	dir = __dirname + '/' + dir;
-	
-	if(!fs.existsSync(dir))
-		fs.mkdirSync(dir);
-}
-
-// Ensure the 'cache' and 'output' directories exists. Create them if they do not.
-ensure_dir('cache');
-ensure_dir('output');
-
 // Load the spec. Start processing.
 var spec = JSON.parse(fs.readFileSync(__dirname + '/' + process.argv[2]));
 
@@ -138,7 +153,8 @@ for(var i = 0; i < spec.contents.length; i++)
     var params = {
         spec: spec,
         chap: chap,
-    	unescape_html: unescape_html
+    	unescape_html: unescape_html,
+    	filter_text: filter_text
     };
 
     if(typeof(chap.title) !== 'string')

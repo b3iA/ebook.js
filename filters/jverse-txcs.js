@@ -1,16 +1,25 @@
 function apply(params, next)
 {
-    var $ = params.chap.dom;
-
-    $('p').each(function(i, e)
+    var chap = params.chap;
+    var $ = chap.dom;
+	var ps = $('p');
+	
+    if(chap.title === 'Monkeys Reaches Stars')
     {
-        var el = $(e);
-        var txt = el.text();
-
-        if(txt === '&amp;nbsp;' || txt === '&nbsp;')
-            el.remove();
-    });
-
+    	ps.each(function(i, e)
+    	{
+    		var p = $(e);
+    		
+    		if(p.text() === '&nbsp')
+    			p.remove();
+    	});
+    }
+    
+    var lp = $(ps[ps.length-1]);
+    
+    if(lp.text().match(/^Part \w+$/))
+    	lp.remove();
+    
     next();
 }
 

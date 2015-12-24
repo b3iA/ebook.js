@@ -14,28 +14,23 @@ function l_esc(txt)
 			  .replace(/#/g, '\\#')
 			  .replace(/_/g, '\\_')
 			  .replace(/\{/g, '\\{')
-			  .replace(/\}/g, '\\}');
+			  .replace(/\}/g, '\\}')
+              .replace(/&/g, '\\&');
 }
 
 function filter(p, txt)
 {
-	return p.unescape_html(txt).replace(/&lt;/g, '<')
-	                           .replace(/&gt;/g, '>')
-	                           .replace(/&mdash;/g, '---')
-	                           .replace(/&ndash;/g, '-')
-							   .replace(/\\/g, '{\\textbackslash}')
-							   .replace(/"/g, '\'\'')
-                               .replace(/&/g, '{\\and}')
-                               .replace(/%/g, '\\%')
-                               .replace(/\$/g, '\\$')
-                               .replace(/#/g, '\\#')
-                               .replace(/_/g, '\\_')
-                               .replace(/\{/g, '\\{')
-                               .replace(/\}/g, '\\}')
-							   .replace(/~/g, '{\\textasciitilde}')
-							   .replace(/\^/g, '{\\textasciicircum}')
-                               .replace(/…/g, '{\\ldots}')
-                               .replace(/\.\.\./g, '{\\ldots}');
+	return l_esc(p.unescape_html(txt).replace(/&lt;/g, '<')
+	                                 .replace(/&gt;/g, '>')
+	                                 .replace(/&nbsp;/g, ' ')
+	                                 .replace(/&mdash;/g, '---')
+	                                 .replace(/&ndash;/g, '-'))
+	                                 	 .replace(/\\([^%\$#_\{\}&])/gm, '{\\textbackslash}$1')
+	                                 	 .replace(/\\$/g, '{\\textbackslash}')
+							             .replace(/~/g, '{\\textasciitilde}')
+							             .replace(/\^/g, '{\\textasciicircum}')
+                                         .replace(/…/g, '{\\ldots}')
+                                         .replace(/\.\.\./g, '{\\ldots}');
 }
 
 function tolatex(p, $, e, brk)

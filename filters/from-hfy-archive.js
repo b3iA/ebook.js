@@ -28,7 +28,7 @@ UriCache.prototype.get = function(params, callback)
     if(this.cache.indexOf(id) > -1)
     {
         console.log('[\033[92mCached\033[0m] ' + id);
-        params.chap.dom = cheerio.load(fs.readFileSync(__dirname + '/../cache/' + id, encoding = 'utf-8'), { decodeEntities: false });
+        params.chap.dom = cheerio.load(fs.readFileSync(__dirname + '/../cache/' + id, encoding = 'utf-8'), { decodeEntities: true });
         callback();
         return;
     }

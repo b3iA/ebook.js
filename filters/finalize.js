@@ -14,8 +14,14 @@ function apply(params, next)
 		{
 			var cr = p.contents()[0];
 			
-			if(cr.type === 'text' && cr.data === '')
-				p.remove();
+			if(cr.type === 'text')
+			{
+				if(cr.data.search(/nbsp;/g) > -1)
+					console.log(cr.data);
+				
+				if(cr.data.trim() === '')
+					p.remove();
+			}
 		}
 	});
 
