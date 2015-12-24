@@ -80,6 +80,8 @@ function tolatex(p, $, e, brk)
 				latex += '\\begin{enumerate}' + tolatex(p, $, elem) + '\n\\end{enumerate}';
 			else if(el.name === 'br')
 				latex += '\n';
+			else if(el.name === 's' || el.name === 'del' || el.name === 'strike')
+				latex += '\\sout{' + tolatex(p, $, elem) + '}';
 			else
 			{
 				console.log('LaTeX: Unhandled tag: ' + el.name);
@@ -100,6 +102,7 @@ function apply(params, next)
 		'',
 		'\\usepackage{fontspec,xunicode}',
 		'\\usepackage{ifxetex}',
+		'\\usepackage[normalem]{ulem}',
 		'\\usepackage{tocloft}',
 		'\\usepackage{stackengine}',
 		'\\usepackage[colorlinks = true, linkcolor = blue, urlcolor = blue, pdfborder = {0 0 0}]{hyperref}',
