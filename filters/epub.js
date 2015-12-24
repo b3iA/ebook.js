@@ -2,6 +2,9 @@ var uuid = require('node-uuid');
 var zip = require('node-zip');
 var fs = require('fs');
 
+// NOTES:
+// FBReader does not support text strikethrough (tags: s, del, strike)
+
 function createContents(spec, uuid)
 {
     var xml = [
