@@ -2,8 +2,9 @@ function apply(params, next)
 {
 	var chap = params.chap;
 	var $ = chap.dom;
-
-	$('p').each(function(i, e)
+	var ps = $('p');
+	
+	ps.each(function(i, e)
 	{
 		var el = $(e);
 		var t = el.text().toLowerCase();
@@ -12,6 +13,12 @@ function apply(params, next)
 			el.remove();
 	});
 
+	if(chap.title === 'Help I Accidentally the Princess' || 
+	   chap.title === 'How I Kept Him From Making the Big Orc Cry')
+	{
+		$(ps[ps.length - 1]).remove();
+	}
+	
 	next();
 }
 
