@@ -2,7 +2,7 @@ function apply(params, next)
 {
     var chap = params.chap;
 	var $ = chap.dom;
-	var purge = [];
+	var rem = [];
 	var prune = {
 		// Peace
 		'Humanity: Builders in the Void': [0, 8],
@@ -41,18 +41,16 @@ function apply(params, next)
 		var ps = $('p');
 	
 		for(var i = 0; i < pr[0]; i++)
-			purge.push(ps[i]);
+			rem.push($(ps[i]));
 		
 		for(var i = ps.length - pr[1]; i < ps.length; i++)
-			purge.push(ps[i]);
+			rem.push($(ps[i]));
 	}
 	
 	if(chap.title === 'An Old Tale')
-		$('h2').remove();
+		rem.push($('h2'));
 	
-	for(var i = 0; i < purge.length; i++)
-		$(purge[i]).remove();
-	
+	params.purge(rem);
 	next();
 }
 

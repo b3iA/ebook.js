@@ -2,6 +2,7 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 
 var ERROR_TAG = '[\033[91mError\033[0m]: ';
+var DEBUG = false;
 
 if(process.argv.length < 3)
 {
@@ -60,18 +61,16 @@ function unescape_html(html)
     	                  .replace(/&amp;/g, '&');
 }
 
-function filter_text(dom, element, lambda)
+function purge(set)
 {
-	var cont = element.contents();
-	
-	for(var i = 0; i < cont.length; i++)
+	for(var i = 0; i < set.length; i++)
 	{
-		var c = cont[i];
+		var e = set[i];
 		
-		if(c.type === 'text')
-			c_data = lambda(c.data);
-		else if(c.type === 'tag')
-			filter_text(dom, dom(c), lambda);
+		if(DEBUG)
+			console.log('[\033[91mDELETE\033[0m]: [' + e.text() + ']');
+			
+		e.remove();
 	}
 }
 
@@ -154,7 +153,7 @@ for(var i = 0; i < spec.contents.length; i++)
         spec: spec,
         chap: chap,
     	unescape_html: unescape_html,
-    	filter_text: filter_text
+    	purge: purge
     };
 
     if(typeof(chap.title) !== 'string')

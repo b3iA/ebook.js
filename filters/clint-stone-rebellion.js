@@ -2,13 +2,14 @@ function apply(params, next)
 {
 	var chap = params.chap;
 	var $ = chap.dom;
-
+	var rem = [];
+	
 	$('p strong').each(function(i, e)
 	{
 		var el = $(e);
 
 		if(el.text().toLowerCase().indexOf('translator note:') === 0)
-			el.parent().remove();
+			rem.push(el.parent());
 	});
 
 	$('p').each(function(i, e)
@@ -17,7 +18,7 @@ function apply(params, next)
 		var idx = el.text().toLowerCase().indexOf('continued in comments');
 
 		if(idx > -1 && idx < 2)
-			el.remove();
+			rem.push(el);
 	});
 
 	var rem_last_p = ['The Pit', 'Purpose', 'Sister', 'Home Run', 'Crazy Bastard', 'Marooned', 'Brother Mine', 'Dark', 'Puzzles', 'Family Values', 'Rebellion of Skuar', 'Enlisted', 'Acceptable', 'Training Mission', 'Liberated', 'Break', 'Breakfast'];
@@ -25,23 +26,27 @@ function apply(params, next)
 	var ps = $('p');
 
 	if(rem_last_p.indexOf(chap.title) > -1)
-		$(ps[ps.length - 1]).remove();
+		rem.push($(ps[ps.length - 1]));
 
 	if(rem_last_p2.indexOf(chap.title) > -1)
-		$(ps[ps.length - 2]).remove();
+		rem.push($(ps[ps.length - 2]));
 
-	if(chap.title === 'Broken' || chap.title === 'Behold' || chap.title === 'Captive' || chap.title === 'Evaluation')
+	if(chap.title === 'Evaluation' ||
+	   chap.title === 'Captive' || 
+	   chap.title === 'Behold')
+	{
+		for(var i = 0; i < 2; i++)
+			rem.push($(ps[ps.length - (i + 1)]));
+	}
+	
+	if(chap.title === 'Broken' || 
+	   chap.title === 'The Lives We Lived')
 	{
 		for(var i = 0; i < 3; i++)
-			$(ps[ps.length - (i + 1)]).remove();
+			rem.push($(ps[ps.length - (i + 1)]));
 	}
 
-	if(chap.title === 'The Lives We Lived')
-	{
-		for(var i = 0; i < 4; i++)
-			$(ps[ps.length - (i + 1)]).remove();
-	}
-
+	params.purge(rem);
 	next();
 }
 

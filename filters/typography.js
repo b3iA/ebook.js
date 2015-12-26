@@ -76,13 +76,14 @@ function apply(params, next)
 
     // Remove redundant horizontal rules
     var brem = false;
-
+	var rem = [];
+	
     $('*').each(function(i, e)
     {
         if(e.name === 'hr')
         {
             if(brem)
-                $(e).remove();
+                rem.push($(e));
             else
                 brem = true;
         }
@@ -97,11 +98,12 @@ function apply(params, next)
 
         // Don't insert break as the first or last element
         if(el.prevAll().length < 1 || el.nextAll().length < 1)
-            el.remove();
+            rem.push(el);
         else
             el.replaceWith('<p><center>' + ENT_ASTER + '</center></p>');
     });
 
+	params.purge(rem);
     next();
 }
 

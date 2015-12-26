@@ -2,7 +2,7 @@ function apply(params, next)
 {
     var $ = params.chap.dom;
     var hrs = $('hr');
-
+	
     if(hrs.length)
     {
         var pa = null;
@@ -16,7 +16,14 @@ function apply(params, next)
         });
 
         if(pa)
-            pa.remove();
+        {
+        	var rem = [];
+        	
+        	for(var i = 0; i < pa.length; i++)
+        		rem.push($(pa[i]));
+        	
+        	params.purge(rem);
+    	}
     }
 
     next();

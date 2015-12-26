@@ -2,16 +2,17 @@ function apply(params, next)
 {
 	var chap = params.chap;
 	var $ = chap.dom;
-
+	var rem = [];
+	
 	if(chap.title === 'Chapter 1')
-		$('h2').remove();
+		rem.push($('h2'));
 
 	if(chap.title === 'Chapter 6')
 	{
 		var cn = $.root().children();
 
-		$(cn[cn.length - 2]).remove();
-		$(cn[cn.length - 1]).remove();
+		rem.push($(cn[cn.length - 2]));
+		rem.push($(cn[cn.length - 1]));
 	}
 	else
 	{
@@ -24,18 +25,18 @@ function apply(params, next)
 		{
 			if(chap.title === 'Chapter 5')
 			{
-				$(cn[cn.length - 4]).remove();
-				$(cn[cn.length - 3]).remove();
+				rem.push($(cn[cn.length - 4]));
+				rem.push($(cn[cn.length - 3]));
 			}
 
-			$(cn[cn.length - 2]).remove();
-			$(cn[cn.length - 1]).remove();
+			rem.push($(cn[cn.length - 2]));
+			rem.push($(cn[cn.length - 1]));
 		}
 	}
 	
 	$('p').each(function(i, e)
 	{
-		$(e).find('br').remove();
+		rem.push($(e).find('br'));
 	});
 
 	$('p strong').each(function(i, e)
@@ -46,6 +47,7 @@ function apply(params, next)
 			el.after($('<p></p><br/>'));
 	});
 	
+	params.purge(rem);
 	next();
 }
 

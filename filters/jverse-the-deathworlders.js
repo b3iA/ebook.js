@@ -2,7 +2,8 @@ function apply(params, next)
 {
     var chap = params.chap;
     var $ = chap.dom;
-
+	var rem = [];
+	
     // Remove 'continued in' paragraphs
     $('p span').each(function(i, e)
     {
@@ -10,7 +11,7 @@ function apply(params, next)
         var t = p.text();
 
         if(t.indexOf('Continued ') === 0 || t.indexOf('Concluded ') === 0)
-            p.remove();
+        	rem.push(p);
     });
 
     $('p').each(function(i, e)
@@ -18,7 +19,7 @@ function apply(params, next)
         var p = $(e);
         
         if(p.text().trim() === '')
-        	p.remove();
+        	rem.push(p);
 	});
 	
     var end_m = /^end (chapter|part) \d/i;
@@ -32,19 +33,19 @@ function apply(params, next)
     	if(l.indexOf('++end chapter') === 0 || 
     	   l.indexOf('++end of chapter') === 0)
     	{
-    		p.nextAll().remove();
-    		p.remove();
+    		rem.concat(p.nextAll());
+    		rem.push(p);
     	}
 		
 		if(l.search(end_m) === 0)
-    		p.remove();
+    		rem.push(p);
     	
 	    if(params.chap.title === 'Deliverance')
 	    {
 		    if(t === 'Four years previously.')
 		    	p.parent().html('<strong>Four years previously.</strong>');
 		    else if(t === '__' || t === 'End chapter 5')
-		    	p.remove();
+		    	rem.push(p);
 	    }
     });
     
@@ -66,6 +67,7 @@ function apply(params, next)
     	});
     }
     
+    params.purge(rem);
     next();
 }
 

@@ -2,9 +2,10 @@ function apply(params, next)
 {
     var $ = params.chap.dom;
     var ps = $('p');
-
+	var rem = [];
+	
     for(var i = 0; i < 3; i++)
-        $(ps[i]).remove();
+        rem.push($(ps[i]));
 
     $('li p').each(function(i, e)
     {
@@ -14,6 +15,7 @@ function apply(params, next)
     	el.remove();
     });
     
+    params.purge(rem);
     next();
 }
 

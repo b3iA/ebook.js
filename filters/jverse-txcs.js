@@ -3,6 +3,7 @@ function apply(params, next)
     var chap = params.chap;
     var $ = chap.dom;
 	var ps = $('p');
+	var rem = [];
 	
     if(chap.title === 'Monkeys Reaches Stars')
     {
@@ -11,15 +12,16 @@ function apply(params, next)
     		var p = $(e);
     		
     		if(p.text() === '&nbsp')
-    			p.remove();
+    			rem.push(p);
     	});
     }
     
     var lp = $(ps[ps.length-1]);
     
     if(lp.text().match(/^Part \w+$/))
-    	lp.remove();
+    	rem.push(lp);
     
+    params.purge(rem);
     next();
 }
 

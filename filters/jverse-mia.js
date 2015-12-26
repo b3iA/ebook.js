@@ -2,9 +2,10 @@ function apply(params, next)
 {
     var chap = params.chap;
 	var $ = chap.dom;
-	var t0 = chap.title[0];
-
-	if(t0 === '1')
+	var t = chap.title.substr(0, 2);
+	var rem = [];
+	
+	if(t === '1.')
 	{
 		// Remove double spacing
 	    $('p').each(function(i, e)
@@ -16,24 +17,24 @@ function apply(params, next)
 	        var tx = el.text().trim();
 
 	        if(tx === '&amp;nbsp;')
-	            el.remove();
+	            rem.push(el);
 	    });
 	}
-	else if(t0 === '2')
+	else if(t === '2.')
 	{
 		var ps = $('p');
 
 		for(var i = 0; i < 5; i++)
-			$(ps[i]).remove();
+			rem.push($(ps[i]));
 	}
-	else if(t0 === '5' || t0 === '6' ||	t0 === '7')
+	else if(t === '5.' || t === '6.' ||	t === '7.')
 	{
 		var ps = $('p');
 
 		for(var i = 0; i < 3; i++)
-			$(ps[i]).remove();
+			rem.push($(ps[i]));
 
-		$('h2').remove();
+		rem.push($('h2'));
 	}
 
 	$('p strong').each(function(i, e)
@@ -41,7 +42,7 @@ function apply(params, next)
 		var el = $(e);
 
 		if(el.text().indexOf('Chapter ') === 0)
-			el.parent().remove();
+			rem.push(el.parent());
 	});
 
 	$('p span').each(function(i, e)
@@ -49,9 +50,10 @@ function apply(params, next)
 		var el = $(e);
 
 		if(el.text().toLowerCase().indexOf('part ') === 0)
-			el.remove();
+			rem.push(el);
 	});
 
+	params.purge(rem);
 	next();
 }
 

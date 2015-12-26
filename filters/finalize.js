@@ -16,9 +16,6 @@ function apply(params, next)
 			
 			if(cr.type === 'text')
 			{
-				if(cr.data.search(/nbsp;/g) > -1)
-					console.log(cr.data);
-				
 				if(cr.data.trim() === '')
 					p.remove();
 			}
