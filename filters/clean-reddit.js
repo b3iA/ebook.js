@@ -18,13 +18,6 @@ function apply(params, next)
 {
     var $ = params.chap.dom;
 
-    // Remove all classes
-    $('*').each(function(i, e)
-    {
-        if(e.attribs)
-            delete e.attribs['class'];
-    });
-
     // Remove all comments
     removeComments($, $.root());
 
@@ -40,6 +33,13 @@ function apply(params, next)
                 delete e.attribs;
             }
         }
+    });
+
+    // Remove all classes
+    $('*').each(function(i, e)
+    {
+        if(e.attribs)
+            delete e.attribs['class'];
     });
 
     next();
