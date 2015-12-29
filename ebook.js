@@ -24,14 +24,9 @@ ensure_dir('output');
 
 function decode_cr(cr)
 {
-	var cp = 0;
+	var ishex = cr[2] === 'x';
 	
-	if(cr[2] === 'x') // Hex?
-		cp = parseInt(cr.substr(3, cr.length - 2), 16);
-	else
-		cp = parseInt(cr.substr(2, cr.length - 2), 10);
-		
-	return String.fromCodePoint(cp);
+	return String.fromCodePoint(parseInt(cr.substr(ishex ? 3 : 2, cr.length - 2), ishex ? 16 : 10));
 }
 
 // Decode all HTML character references to unicode.
