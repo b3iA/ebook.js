@@ -78,14 +78,14 @@ function apply(params, next)
     var brem = false;
 	var rem = [];
 	
-    $('*').each(function(i, e)
+    $.root().children().each(function(i, e)
     {
         if(e.name === 'hr')
         {
             if(brem)
-                rem.push($(e));
-            else
-                brem = true;
+                $(e).remove();
+			else            
+            	brem = true;
         }
         else if(e.name === 'p')
             brem = false;
