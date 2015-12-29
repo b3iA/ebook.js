@@ -16,6 +16,14 @@ Licence:
 MIT
 
 
+Bugs and Suggestions
+--------------------
+PM either to https://www.reddit.com/user/b3iAAoLZOH9Y265cujFh/
+
+I'm only around infrequently. If you do not receive an immediate response, it's not because
+you're being ignored. I'll be getting back to you at the earliest available opportunity.
+
+
 Configuration
 -------------
 All input files are expected to be encoded as UTF-8. Similarly, intermediary and output
@@ -77,10 +85,24 @@ files will be referred to as 'specs', and have the following format:
 		    elements, which can then be further processed by the typography
 		    filter (see below)
 
-		* "no-preable"
+		* "finalize"
+			Removal of DOM elements by other filters tends to leave surrounding text
+			blocks containing newlines. This can lead to undesirable formatting in
+			output formats where whitespace is not completely ignored (latex). This filter
+			removes such blocks if and only if they're redundant (i.e. more than one
+			such block occurs in a row). It also removes any completely empty paragraphs.
+			
+		* "no-preamble"
 		    Removes any post content preceding the first horizontal rule, if the total
-		    length of the content does not exceed 2500 characters.
+		    length of the content does not exceed 2500 characters. The threshold value
+		    has been determined empirically and is known to correctly filter author
+		    preambles from all chapters in the current corpus with no false positives.
 
+		* "print-dom"
+			Makes no changes, but displays a visual representation of the DOM at the
+			point in the filtering chain in which it's inserted. Very handy for
+			tracking down when and why undesirable DOM transformations are performed.
+			
 		* "typography"
 		    Replaces opening and closing quotes and apostrophes with right / left versions,
 		    replaces '...' with proper ellipsis, removes redundant, leading or trailing
@@ -89,7 +111,8 @@ files will be referred to as 'specs', and have the following format:
 		    all EPUB readers have problems rendering these correctly. Conversely,
 		    not using entites can be correctly handled by all modern browsers.
 
-		* Series-specific filters for the following:
+		* Series-specific filters for the following (not all series in the current corpus
+		  requires additional or custom filtering):
 
 		    * Billy-Bob Space Trucker
 		    * Blessed Are The Simple
@@ -203,7 +226,7 @@ calls its supplied "next" function. Consequently, the following is valid:
     }
 
 If the filter is written to be used as an input - the first filter in a chain -
-it's name should begin with 'from-', and it has two additional responsibilities:
+its name should begin with 'from-', and it has two additional responsibilities:
 
     function apply(params, next)
     {
@@ -229,4 +252,4 @@ latex and html in 36 seconds. A 2-pass build of pdf files takes an additional 1 
 15 seconds using XeTeX, resulting in a total of 40.7Mb of output data in 56 files.
 
 In short, unless you require sustained throughput of more than three average length books
-per minute, any desktop machine or reasonable laptop will suffice.
+per minute, pretty much any reasonably modern computer will run this just fine.
