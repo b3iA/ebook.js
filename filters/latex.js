@@ -5,7 +5,7 @@ var fs = require('fs');
 // DejaVu Serif
 // Linux Libertine
 // Linux Biolinum
-var typeface = 'Noto Serif';
+var typeface = 'Liberation Serif';
 
 function l_esc(txt)
 {
