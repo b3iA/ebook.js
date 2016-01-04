@@ -61,7 +61,7 @@ function tolatex(p, $, e, brk)
 			else if(el.name === 'strong')
 				latex += '\\textbf{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'pre' || el.name === 'code')
-				latex += '\\texttt{' + tolatex(p, $, elem) + '}';
+				latex += '\\texttt{' + tolatex(p, $, elem).replace(/\n/g, '\\\\*') + '}';
 			else if(el.name === 'a')
 				latex += '\\href{' + l_esc(el.attribs['href']) + '}{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'p')
