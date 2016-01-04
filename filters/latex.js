@@ -79,7 +79,7 @@ function tolatex(p, $, e, brk)
 			else if(el.name === 'ol')
 				latex += '\\begin{enumerate}' + tolatex(p, $, elem) + '\n\\end{enumerate}';
 			else if(el.name === 'br')
-				latex += '\n';
+				latex += '\\\\*\n';
 			else if(el.name === 's' || el.name === 'del' || el.name === 'strike')
 				latex += '\\sout{' + tolatex(p, $, elem) + '}';
 			else
