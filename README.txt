@@ -7,8 +7,11 @@ Usage
 -----
 node ebook.js <spec.json>
 
-PLEASE DO NOT DISTRIBUTE THE RESULTING OUTPUT FILES UNLESS YOU ARE THE AUTHOR OF OR OWNS
-THE RIGHTS TO ALL MATERIAL THEY CONTAIN.
+Feel free to enjoy the resulting output files for personal consumption and to share any
+book specifications or filters you author with other users of this tool, but:
+
+PLEASE DO NOT DISTRIBUTE THE RESULTING OUTPUT FILES UNLESS YOU ARE THE AUTHOR OR OWNER
+OF THE RIGHTS TO ALL MATERIAL THEY CONTAIN.
 
 
 Licence:
@@ -21,7 +24,7 @@ Bugs and Suggestions
 PM either to https://www.reddit.com/user/b3iAAoLZOH9Y265cujFh/
 
 I'm only around infrequently. If you do not receive an immediate response, it's not because
-you're being ignored. I'll be getting back to you at the earliest available opportunity.
+you're being ignored. I'll be getting back to you as soon as I see your message.
 
 
 Configuration
@@ -59,6 +62,10 @@ files will be referred to as 'specs', and have the following format:
 		    Read the chapter data from a local Markdown file, given a filename relative
 		    to the root directory.
 
+		* "from-hfy-archive"
+		    Downloads and caches the chapter contents from a HFY Archive post given
+		    a source URL.
+	
 		* "from-reddit-post"
 		    Downloads and caches the chapter contents from a Reddit post given a source
 		    URL. Since Reddits JSON API is used - so that post tagged NSFW can be
@@ -68,11 +75,13 @@ files will be referred to as 'specs', and have the following format:
 
 		    Submission continuations in comments are automatically detected and
 		    concatenated with the main submission text before further processing.
+		
+		* "from-url"
+			Downloads and caches the full response from an arbitrary URL. It is the
+			responsibility of the user to insert additional filters in the processing
+			chain that extracts the content, and presents it as a DOM that is useable
+			with subsequent filters, if desired.
 
-		* "from-hfy-archive"
-		    Downloads and caches the chapter contents from a HFY Archive post given
-		    a source URL.
-	
 	FILTERS:
 		* "clean-reddit"
 		    Removes HTML comment elements, CSS classes on any other element and
@@ -124,6 +133,7 @@ files will be referred to as 'specs', and have the following format:
 		    * QED
 		    * Salvage
 		    * The Deathworlders
+		    * The Salvation War
 		    * The Xiu Chang Saga
 
 "filename" (string):
@@ -172,6 +182,18 @@ files will be referred to as 'specs', and have the following format:
 			If a set of filter chains have been specified, this reference to a chain
 			by name is mandatory. This feature can be used to support multi-source
 			or variably filtered content.
+	
+	NOTE: It is possible to add aditional user-defined parameters to each chapter,
+	      which can be used to influence the operation of filters in the relevant
+	      processing chain. This has many potential uses, notably to sub-select
+	      chapter content in situations where content for multiple chapters
+	      originates from the same source URL. For an example of this, see the
+	      spec and content filter implementation for The Salvation War.
+
+When a specification contains multiple chapters that use the same source URL, the execution
+of all but the first chapter using a given source will block automatically until processing
+of the first instance completes. This prevents redundant fetching of that URL when the content
+has not yet been cached. Chapters using different source URLs still process in parallel.
 
 
 Authoring Filters
@@ -246,10 +268,10 @@ its name should begin with 'from-', and it has two additional responsibilities:
     
 Performance
 -----------
-Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current corpus (5645 pages when
+Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current test-corpus (6502 pages when
 typeset af PDF) can be retrieved from cache, filterred, typeset and emitted to finished epub,
-latex and html in 36 seconds. A 2-pass build of pdf files takes an additional 1 minute and
-15 seconds using XeTeX, resulting in a total of 40.7Mb of output data in 56 files.
+latex and html in 59 seconds. A 2-pass build of pdf files takes an additional 1 minute and
+30 seconds using XeTeX, resulting in a total of 52.5Mb of output data in 64 files.
 
 In short, unless you require sustained throughput of more than three average length books
 per minute, pretty much any reasonably modern computer will run this just fine.
