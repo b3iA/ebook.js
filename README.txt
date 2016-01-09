@@ -127,6 +127,7 @@ files will be referred to as 'specs', and have the following format:
 		    * Blessed Are The Simple
 		    * Builders In The Void: Peace / War
 		    * Client Stone: Freedom / Rebellion
+		    * Henosis
 		    * Humans Don't Make Good Pets
 		    * MIA
 		    * Perspective
@@ -268,7 +269,7 @@ its name should begin with 'from-', and it has two additional responsibilities:
     
 Performance
 -----------
-Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current test-corpus (6502 pages when
+Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current test-corpus (6562 pages when
 typeset af PDF) can be retrieved from cache, filterred, typeset and emitted to finished epub,
 latex and html in 59 seconds. A 2-pass build of pdf files takes an additional 1 minute and
 30 seconds using XeTeX, resulting in a total of 52.5Mb of output data in 64 files.
