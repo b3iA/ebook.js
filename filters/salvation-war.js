@@ -47,7 +47,8 @@ function to_html($, el, ctx)
 	                        .replace(/[\n]/g, ' ')
 	                        .replace(/  +/g, ' ')
 	                        .replace(/[….][….][….]+/g, '...')
-	                        .replace(/\"\"/g, '"');
+	                        .replace(/\"\"/g, '"')
+	                        .replace(/\[\/?i\]/g, '');
 			
 			html += txt;
 			ctx.have_text = txt.length > 0;
