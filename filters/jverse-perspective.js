@@ -34,11 +34,50 @@ function apply(params, next)
 		}
 	}
 	
-	$('p').each(function(i, e)
+	params.purge(rem);
+	
+	// Now, we have to do something about the non-standard line breaks used
+	// by Perspective. They wreak bloody havok on subsequent typesetting.
+	var nps = [];
+	
+	$('p').each(function(idx, e)
 	{
-		rem.push($(e).find('br'));
-	});
+		var cont = $(e).contents();
+		var p = $('<p></p>');
+		
+		for(var i = 0; i < cont.length; i++)
+		{
+			var c = cont[i];
+			
+			if(c.type === 'text')
+			{
+		    	p.append(c.data.replace(/ $/, ''));
 
+				if(c.data.match(/ $/) &&
+			       i < cont.length - 1 &&
+			       cont[i+1].type === 'tag' &&
+			       cont[i+1].name === 'br')
+			    {
+			    	i++;
+			    	nps.push(p);
+			    	nps.push('\n');
+			    	p = $('<p></p>');
+			    }
+			}
+			else if(c.type === 'tag' && c.name !== 'br')
+			{
+				p.append($(c));
+			}
+		}
+		
+    	nps.push(p);
+    	nps.push('\n');
+	});
+	
+	$.root().contents().remove();
+	$.root().append(nps);
+	
+	// With that done, we need to fix up the date title spacing.
 	$('p strong').each(function(i, e)
 	{
 		var el = $(e);
@@ -47,7 +86,6 @@ function apply(params, next)
 			el.after($('<p></p><br/>'));
 	});
 	
-	params.purge(rem);
 	next();
 }
 
