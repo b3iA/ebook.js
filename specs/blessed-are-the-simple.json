@@ -11,6 +11,7 @@
 	],
 	"filename": "Blessed are the Simple",
 	"output": ["epub", "latex", "html"],
+	"no-preamble-treshold": 1000,
 	"contents":
 	[
 		{
@@ -128,6 +129,10 @@
 		{
 			"title": "How I Made It In Time, WOOT!",
 			"src": "http://www.reddit.com/r/HFY/comments/3yzdfy/blessed_are_the_simple_xxix_or_how_i_made_it_in/"
+		},
+		{
+			"title": "I Crave Donuts and Meat. Send Help.",
+			"src": "http://www.reddit.com/r/HFY/comments/426dj3/blessed_are_the_simple_xxx_or_i_crave_donuts_and/"
 		}
 	]
 }
