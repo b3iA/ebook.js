@@ -1,10 +1,12 @@
 Installation
 ------------
+
 Run 'npm install' to install the dependencies, and you should be good to go.
 
 
 Usage
 -----
+
 node ebook.js <spec.json>
 
 Feel free to enjoy the resulting output files for personal consumption and to share any
@@ -16,11 +18,13 @@ OF THE RIGHTS TO ALL MATERIAL THEY CONTAIN.
 
 Licence:
 --------
+
 MIT
 
 
 Bugs and Suggestions
 --------------------
+
 PM either to https://www.reddit.com/user/b3iAAoLZOH9Y265cujFh/
 
 I'm only around infrequently. If you do not receive an immediate response, it's not because
@@ -29,6 +33,7 @@ you're being ignored. I'll be getting back to you as soon as I see your message.
 
 Configuration
 -------------
+
 All input files are expected to be encoded as UTF-8. Similarly, intermediary and output
 data is also encoded as UTF-8.
 
@@ -199,6 +204,7 @@ has not yet been cached. Chapters using different source URLs still process in p
 
 Authoring Filters
 -----------------
+
 Each filter is implemented as a Node.JS module, and placed in the "filters"
 directory. Each filter module must export exactly one function:
 
@@ -267,11 +273,62 @@ its name should begin with 'from-', and it has two additional responsibilities:
     }
  
     
+DOM structure
+-------------
+
+Almost all intermediary filters and all output filters expects a constrained DOM layout. It is
+the responsibility of any input filter (or a specialised intermediary filter) to harmonise any
+input data to conform to the following convention:
+
+The DOM operated on by filters is a HTML fragment, not a full document. It should consist of
+nothing but a series of paragraphs, possibly interdispersed by one or more horizontal rules.
+
+Text in each paragraph can be bolded by using nested <strong> tags and italisized by using
+<em>. Fixed width blocks can be included by using either <pre> or <code>. Ordered and unordered
+lists are supported via <ol> and <ul> respectively, linebreaks can be introduced with <br> but
+are strongly discouraged. Empty lines are NOT supported. Struck out text can use either <s>,
+<del> or <strike> and text can be centered with the <center> tag,
+
+The only tag permitted outside an enclosing root-level paragraph are horizontal rules which
+will be converted to a section break appropriate for each type of output file. Paragraphs should
+never be nested.
+
+All styling information, scripts, comments and meta-data should be stripped. Unsupported tags
+should be converted to the closest supported tag or discarded.
+
+To wit:
+
+<DOM>
+    <p>The first paragraph of the text.</p>
+    <p>This paragraph will be followed by additional spacing and an asterism:</p>
+    <hr/>
+    <p>
+        <pre>
+            DISCLAIMER: This is not a exhaustive example.
+        </pre>
+        You're free to use <strong>bold</strong> or <em>italic</em> text. On the
+        other hand, you <strike>can</strike> cannot use:
+        <ul>
+            <li>Headings</li>
+            <li>Font tags or any other styling markup or attributes</li>
+            <li>HTML entities and character references. Both should be converted to their
+                utf-8 encoded equivalents.
+            </li>
+        </ul>
+        While this may seem restrictive, it has proved sufficient to faithfully represent
+        the current test corpus, while keeping all filters interoperable and the implementational
+        complexity relatively low. It also helps to ensure that the same material is visually
+        close to identical across all supported output formats.
+    </p>
+</DOM>
+
+
 Performance
 -----------
+
 Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current test-corpus (6562 pages when
-typeset af PDF) can be retrieved from cache, filterred, typeset and emitted to finished epub,
-latex and html in 59 seconds. A 2-pass build of pdf files takes an additional 1 minute and
+typeset as PDF) can be retrieved from cache, filterred, typeset and emitted to finished EPUB,
+LaTeX and HTML in 59 seconds. A 2-pass build of pdf files takes an additional 1 minute and
 30 seconds using XeTeX, resulting in a total of 52.5Mb of output data in 64 files.
 
 In short, unless you require sustained throughput of more than three average length books
