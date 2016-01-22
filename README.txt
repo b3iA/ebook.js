@@ -13,7 +13,7 @@ Feel free to enjoy the resulting output files for personal consumption and to sh
 book specifications or filters you author with other users of this tool, but:
 
 PLEASE DO NOT DISTRIBUTE THE RESULTING OUTPUT FILES UNLESS YOU ARE THE AUTHOR OR OWNER
-OF THE RIGHTS TO ALL MATERIAL THEY CONTAIN.
+OF THE RIGHTS TO ALL MATERIAL THEY CONTAIN, I.E. DON'T BE A... BAD PERSON.
 
 
 Licence:
@@ -109,8 +109,12 @@ files will be referred to as 'specs', and have the following format:
 		* "no-preamble"
 		    Removes any post content preceding the first horizontal rule, if the total
 		    length of the content does not exceed 2500 characters. The threshold value
-		    has been determined empirically and is known to correctly filter author
-		    preambles from all chapters in the current corpus with no false positives.
+		    has been determined empirically and works for most of the content in the
+		    test corpus.
+		    The default maximum preable length can be changed with the parameter
+		    "no-preamble-threshold", which can be specified for either the spec, one or
+		    more chapters, or both. If both are specified, the chapter parameter takes
+		    precedence (used by BatS).
 
 		* "print-dom"
 			Makes no changes, but displays a visual representation of the DOM at the
@@ -128,6 +132,7 @@ files will be referred to as 'specs', and have the following format:
 		* Series-specific filters for the following (not all series in the current corpus
 		  requires additional or custom filtering):
 
+		    * All Sapiens Go To Heaven
 		    * Billy-Bob Space Trucker
 		    * Blessed Are The Simple
 		    * Builders In The Void: Peace / War
