@@ -70,6 +70,9 @@ function get(params, callback)
         var md = getPostMarkdown(JSON.parse(body));
         var html = marked(md);
 
+        // Handle non-standard Reddit superscript markdown.
+        html = html.replace(/\^\^([^ ]+)/g, '<sup>$1</sup>');
+        
         params.chap.dom = cheerio.load(html, { decodeEntities: true });
         
         fs.writeFileSync(__dirname + '/../cache/' + params.chap.id, params.chap.dom.html(), encoding = 'utf-8');

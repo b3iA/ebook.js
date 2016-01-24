@@ -82,6 +82,8 @@ function tolatex(p, $, e, brk)
 				latex += '\\\\*\n';
 			else if(el.name === 's' || el.name === 'del' || el.name === 'strike')
 				latex += '\\sout{' + tolatex(p, $, elem) + '}';
+			else if(el.name === 'sup')
+				latex += '\\textsuperscript{' + tolatex(p, $, elem) + '}';
 			else
 			{
 				console.log('LaTeX: Unhandled tag: ' + el.name);
