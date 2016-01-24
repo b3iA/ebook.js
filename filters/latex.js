@@ -166,7 +166,7 @@ function apply(params, next)
         latex += '\\clearpage\n\\section{' + l_esc(chap.title) + '}\n';
         
         if(chap.byline)
-        	latex += '\\vspace{-2em}By ' + chap.byline + '\\vspace{1em}\n';
+        	latex += '\\vspace{-2em}By ' + l_esc(chap.byline) + '\\vspace{1em}\\\\*\n';
         
         latex += tolatex(params, chap.dom, chap.dom.root());
     }

@@ -1,0 +1,21 @@
+{
+	"title": "HFY Anthology",
+	"creator": "Various Authors",
+	"filters": [
+		"from-reddit-post",
+		"clean-reddit",
+		"no-preamble",
+		"typography",
+		"finalize"
+	],
+	"filename": "HFY Anthology",
+	"output": ["epub", "latex", "html"],
+	"contents":
+	[
+		{
+			"title": "The Energy Trade",
+			"byline": "Lost_Carcosan",
+			"src": "http://www.reddit.com/r/HFY/comments/3t02im/oc_the_energy_trade/"
+		}
+	]
+}
