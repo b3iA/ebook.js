@@ -4,7 +4,7 @@
 	"filters": [
 		"from-reddit-post",
 		"clean-reddit",
-		"no-preamble",
+		"hfy-anthology",
 		"typography",
 		"finalize"
 	],
@@ -16,6 +16,86 @@
 			"title": "The Energy Trade",
 			"byline": "Lost_Carcosan",
 			"src": "http://www.reddit.com/r/HFY/comments/3t02im/oc_the_energy_trade/"
+		},
+		{
+			"title": "Invitation",
+			"byline": "EldritchSpawn",
+			"src": "http://www.reddit.com/r/HFY/comments/249hj7/oc_invitation/"
+		},
+		{
+			"title": "A predator subdued",
+			"byline": "FrzrBrn",
+			"src": "http://www.reddit.com/r/HFY/comments/25b89v/oc_a_predator_subdued/"
+		},
+		{
+			"title": "The Network",
+			"byline": "Rythre",
+			"src": "http://www.reddit.com/r/HFY/comments/265xic/oc_the_network/"
+		},
+		{
+			"title": "Fear and Loathing in Power Armor",
+			"byline": "Unknown",
+			"src": "http://www.reddit.com/r/HFY/comments/281rdo/oc_fear_and_loathing_in_power_armor/"
+		},
+		{
+			"title": "Making an omelet",
+			"byline": "dspeyer",
+			"src": "http://www.reddit.com/r/HFY/comments/2bm96k/oc_making_an_omelet/"
+		},
+		{
+			"title": "An Alien Concept",
+			"byline": "Tom1664",
+			"src": "http://www.reddit.com/r/HFY/comments/29za79/an_alien_concept/"
+		},
+		{
+			"title": "An undefended human world",
+			"byline": "dspeyer",
+			"src": "http://www.reddit.com/r/HFY/comments/29mvb1/oc_an_undefended_human_world/"
+		},
+		{
+			"title": "The Wall in the Dark",
+			"byline": "hazbaz",
+			"src": "http://www.reddit.com/r/HFY/comments/2ettjx/oc_the_wall_in_the_dark/"
+		},
+		{
+			"title": "Winging it",
+			"byline": "DrunkRobot97",
+			"src": "http://www.reddit.com/r/HFY/comments/2e66bx/winging_it/"
+		},
+		{
+			"title": "Reinforcements Required",
+			"byline": "Disako",
+			"src": "http://www.reddit.com/r/HFY/comments/2fa0pg/oc_reinforcements_required/"
+		},
+		{
+			"title": "Different Paths",
+			"byline": "DrunkRobot97",
+			"src": "http://www.reddit.com/r/HFY/comments/2huio5/different_paths/"
+		},
+		{
+			"title": "We Are the Gods",
+			"byline": "Hambone3110",
+			"src": "http://www.reddit.com/r/HFY/comments/2k6srf/oc_standalone_we_are_the_gods/"
+		},
+		{
+			"title": "Diplomatic Communiqué",
+			"byline": "cdos93",
+			"src": "http://www.reddit.com/r/HFY/comments/2ms6pp/oc_diplomatic_communiqu%C3%A9/"
+		},
+		{
+			"title": "Humans are not that special",
+			"byline": "Slavaa",
+			"src": "http://www.reddit.com/r/HFY/comments/2qp7ql/humans_are_not_that_special/"
+		},
+		{
+			"title": "Adonis",
+			"byline": "WingAutarch",
+			"src": "http://www.reddit.com/r/HFY/comments/2r701e/oc_adonis/"
+		},
+		{
+			"title": "Little, Black Boxes",
+			"byline": "Swim_Jong_Eel",
+			"src": "http://www.reddit.com/r/HFY/comments/2raxnv/little_black_boxes/"
 		}
 	]
 }
