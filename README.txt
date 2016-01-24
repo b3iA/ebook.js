@@ -144,6 +144,7 @@ files will be referred to as 'specs', and have the following format:
 		    * QED
 		    * Salvage
 		    * The Deathworlders
+		    * The Fourth Wave
 		    * The Salvation War
 		    * The Xiu Chang Saga
 
@@ -331,7 +332,7 @@ To wit:
 Performance
 -----------
 
-Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current test-corpus (6745 pages when
+Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current test-corpus (7712 pages when
 typeset as PDF) can be retrieved from cache, filterred, typeset and emitted to finished EPUB,
 LaTeX and HTML in 59 seconds. A 2-pass build of pdf files takes an additional 1 minute and
 30 seconds using XeTeX, resulting in a total of 52.5Mb of output data in 64 files.
