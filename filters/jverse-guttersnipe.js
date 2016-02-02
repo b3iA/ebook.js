@@ -10,10 +10,13 @@ function apply(params, next)
 		'Part 4': [2, 0],
 		'Part 5': [2, 0],
 		'Part 6': [3, 1],
-		'Part 7': [3, 0]
+		'Part 7': [3, 0],
+		'Part 8': [3, 0]
 	};
 		
 	var wsre = /^[   ]*/g;
+	var qtre = /”+/g;
+	var spre = /“ +/g;
 	
 	$('h2').each(function(i, e)
 	{
@@ -48,7 +51,11 @@ function apply(params, next)
 			var c = cont[idx];
 			
 			if(c.type === 'text')
-				c.data = c.data.replace(wsre, '');
+			{
+				c.data = c.data.replace(wsre, '')
+				               .replace(qtre, '”')
+				               .replace(spre, '“');
+			}
 		}
 	});
 	
