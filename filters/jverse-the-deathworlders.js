@@ -23,21 +23,19 @@ function apply(params, next)
 	});
 	
     var end_m = /^end (chapter|part) \d/i;
+    var end_m2 = /^\+\+end[  ](of )*chapter/i;
     
     $('p, p strong').each(function(i, e)
     {
         var p = $(e);
         var t = p.text();
-		var l = t.toLowerCase();
 		
-    	if(l.indexOf('++end chapter') === 0 || 
-    	   l.indexOf('++end of chapter') === 0)
+    	if(t.search(end_m2) === 0)
     	{
     		rem.concat(p.nextAll());
     		rem.push(p);
     	}
-		
-		if(l.search(end_m) === 0)
+		else if(t.search(end_m) === 0)
     		rem.push(p);
     	
 	    if(params.chap.title === 'Deliverance')
