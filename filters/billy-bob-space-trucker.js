@@ -64,7 +64,6 @@ function apply(params, next)
 	}
 	
 	params.purge(rem);
-	
 	next();
 }
 
