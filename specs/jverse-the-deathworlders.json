@@ -300,6 +300,16 @@
 			"title": "An Alien World",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/deathworlders/chapter-24-alien-world"
+		},
+		{
+			"title": "Where We Stand",
+			"filters": "hfy-archive",
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-25-where-we-stand"
+		},
+		{
+			"title": "Blood and Ash",
+			"filters": "hfy-archive",
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-26-blood-and-ash"
 		}
 	]
 }

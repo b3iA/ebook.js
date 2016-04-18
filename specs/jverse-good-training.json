@@ -1,0 +1,70 @@
+{
+	"title": "Good Training",
+	"creator": "ctwelve",
+	"filters": [
+		"from-hfy-archive",
+		"clean-reddit",
+		"custom-break-to-hr",
+		"no-preamble",
+		"jverse-the-deathworlders",
+		"typography",
+		"finalize"
+	],
+	"filename": "Good Training",
+	"output": ["epub", "latex", "html"],
+	"contents":
+	[
+		{
+			"title": "Fun & Games",
+			"src": "http://hfy-archive.org/book/good-training/01-fun-games"
+		},
+		{
+			"title": "Strategies",
+			"src": "http://hfy-archive.org/book/good-training/02-strategies"
+		},
+		{
+			"title": "Instinct",
+			"src": "http://hfy-archive.org/book/good-training/03-instinct"
+		},
+		{
+			"title": "Crawl",
+			"src": "http://hfy-archive.org/book/good-training/04-crawl"
+		},
+		{
+			"title": "Walk",
+			"src": "http://hfy-archive.org/book/good-training/05-walk"
+		},
+		{
+			"title": "Friendships & Revelations",
+			"src": "http://hfy-archive.org/book/good-training/06-friendships-revelations"
+		},
+		{
+			"title": "Run",
+			"src": "http://hfy-archive.org/book/good-training/07-run"
+		},
+		{
+			"title": "Fetch",
+			"src": "http://hfy-archive.org/book/good-training/08-fetch"
+		},
+		{
+			"title": "Aftermath",
+			"src": "http://hfy-archive.org/book/good-training/09-aftermath"
+		},
+		{
+			"title": "Essayons",
+			"src": "http://hfy-archive.org/book/good-training/10-essayons"
+		},
+		{
+			"title": "Shenanigans",
+			"src": "http://hfy-archive.org/book/good-training/11-shenanigans"
+		},
+		{
+			"title": "Wargames",
+			"src": "http://hfy-archive.org/book/good-training/12-wargames"
+		},
+		{
+			"title": "Adventure Time",
+			"src": "http://hfy-archive.org/book/good-training/13-adventure-time"
+		}
+	]
+}
