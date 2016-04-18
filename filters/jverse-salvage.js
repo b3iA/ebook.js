@@ -31,6 +31,12 @@ function apply(params, next)
 		});
 	}
     
+    if(chap.title === 'The Fittest')
+    {
+    	$(ps[0]).remove();
+    	$(ps[1]).remove();
+    }
+    
     if(fp.text() === 'END OF CHAPTER' || fp.text() === 'Chapter End')
         fp.remove();
     
