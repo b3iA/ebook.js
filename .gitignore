@@ -3,4 +3,5 @@ output
 node_modules
 build-pdfs
 build-all
+build-clean
 page-count
