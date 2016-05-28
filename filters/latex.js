@@ -6,6 +6,7 @@ var fs = require('fs');
 // Linux Libertine
 // Linux Biolinum
 var typeface = 'Liberation Serif';
+var typeface_mono = 'Liberation Mono';
 
 function l_esc(txt)
 {
@@ -61,7 +62,7 @@ function tolatex(p, $, e, brk)
 			else if(el.name === 'strong')
 				latex += '\\textbf{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'pre' || el.name === 'code')
-				latex += '\\texttt{' + tolatex(p, $, elem).replace(/\n/g, '\\\\*') + '}';
+				latex += '\\monosp{' + tolatex(p, $, elem).replace(/\n/g, '\\\\*') + '}';
 			else if(el.name === 'a')
 				latex += '\\href{' + l_esc(el.attribs['href']) + '}{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'p')
@@ -118,6 +119,7 @@ function apply(params, next)
 		'  \\usepackage{fontspec}',
 		'  \\defaultfontfeatures{Ligatures=TeX}',
 		'  \\setromanfont{' + typeface + '}',
+		'  \\setmonofont[Scale=0.85]{' + typeface_mono + '}',
 		'\\else',
 		'  \\usepackage[T1]{fontenc}',
 		'  \\usepackage[utf8]{inputenc}',	
@@ -130,6 +132,7 @@ function apply(params, next)
 		'\\linespread{1.2}',
 		'\\raggedright',
 		'',
+		'\\newcommand{\\monosp}[1]{\\texttt{{#1}}\\vspace{5mm}}',
 		'\\renewcommand{\\cftsecfont}{}',
 		'\\renewcommand{\\cftsecpagefont}{}',
 		'\\renewcommand{\\cftsecpresnum}{\\begin{lrbox}{\\@tempboxa}}',
