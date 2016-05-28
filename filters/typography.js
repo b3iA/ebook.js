@@ -74,6 +74,19 @@ function apply(params, next)
         });
     });
 
+	// Flatten nested monospace tags
+    var flatten_mono = function(i, e)
+    {
+        var el = $(e);
+        var parent = el.parent();
+
+        parent.text(el.text());
+        el.remove();
+    };
+    
+    $('pre > code').each(flatten_mono);
+    $('code > pre').each(flatten_mono);
+    
     // Remove redundant horizontal rules
     var brem = false;
 	var rem = [];
