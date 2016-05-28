@@ -2,6 +2,7 @@ cache
 output
 node_modules
 build-pdfs
+build-pdf
 build-all
 build-clean
 page-count
