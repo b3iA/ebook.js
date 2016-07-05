@@ -9,7 +9,7 @@ function apply(params, next)
 		'The Lost Minstrel - 4': [5, 0],
 		'The Lost Minstrel - 5': [5, 0],
 		'The Lost Minstrel - 6': [5, 0],
-		'The Lost Minstrel - 7': [7, 0],
+		'The Lost Minstrel - 7': [8, 0],
 		'The Lost Minstrel - 8': [7, 0],
 		'The Lost Minstrel - 9': [9, 0],
 		'The Lost Minstrel - 10': [1, 0],
