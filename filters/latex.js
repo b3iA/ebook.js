@@ -100,66 +100,70 @@ function apply(params, next)
 {
     var spec = params.spec;
     var oname = 'output/' + spec.filename + '.tex';
+    var title = l_esc(spec.title);
+    var creator = l_esc(spec.creator);
+    var n_re = /\n/g;
+    var d_str = (new Date()).toUTCString();
     var latex = [
 		'\\documentclass[a4paper,10pt]{article}',
 		'',
 		'\\usepackage{fontspec,xunicode}',
-		'\\usepackage{ifxetex}',
 		'\\usepackage[normalem]{ulem}',
 		'\\usepackage{tocloft}',
-		'\\usepackage{stackengine}',
-		'\\usepackage[colorlinks = true, linkcolor = blue, urlcolor = blue, pdfborder = {0 0 0}]{hyperref}',
+		'\\usepackage{hyperref}',
+		'',
+		'\\title{' + title.replace(n_re, '\\\\\n') + '}',
+		'\\author{By ' + creator + (spec.patreon ? '\\\\ Donate securely to the author at \\href{' + l_esc(spec.patreon) + '}{Patreon}' : '') + '}',
+		'\\date{}',
 		'',
 		'\\hypersetup{',
-		'  pdftitle = {' + l_esc(spec.title).replace(/\n/g, ' - ') + '},',
-		'  pdfauthor = {' + l_esc(spec.creator) + '}',
+		'  pdftitle = {' + title.replace(n_re, ' - ') + '},',
+		'  pdfauthor = {' + spec.creator + '},',
+        '  pdfproducer = {EbookJS},',
+        '  colorlinks = true,',
+        '  linkcolor = [rgb]{0.09,0.15,0.588},',
+        '  urlcolor = [rgb]{0.09,0.15,0.588},',
+        '  pdfborder = {0 0 0}',
 		'}',
-		'',
-		'\\ifxetex',
-		'  \\usepackage{fontspec}',
-		'  \\defaultfontfeatures{Ligatures=TeX}',
-		'  \\setromanfont{' + typeface + '}',
-		'  \\setmonofont[Scale=0.85]{' + typeface_mono + '}',
-		'\\else',
-		'  \\usepackage[T1]{fontenc}',
-		'  \\usepackage[utf8]{inputenc}',	
-		'\\fi',
-		'',
-		'\\def\\asterism{\\par\\begin{center}\\scalebox{2}{$\\cdots$}\\end{center}}',
 		'',
 		'\\setlength{\\parskip}{\\baselineskip}',
 		'\\setlength{\\parindent}{0pt}',
 		'\\linespread{1.2}',
 		'\\raggedright',
+		'\\defaultfontfeatures{Ligatures=TeX}',
+		'\\setromanfont{' + typeface + '}',
+		'\\setmonofont[Scale=0.85]{' + typeface_mono + '}',
+		'',
+		'\\def\\asterism{\\par\\begin{center}\\scalebox{2}{$\\cdots$}\\end{center}}',
 		'',
 		'\\newcommand{\\monosp}[1]{\\texttt{{#1}}\\vspace{5mm}}',
-		'\\renewcommand{\\cftsecfont}{}',
-		'\\renewcommand{\\cftsecpagefont}{}',
+		'\\renewcommand{\\cftsecfont}{\\normalfont}',
+		'\\renewcommand{\\cftsecpagefont}{\\normalfont}',
 		'\\renewcommand{\\cftsecpresnum}{\\begin{lrbox}{\\@tempboxa}}',
 		'\\renewcommand{\\cftsecaftersnum}{\\end{lrbox}}',
 		'\\renewcommand{\\cftsecleader}{\\cftdotfill{\\cftdotsep}}',
-		'\\renewcommand{\\contentsname}{Table of contents\\linebreak}',
+		'\\renewcommand{\\contentsname}{Contents\\linebreak}',
 		'\\setcounter{secnumdepth}{-2}',
 		'',
 		'\\begin{document}',
+        '\\pagestyle{plain}',
 		'',
-		'\\title{' + l_esc(spec.title).replace(/\n/g, '\\\\\n') + '}',
-		'\\author{By ' + l_esc(spec.creator) + (spec.patreon ? '\\\\ Donate securely to the author at \\href{' + l_esc(spec.patreon) + '}{Patreon}' : '') + '}',
-		'\\date{}',
-		'',
+        '\\addcontentsline{toc}{section}{\\protect{Title}}',
+        '\\sectionmark{Title}',
 		'\\maketitle',
-		'\\pagestyle{empty}',
 		'\\thispagestyle{empty}',
-		'',
 		'\\vfill',
+		'\\begin{center}Automatically typeset in\\\\' + typeface + ' and ' + typeface_mono + '\\\\by EbookJS on ' + d_str.substr(5, d_str.length) + '\\end{center}',
 		'',
-		'\\begin{center}Set in ' + typeface + '\\end{center}',
 		'\\clearpage',
+        '\\pagenumbering{Roman}',
 		'\\tableofcontents',
+		'',
 		'\\clearpage',
-		'\\pagestyle{plain}',
-		'\\pagenumbering{arabic}',
-		''
+        '\\newcounter{storedpage}',
+        '\\setcounter{storedpage}{\\value{page}}',
+        '\\pagenumbering{arabic}',
+        '\\setcounter{page}{\\value{storedpage}}'
 	].join('\n');
 
     console.log('Building ' + oname);
@@ -167,8 +171,9 @@ function apply(params, next)
     for(var i = 0; i < spec.contents.length; i++)
     {
         var chap = spec.contents[i];
-
-        latex += '\\clearpage\n\\section{' + l_esc(chap.title) + '}\n';
+        var title = l_esc(chap.title);
+        
+        latex += '\n\\clearpage\n\\section{' + title + '}\n';
         
         if(chap.byline)
         	latex += '\\vspace{-2em}By ' + l_esc(chap.byline) + '\\vspace{1em}\\\\*\n';
