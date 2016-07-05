@@ -1,6 +1,7 @@
 var request = require('request');
 var cheerio = require('cheerio');
 var marked = require('marked');
+var child_process = require('child_process');
 var fs = require('fs');
 
 marked.escape = function(html, encode)
@@ -83,6 +84,7 @@ function get(params, callback)
             fs.writeFileSync(__dirname + '/../cache/' + params.chap.id + '.md', md, encoding = 'utf-8');
         }
         
+        child_process.execSync("sleep 1");
         callback();
     }}(params, callback, this));
 };
