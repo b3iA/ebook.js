@@ -9,8 +9,8 @@ function apply(params, next)
 		'Part 3': [1, 0],
 		'Part 4': [2, 0],
 		'Part 5': [2, 0],
-		'Part 6': [3, 1],
-		'Part 7': [3, 0],
+		'Part 6': [2, 1],
+		'Part 7': [2, 0],
 		'Part 8': [3, 0]
 	};
 		
