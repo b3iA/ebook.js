@@ -8,9 +8,9 @@ function apply(params, next)
         var pa = null;
 		var len = 2500;
 		
-		if(params.chap['no-preamble-treshold'])
+		if(params.chap['no-preamble-treshold'] !== undefined)
 			len = params.chap['no-preamble-treshold'];
-		else if(params.spec['no-preamble-treshold'])
+		else if(params.spec['no-preamble-treshold'] !== undefined)
 			len = params.spec['no-preamble-treshold'];
 		
         hrs.each(function(i, e)
