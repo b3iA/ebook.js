@@ -90,6 +90,11 @@
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training/13-adventure-time"
 		},
+        {
+            "title": "Saturday Morning Breakfast",
+			"filters": "reddit",
+            "src": "http://www.reddit.com/r/HFY/comments/4aw0mv/jverse_good_training_saturday_morning_breakfast/"
+        },
 		{
 			"title": "The Locals",
 			"filters": "reddit",

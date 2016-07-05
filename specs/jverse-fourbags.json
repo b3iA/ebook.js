@@ -98,10 +98,7 @@
         ]
     },
     "filename": "JVerse Anthology (Fourbags)",
-    "output": [
-        "epub",
-        "latex"
-    ],
+    "output": "epub",
     "contents": [
         {
             "title": "The Kevin Jenkins Experience Part 1.1",
@@ -257,6 +254,7 @@
             "title": "Quarantine",
             "src": "http://www.reddit.com/r/HFY/comments/2inz1g/jenkinsverse_4_quarantine/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 200,
             "filters": "deathworlders"
         },
         {
@@ -755,6 +753,7 @@
             "title": "Only Human",
             "src": "http://www.reddit.com/r/HFY/comments/2nffzi/jenkinsverse_12_only_human/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 0,
             "filters": "deathworlders"
         },
         {
@@ -779,6 +778,7 @@
             "title": "Tall Tales",
             "src": "http://www.reddit.com/r/HFY/comments/2oxj1e/oc_jenkinsverse_13_tall_tales/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 500,
             "filters": "deathworlders"
         },
         {
@@ -878,13 +878,14 @@
             "filters": "hdmgp"
         },
         {
-            "title": "Firebird (part 1/2)",
+            "title": "Firebird (pt. 1)",
             "src": "http://www.reddit.com/r/HFY/comments/2tsitq/ocjenkinsverse16_firebird_pt_12/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 200,
             "filters": "deathworlders"
         },
         {
-            "title": "Firebird (part 2/2)",
+            "title": "Firebird (pt. 2)",
             "src": "http://www.reddit.com/r/HFY/comments/2tsmxm/ocjenkinsverse_16_firebird_pt_22/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
@@ -908,25 +909,26 @@
             "filters": "hdmgp"
         },
         {
-            "title": "Battles (part 1/4)",
+            "title": "Battles (pt. 1)",
             "src": "http://www.reddit.com/r/HFY/comments/2vpp5v/ocjverse_17_battles_part_14/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Battles (part 2/4)",
+            "title": "Battles (pt. 2)",
             "src": "http://www.reddit.com/r/HFY/comments/2vpp8e/ocjverse_17_battles_part_24/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Battles (part 3/4)",
+            "title": "Battles (pt. 3)",
             "src": "http://www.reddit.com/r/HFY/comments/2vpp9m/ocjverse_17_battles_part_34/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 300,
             "filters": "deathworlders"
         },
         {
-            "title": "Battles (part 4/4)",
+            "title": "Battles (pt. 4)",
             "src": "http://www.reddit.com/r/HFY/comments/2vppaj/ocjverse_17_battles_part_44/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
@@ -1028,55 +1030,57 @@
             "filters": "salvage"
         },
         {
-            "title": "Baptisms (part 1/4)",
+            "title": "Baptisms (pt. 1)",
             "src": "http://www.reddit.com/r/HFY/comments/31cm1m/ocjverse_19_baptisms_part_1_of_4/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Baptisms (part 2/4)",
+            "title": "Baptisms (pt. 2)",
             "src": "http://www.reddit.com/r/HFY/comments/31cm2c/ocjverse_19_baptisms_part_2_of_4/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Baptisms (part 3/4)",
+            "title": "Baptisms (pt. 3)",
             "src": "http://www.reddit.com/r/HFY/comments/31cm2v/ocjverse_19_baptisms_part_3_of_4/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Baptisms (part 4/4)",
+            "title": "Baptisms (pt. 4)",
             "src": "http://www.reddit.com/r/HFY/comments/31cm37/ocjverse_19_baptisms_part_4_of_4/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Exorcisms (part 1/5)",
+            "title": "Exorcisms (pt. 1)",
             "src": "http://www.reddit.com/r/HFY/comments/33avr0/ocjverse_20_exorcisms_part_1_of_5/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Exorcisms (part 2/5)",
+            "title": "Exorcisms (pt. 2)",
             "src": "http://www.reddit.com/r/HFY/comments/33avrf/ocjverse_20_exorcisms_part_2_of_5/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 400,
             "filters": "deathworlders"
         },
         {
-            "title": "Exorcisms (part 3/5)",
+            "title": "Exorcisms (pt. 3)",
             "src": "http://www.reddit.com/r/HFY/comments/33avs9/ocjverse_20_exorcisms_part_3_of_5/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 400,
             "filters": "deathworlders"
         },
         {
-            "title": "Exorcisms (part 4/5)",
+            "title": "Exorcisms (pt. 4)",
             "src": "http://www.reddit.com/r/HFY/comments/33avt0/ocjverse_20_exorcisms_part_4_of_5/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Exorcisms (part 5/5)",
+            "title": "Exorcisms (pt. 5)",
             "src": "http://www.reddit.com/r/HFY/comments/33avti/ocjverse_20_exorcisms_part_5_of_5/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
@@ -1100,25 +1104,27 @@
             "filters": "mia"
         },
         {
-            "title": "Dragon Dreams (part 1/4)",
+            "title": "Dragon Dreams (pt. 1)",
             "src": "http://www.reddit.com/r/HFY/comments/36m6k0/ocjverse21_dragon_dreams_part_1_of_4/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
         },
         {
-            "title": "Dragon Dreams (part 2/4)",
+            "title": "Dragon Dreams (pt. 2)",
             "src": "http://www.reddit.com/r/HFY/comments/36m6ll/ocjverse21_dragon_dreams_part_2_of_4/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 200,
             "filters": "deathworlders"
         },
         {
-            "title": "Dragon Dreams (part 3/4)",
+            "title": "Dragon Dreams (pt. 3)",
             "src": "http://www.reddit.com/r/HFY/comments/36m6mo/ocjverse21_dragon_dreams_part_3_of_4/",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 400,
             "filters": "deathworlders"
         },
         {
-            "title": "Dragon Dreams (part 4/4)",
+            "title": "Dragon Dreams (pt. 4)",
             "src": "http://www.reddit.com/r/HFY/comments/36m6nh/ocjverse21_dragon_dreams_part_4_of_4/",
             "byline": "Hambone3110",
             "filters": "deathworlders"
@@ -1282,6 +1288,7 @@
 		{
 			"title": "Warhorse - The Second Year",
             "byline": "Hambone3110",
+			"no-preamble-treshold": 0,
 			"filters": "deathworlders-hfya",
 			"src": "http://hfy-archive.org/book/deathworlders/chapter-22-warhorse/second-year"
 		},
