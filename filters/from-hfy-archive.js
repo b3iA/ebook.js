@@ -1,5 +1,6 @@
 var request = require('request');
 var cheerio = require('cheerio');
+var child_process = require('child_process');
 var fs = require('fs');
 
 function uriToId(uri)
@@ -52,6 +53,7 @@ function get(params, callback)
         
         fs.writeFileSync(__dirname + '/../cache/' + params.chap.id, params.chap.dom.xml(), encoding = 'utf-8');
         
+        child_process.execSync("sleep 1");
         callback();
     }}(params, callback, this));
 };
