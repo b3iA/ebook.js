@@ -113,7 +113,7 @@ function apply(params, next)
         if(el.prevAll().length < 1 || el.nextAll().length < 1)
             rem.push(el);
         else
-            el.replaceWith('<p><center>' + ENT_ASTER + '</center></p>');
+            el.replaceWith('<p class="center">' + ENT_ASTER + '</p>');
     });
 
 	params.purge(rem);

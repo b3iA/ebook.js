@@ -48,16 +48,7 @@ function tolatex(p, $, e, brk)
 			latex += filter(p, el.data);
 		else if(el.type === 'tag')
 		{
-			if(el.name === 'center')
-			{
-				var sl = tolatex(p, $, elem);
-				
-				if(sl === '⁂')
-					latex += '\\asterism\n';
-				else
-					latex += '\\begin{center}' + sl + '\\end{center}';
-			}
-			else if(el.name === 'em')
+			if(el.name === 'em')
 				latex += '\\textit{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'strong')
 				latex += '\\textbf{' + tolatex(p, $, elem) + '}';
@@ -68,8 +59,16 @@ function tolatex(p, $, e, brk)
 			else if(el.name === 'p')
 			{
 				var t = tolatex(p, $, elem);
-				
-				latex += t + (t.indexOf('\\star') > -1 ? '' : '\n');
+
+				if(elem.attr('class') === 'center')
+				{
+				    if(t === '⁂')
+					    latex += '\\asterism\n';
+				    else
+					    latex += '\\begin{center}' + t + '\\end{center}';
+				}
+				else
+				    latex += t + (t.indexOf('\\star') > -1 ? '' : '\n');
 			}
 			else if(el.name === 'span')
 				latex += tolatex(p, $, elem);
