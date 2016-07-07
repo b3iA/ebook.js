@@ -125,7 +125,7 @@ function createTitle(title)
 	var lines = title.split('\n');
 	
 	for(var i = 0; i < lines.length; i++)
-		html += '        <p class="center"><center><div class="title">' + escapeHTML(lines[i]) + '</div></center></p>\n';
+		html += '        <h1 class="center">' + escapeHTML(lines[i]) + '</h1>\n';
 
 	return html;
 }
@@ -149,11 +149,11 @@ function createCover(params)
 		'    </head>',
 		'    <body>',
 		createTitle(spec.title),
-		'        <p class="center"><center><div class="author">By ' + spec.creator + '</div></center></p>',
+		'        <h3 class="center">By ' + spec.creator + '</h3>',
 	].join('\n');
 
 	if(spec.patreon)
-		html += '        <p class="center"><center><div class="patreon">Donate securely to the author at <a href="' + spec.patreon + '">patreon.com</a></div></center></p>\n';
+		html += '        <p><br/></p><h3 class="center">Donate securely to the author at <a href="' + spec.patreon + '">patreon.com</a></h3>\n';
 	
 	return html + '    </body>\n</html>';
 }
