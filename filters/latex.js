@@ -21,29 +21,25 @@ function l_esc(txt)
 
 function filter(p, txt)
 {
-	return l_esc(p.unescape_html(txt).replace(/&lt;/g, '<')
-	                                 .replace(/&gt;/g, '>')
-	                                 .replace(/&nbsp;/g, ' ')
-	                                 .replace(/&mdash;/g, '---')
-	                                 .replace(/&ndash;/g, '-'))
-	                                 	 .replace(/\\([^%\$#_\{\}&])/gm, '{\\textbackslash}$1')
-	                                 	 .replace(/\\$/g, '{\\textbackslash}')
-							             .replace(/~/g, '{\\textasciitilde}')
-							             .replace(/\^/g, '{\\textasciicircum}')
-                                         .replace(/…/g, '{\\ldots}')
-                                         .replace(/\.\.\./g, '{\\ldots}');
+	return l_esc(p.unescape_html(txt).replace(/—/g, '---')
+	                                 .replace(/–/g, '-'))
+	                                 .replace(/\\([^%\$#_\{\}&])/gm, '{\\textbackslash}$1')
+	                                 .replace(/\\$/g, '{\\textbackslash}')
+							         .replace(/~/g, '{\\textasciitilde}')
+							         .replace(/\^/g, '{\\textasciicircum}')
+                                     .replace(/…/g, '{\\ldots}');
 }
 
 function tolatex(p, $, e, brk)
 {
 	var latex = '';
-	
+
 	e.contents().each(function(i, el)
 	{
 		var elem = $(el);
-		
+
 		// console.log(id + el.type);
-		
+
 		if(el.type === 'text')
 			latex += filter(p, el.data);
 		else if(el.type === 'tag')
@@ -62,7 +58,7 @@ function tolatex(p, $, e, brk)
 
 				if(elem.attr('class') === 'center')
 				{
-				    if(t === '⁂')
+				    if(t === '&#0038;')
 					    latex += '\\asterism\n';
 				    else
 					    latex += '\\begin{center}' + t + '\\end{center}';
@@ -70,6 +66,8 @@ function tolatex(p, $, e, brk)
 				else
 				    latex += t + (t.indexOf('\\star') > -1 ? '' : '\n');
 			}
+            else if(el.name === 'blockquote')
+                latex += '\\begin{displayquote}\n' + tolatex(p, $, elem) + '\n\\end{displayquote}';
 			else if(el.name === 'span')
 				latex += tolatex(p, $, elem);
 			else if(el.name === 'li')
@@ -91,7 +89,7 @@ function tolatex(p, $, e, brk)
 			}
 		}
 	});
-	
+
 	return latex;
 }
 
@@ -110,6 +108,7 @@ function apply(params, next)
 		'\\usepackage[normalem]{ulem}',
 		'\\usepackage{tocloft}',
 		'\\usepackage{hyperref}',
+		'\\usepackage{csquotes}',
 		'',
 		'\\title{' + title.replace(n_re, '\\\\\n') + '}',
 		'\\author{By ' + creator + (spec.patreon ? '\\\\ Donate securely to the author at \\href{' + l_esc(spec.patreon) + '}{Patreon}' : '') + '}',
@@ -171,12 +170,12 @@ function apply(params, next)
     {
         var chap = spec.contents[i];
         var title = l_esc(chap.title);
-        
+
         latex += '\n\\clearpage\n\\section{' + title + '}\n';
-        
+
         if(chap.byline)
         	latex += '\\vspace{-2em}By ' + l_esc(chap.byline) + '\\vspace{1em}\\\\*\n';
-        
+
         latex += tolatex(params, chap.dom, chap.dom.root());
     }
 
