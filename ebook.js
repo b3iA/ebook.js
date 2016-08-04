@@ -160,8 +160,10 @@ for(var i = 0; i < spec.contents.length; i++)
         spec: spec,
         chap: chap,
     	unescape_html: unescape_html,
+    	decode_crs: decode_crs,
     	purge: purge,
-    	uri_cache: uri_cache
+    	uri_cache: uri_cache,
+    	cheerio_flags: { decodeEntities: false }
     };
 
     if(typeof(chap.title) !== 'string')
