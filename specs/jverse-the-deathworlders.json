@@ -336,6 +336,11 @@
 			"title": "Forges",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/deathworlders/chapter-29-forges"
+		},
+		{
+			"title": "Hearts and Minds",
+			"filters": "hfy-archive",
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-30-hearts-and-minds"
 		}
 	]
 }

@@ -99,6 +99,26 @@
 			"title": "The Locals",
 			"filters": "reddit",
 			"src": "http://www.reddit.com/r/HFY/comments/4g6cgw/jverse_good_training_the_locals"
+		},
+		{
+			"title": "The Champions: Prologue",
+			"filters": "hfy-archive",
+			"src": "http://hfy-archive.org/book/good-training-champions-pt-i/prologue"
+		},
+		{
+			"title": "The Champions: Tooth & Claw",
+			"filters": "hfy-archive",
+			"src": "http://hfy-archive.org/book/good-training-champions-pt-i/tooth-claw"
+		},
+		{
+			"title": "The Champions: Longest Prefix Match",
+			"filters": "hfy-archive",
+			"src": "http://hfy-archive.org/book/good-training-champions-pt-i/longest-prefix-match"
+		},
+		{
+			"title": "The Champions: Gametime",
+			"filters": "hfy-archive",
+			"src": "http://hfy-archive.org/book/good-training-champions-pt-i/gametime"
 		}
 	]
 }

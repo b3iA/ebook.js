@@ -98,7 +98,7 @@
         ]
     },
     "filename": "JVerse Anthology (Fourbags)",
-    "output": "epub",
+    "output": ["epub", "latex", "html"],
     "contents": [
         {
             "title": "The Kevin Jenkins Experience Part 1.1",

@@ -11,7 +11,7 @@
 		"finalize"
 	],
 	"filename": "Billy-Bob Space Trucker",
-	"output": ["epub", "latex", "html"],
+	"output": ["epub", "html", "latex"],
 	"contents":
 	[
 		{
