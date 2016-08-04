@@ -112,6 +112,13 @@ function apply(params, next)
     if(rem.length)
 	    params.purge(rem);
 
+	$('*').contents().each(function(i, e)
+	{
+	    if(e.type !== 'text')
+	        return;
+	        
+	    e.data = e.data.replace(/&#xA0;/gi, '');
+	});
 	next();
 }
 

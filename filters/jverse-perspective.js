@@ -49,25 +49,15 @@ function apply(params, next)
 		{
 			var c = cont[i];
 			
-			if(c.type === 'text')
+			if(c.type === 'tag' && c.name === 'br')
 			{
-		    	p.append(c.data.replace(/ $/, ''));
-
-				if(c.data.match(/ $/) &&
-			       i < cont.length - 1 &&
-			       cont[i+1].type === 'tag' &&
-			       cont[i+1].name === 'br')
-			    {
-			    	i++;
-			    	nps.push(p);
-			    	nps.push('\n');
-			    	p = $('<p></p>');
-			    }
+			    if(p.text() !== '&#xA0;')
+			        nps.push(p);
+			        
+		    	p = $('<p></p>');
 			}
-			else if(c.type === 'tag' && c.name !== 'br')
-			{
-				p.append($(c));
-			}
+			else
+			    p.append($(c));
 		}
 		
     	nps.push(p);
@@ -83,8 +73,20 @@ function apply(params, next)
 		var el = $(e);
 		
 		if(el.text().indexOf('D BV') > -1)
-			el.after($('<p></p><br/>'));
+			el.after($('<br/>')); // <p></p>
 	});
+	
+	// Other unique quirks
+	if(chap.title === 'Chapter 11')
+	{
+	    var prob = $($('p:contains("No going back now")')[0]);
+	    
+	    prob.contents().each(function(i, e)
+	    {
+	        if(e.type === 'text')
+	            e.data = e.data.replace('\*', '');
+	    });
+	}
 	
 	next();
 }
