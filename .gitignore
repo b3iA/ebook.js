@@ -5,4 +5,5 @@ build-pdfs
 build-pdf
 build-all
 build-clean
+build-epubcheck
 page-count
