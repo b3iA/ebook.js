@@ -7,15 +7,16 @@ var fs = require('fs');
 
 function escapeHTML(txt)
 {
-    return txt.replace('&', '&amp;')
-              .replace('"', '&quot;')
-              .replace('\'', '&apos;')
-              .replace('<', '&lt;')
-              .replace('>', '&gt;')
+    return txt.replace(/&/g, '&#0038;')
+              .replace(/"/g, '&#0034;')
+              .replace(/'/g, '&#0039;')
+              .replace(/</g, '&#0060;')
+              .replace(/>/g, '&#0062;');
 }
 
 function createContents(spec, uuid)
 {
+    var creator = escapeHTML(spec.creator);
     var xml = [
         '<?xml version="1.0"?>',
         '<package version="2.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId">',
@@ -23,7 +24,7 @@ function createContents(spec, uuid)
         '    <dc:title>' + escapeHTML(spec.title) + '</dc:title>',
         '    <dc:language>en</dc:language>',
         '    <dc:identifier id="BookId" opf:scheme="UUID">' + uuid + '</dc:identifier>',
-        '    <dc:creator opf:file-as="' + spec.creator + '" opf:role="aut">' + spec.creator + '</dc:creator>',
+        '    <dc:creator opf:file-as="' + creator + '" opf:role="aut">' + creator + '</dc:creator>',
         '  </metadata>\n'
     ].join('\n');
 
@@ -109,7 +110,7 @@ function createXHTML(params, chap)
         '    <div class="chapter">\n'
     ].join('\n');
 
-    xml += params.unescape_html(chap.dom.xml());
+    xml += chap.dom.xml();
     xml += [
         '    </div>',
         '  </body>',
@@ -149,7 +150,7 @@ function createCover(params)
 		'    </head>',
 		'    <body>',
 		createTitle(spec.title),
-		'        <h3 class="center">By ' + spec.creator + '</h3>',
+		'        <h3 class="center">By ' + escapeHTML(spec.creator) + '</h3>',
 	].join('\n');
 
 	if(spec.patreon)
