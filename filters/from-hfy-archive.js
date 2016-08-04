@@ -7,7 +7,7 @@ function uriToId(uri)
 {
     var tokens = uri.split('/');
 
-    return 'HFYA_' + tokens.slice(tokens.length-2, tokens.length).join('_');
+    return 'HFYA_' + decodeURI(tokens.slice(tokens.length-2, tokens.length).join('_'));
 };
 
 function get(params, callback)
@@ -15,7 +15,7 @@ function get(params, callback)
     if(params.uri_cache.cache.indexOf(params.chap.id) > -1)
     {
         console.log('[\033[92mCached\033[0m] ' + params.chap.id);
-        params.chap.dom = cheerio.load(fs.readFileSync(__dirname + '/../cache/' + params.chap.id, encoding = 'utf-8'), { decodeEntities: true });
+        params.chap.dom = cheerio.load(fs.readFileSync(__dirname + '/../cache/' + params.chap.id, encoding = 'utf-8'), params.cheerio_flags);
         callback();
         return;
     }
@@ -32,7 +32,7 @@ function get(params, callback)
         console.log('[\033[93mFetched\033[0m] ' + params.chap.id);
         params.uri_cache.cache.push(params.chap.id);
 
-        var $ = cheerio.load(body, { decodeEntities: true });
+        var $ = cheerio.load(body, params.cheerio_flags);
         var content = $('div.node-content div[property]').contents();
         
         $.root().children().remove();

@@ -43,7 +43,7 @@ function uriToId(uri)
 {
     var tokens = uri.split('/');
 
-    return tokens.slice(4, tokens.length - 1).join('_');
+    return decodeURI(tokens.slice(4, tokens.length - 1).join('_'));
 };
 
 function get(params, callback)
@@ -51,14 +51,14 @@ function get(params, callback)
     if(params.uri_cache.cache.indexOf(params.chap.id) > -1)
     {
         console.log('[\033[92mCached\033[0m] ' + params.chap.id);
-        params.chap.dom = cheerio.load(fs.readFileSync(__dirname + '/../cache/' + params.chap.id, encoding = 'utf-8'), { decodeEntities: true });
+        params.chap.dom = cheerio.load(fs.readFileSync(__dirname + '/../cache/' + params.chap.id, encoding = 'utf-8'), params.cheerio_flags);
         callback();
         return;
     }
 
-    request({ uri: params.chap.src + '.json' }, function(parmas, callback, uri_cache) { return function(error, response, body)
+    request({ uri: params.chap.src + '.json' }, function(params, callback, uri_cache) { return function(error, response, body)
     {
-        if(response.statusCode === 503)
+        if(!response || response.statusCode === 503)
         {
             console.log('[\033[91mRetrying\033[0m] ' + params.chap.id);
             get(params, callback);
@@ -74,7 +74,7 @@ function get(params, callback)
         // Handle non-standard Reddit superscript markdown.
         html = html.replace(/\^\^([^ ]+)/g, '<sup>$1</sup>');
         
-        params.chap.dom = cheerio.load(html, { decodeEntities: true });
+        params.chap.dom = cheerio.load(html, params.cheerio_flags);
         
         fs.writeFileSync(__dirname + '/../cache/' + params.chap.id, params.chap.dom.html(), encoding = 'utf-8');
         
