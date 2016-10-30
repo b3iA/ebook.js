@@ -37,57 +37,84 @@ function tolatex(p, $, e, brk)
 	e.contents().each(function(i, el)
 	{
 		var elem = $(el);
-
+        var l = '';
+        
 		// console.log(id + el.type);
 
 		if(el.type === 'text')
-			latex += filter(p, el.data);
+			l += filter(p, el.data);
 		else if(el.type === 'tag')
 		{
 			if(el.name === 'em')
-				latex += '\\textit{' + tolatex(p, $, elem) + '}';
+				l += '\\textit{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'strong')
-				latex += '\\textbf{' + tolatex(p, $, elem) + '}';
+			{
+				var pa = el.parent;
+				
+				// Make sure sub-headings are not the last thing on a page.
+				if(pa && pa.name === 'p')
+				{
+                    var isheading = true;
+                    
+                    for(var idx = 0; idx < pa.children.length; idx++)
+                    {
+                        var pe = pa.children[idx];
+                        
+                        if(pe.name !== 'strong' && pe.name != 'br' && !(pe.type === 'text' && pe.data.trim().length === 0))
+                        {
+                            isheading = false;
+                            break;
+                        }
+                    }
+                    
+                    if(isheading)
+                        l += '\\needspace{2.0\\baselineskip}';
+                }
+                				    
+			    l += '\\textbf{' + tolatex(p, $, elem) + '}';
+			}
 			else if(el.name === 'pre' || el.name === 'code')
-				latex += '\\monosp{' + tolatex(p, $, elem).replace(/\n/g, '\\\\*') + '}';
+				l += '\\monosp{' + tolatex(p, $, elem).replace(/\n/g, '\\\\*') + '}';
 			else if(el.name === 'a')
-				latex += '\\href{' + l_esc(el.attribs['href']) + '}{' + tolatex(p, $, elem) + '}';
+				l += '\\href{' + l_esc(el.attribs['href']) + '}{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'p')
 			{
 				var t = tolatex(p, $, elem);
 
 				if(elem.attr('class') === 'center')
 				{
-				    if(t === '&#0038;')
-					    latex += '\\asterism\n';
+				    if(t === '⁂')
+					    l += '\\asterism\n';
 				    else
-					    latex += '\\begin{center}' + t + '\\end{center}';
+					    l += '\\begin{center}' + t + '\\end{center}';
 				}
 				else
-				    latex += t + (t.indexOf('\\star') > -1 ? '' : '\n');
+				    l += t.replace(/\n\n?/g, '\n') + (t.indexOf('\\star') > -1 ? '' : '\n');
 			}
             else if(el.name === 'blockquote')
-                latex += '\\begin{displayquote}\n' + tolatex(p, $, elem) + '\n\\end{displayquote}';
+                l += '\\begin{displayquote}\n' + tolatex(p, $, elem) + '\n\\end{displayquote}';
 			else if(el.name === 'span')
-				latex += tolatex(p, $, elem);
+				l += tolatex(p, $, elem);
 			else if(el.name === 'li')
-				latex += '\\item ' + tolatex(p, $, elem);
+				l += '\\item ' + tolatex(p, $, elem);
 			else if(el.name === 'ul')
-				latex += '\\begin{itemize}' + tolatex(p, $, elem) + '\n\\end{itemize}';
+				l += '\\begin{itemize}' + tolatex(p, $, elem) + '\n\\end{itemize}';
 			else if(el.name === 'ol')
-				latex += '\\begin{enumerate}' + tolatex(p, $, elem) + '\n\\end{enumerate}';
+				l += '\\begin{enumerate}' + tolatex(p, $, elem) + '\n\\end{enumerate}';
 			else if(el.name === 'br')
-				latex += '\\\\*\n';
+				l += '\\\\*\n';
 			else if(el.name === 's' || el.name === 'del' || el.name === 'strike')
-				latex += '\\sout{' + tolatex(p, $, elem) + '}';
+				l += '\\sout{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'sup')
-				latex += '\\textsuperscript{' + tolatex(p, $, elem) + '}';
+				l += '\\textsuperscript{' + tolatex(p, $, elem) + '}';
 			else
 			{
 				console.log('LaTeX: Unhandled tag: ' + el.name);
-				latex += tolatex(p, $, elem);
+				l += tolatex(p, $, elem);
 			}
 		}
+		
+	    latex += el.type !== 'tag' || el.name !== 'p' ? l.replace(/\n\n?/g, '\n') : l;
 	});
 
 	return latex;
@@ -109,6 +136,8 @@ function apply(params, next)
 		'\\usepackage{tocloft}',
 		'\\usepackage{hyperref}',
 		'\\usepackage{csquotes}',
+		'\\usepackage{microtype}',
+		'\\usepackage{needspace}',
 		'',
 		'\\title{' + title.replace(n_re, '\\\\\n') + '}',
 		'\\author{By ' + creator + (spec.patreon ? '\\\\ Donate securely to the author at \\href{' + l_esc(spec.patreon) + '}{Patreon}' : '') + '}',
