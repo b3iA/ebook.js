@@ -21,6 +21,7 @@ function apply(params, next)
 		rem.push($(ps[1]));
 	    rem.push($('p:contains("CONTINUED IN COMMENTS BELOW")'));
 	    rem.push($('p:contains("I felt like adding more. Have an epilogue!")'));
+	    rem.push($('h1'));
 	}
 	else if(chap.title === 'Saturday Morning Breakfast' || chap.title === 'Good Training: Saturday Morning Breakfast')
 	{

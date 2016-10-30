@@ -23,7 +23,7 @@ function apply(params, next)
         	rem.push(p);
 	});
 	
-    var end_m = /^end (chapter|part) \d/i;
+    var end_m = /^\+*end (chapter|part) \d/i;
     var end_m2 = /^\+\+end[  ](of )*chapter/i;
     var cont_m = /^Continued in Chapter/i;
     
