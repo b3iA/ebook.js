@@ -20,7 +20,7 @@ function get(params, callback)
 
     request({ uri: params.chap.src }, function(params, callback) { return function(error, response, body)
     {
-        if(response.statusCode === 503)
+        if(!response || response.statusCode === 503)
         {
             console.log('[\033[91mRetrying\033[0m] ' + params.chap.id);
             get(params, callback);
@@ -31,7 +31,7 @@ function get(params, callback)
         
         params.uri_cache.cache.push(params.chap.id);
         params.chap.dom = cheerio.load(body, params.cheerio_flags);
-        fs.writeFileSync(__dirname + '/../cache/' + params.chap.id, params.chap.dom.xml(), encoding = 'utf-8');
+        fs.writeFileSync(__dirname + '/../cache/' + params.chap.id, body, encoding = 'utf-8');
         
         child_process.execSync("sleep 1");
         callback();
