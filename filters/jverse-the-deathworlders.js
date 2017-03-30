@@ -115,7 +115,8 @@ function apply(params, next)
             rem.push($(ps[i]));
     }
     else if(title.indexOf('Operation NOVA HOUND') > -1 || 
-            title.indexOf('Back Down To Earth') > -1)
+            title.indexOf('Back Down To Earth') > -1 ||
+            title === 'Metadyskolia')
     {
         var ps = $('p');
         
@@ -139,6 +140,13 @@ function apply(params, next)
     		}
     	});
     }
+    else if(title.indexOf('Event Horizons') > -1)
+	{
+		var ps = $($('p:contains("patreon.com")')[0]).prev().nextAll();
+		
+		for(var i = 0; i < ps.length; i++)
+			rem.push($(ps[i]));
+	}
     
     params.purge(rem);
     next();

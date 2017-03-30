@@ -7,13 +7,13 @@ function apply(params, next)
 	
 	if(chap.title === 'Part 1')
 		rem.push($(ps[ps.length - 1]));
-	else if(chap.title === 'Part 3')
+	else if(chap.title === 'Part 3' || chap.title === 'Part 20')
 	{
 		rem.push($(ps[0]));
 		rem.push($(ps[1]));
 		rem.push($(ps[2]));
 	}
-	else if(chap.title === 'Part 6' || chap.title === 'Part 20')
+	else if(chap.title === 'Part 6')
 	{
 		rem.push($(ps[0]));
 		rem.push($(ps[1]));
