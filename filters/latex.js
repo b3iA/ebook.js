@@ -1,13 +1,6 @@
 var cheerio = require('cheerio');
 var fs = require('fs');
 
-// Noto Serif
-// DejaVu Serif
-// Linux Libertine
-// Linux Biolinum
-var typeface = 'Liberation Serif';
-var typeface_mono = 'Liberation Mono';
-
 function l_esc(txt)
 {
 	return txt.replace(/%/g, '\\%')
@@ -48,31 +41,7 @@ function tolatex(p, $, e, brk)
 			if(el.name === 'em')
 				l += '\\textit{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'strong')
-			{
-				var pa = el.parent;
-				
-				// Make sure sub-headings are not the last thing on a page.
-				if(pa && pa.name === 'p')
-				{
-                    var isheading = true;
-                    
-                    for(var idx = 0; idx < pa.children.length; idx++)
-                    {
-                        var pe = pa.children[idx];
-                        
-                        if(pe.name !== 'strong' && pe.name != 'br' && !(pe.type === 'text' && pe.data.trim().length === 0))
-                        {
-                            isheading = false;
-                            break;
-                        }
-                    }
-                    
-                    if(isheading)
-                        l += '\\needspace{2.0\\baselineskip}';
-                }
-                				    
 			    l += '\\textbf{' + tolatex(p, $, elem) + '}';
-			}
 			else if(el.name === 'pre' || el.name === 'code')
 				l += '\\monosp{' + tolatex(p, $, elem).replace(/\n/g, '\\\\*') + '}';
 			else if(el.name === 'a')
@@ -158,8 +127,23 @@ function apply(params, next)
 		'\\linespread{1.2}',
 		'\\raggedright',
 		'\\defaultfontfeatures{Ligatures=TeX}',
-		'\\setromanfont{' + typeface + '}',
-		'\\setmonofont[Scale=0.85]{' + typeface_mono + '}',
+		'\\setmainfont[',
+		'	Path = ../templates/,',
+		'	Extension = .ttf,',
+		'	Ligatures = TeX,',
+		'	BoldFont = LiberationSerif-Bold,',
+		'	ItalicFont = LiberationSerif-Italic,',
+		'	BoldItalicFont = LiberationSerif-BoldItalic',
+		']{LiberationSerif-Regular}',
+		'\\setmonofont[',
+		'	Path = ../templates/,',
+		'	Scale = 0.85,',
+		'	Extension = .ttf,',
+		'	Ligatures = TeX,',
+		'	BoldFont = LiberationMono-Bold,',
+		'	ItalicFont = LiberationMono-Italic,',
+		'	BoldItalicFont = LiberationMono-BoldItalic',
+		']{LiberationMono-Regular}',
 		'',
 		'\\def\\asterism{\\par\\begin{center}\\scalebox{2}{$\\cdots$}\\end{center}}',
 		'',
@@ -180,7 +164,7 @@ function apply(params, next)
 		'\\maketitle',
 		'\\thispagestyle{empty}',
 		'\\vfill',
-		'\\begin{center}Automatically typeset in\\\\' + typeface + ' and ' + typeface_mono + '\\\\by EbookJS on ' + d_str.substr(5, d_str.length) + '\\end{center}',
+		'\\begin{center}Automatically typeset in\\\\Liberation Serif and Mono\\\\by EbookJS on ' + d_str.substr(5, d_str.length) + '\\end{center}',
 		'',
 		'\\clearpage',
         '\\pagenumbering{Roman}',
