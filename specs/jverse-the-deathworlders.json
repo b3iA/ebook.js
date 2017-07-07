@@ -369,6 +369,30 @@
 			"filters": "hfy-archive",
 			"no-preamble-treshold": 0,
 			"src": "http://hfy-archive.org/book/deathworlders/chapter-35-event-horizons"
+		},
+		{
+			"title": "Consequences",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-36-consequences"
+		},
+		{
+			"title": "Grounded",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-37-grounded"
+		},
+		{
+			"title": "Paroxysm",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-38-paroxysm"
+		},
+		{
+			"title": "The Nirvana Cage",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-39-nirvana-cage"
 		}
 	]
 }

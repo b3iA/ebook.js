@@ -141,12 +141,23 @@ function apply(params, next)
     	});
     }
     else if(title.indexOf('Event Horizons') > -1)
-	{
-		var ps = $($('p:contains("patreon.com")')[0]).prev().nextAll();
-		
-		for(var i = 0; i < ps.length; i++)
-			rem.push($(ps[i]));
-	}
+    {
+	var ps = $($('p:contains("patreon.com")')[0]).prev().nextAll();
+	
+	for(var i = 0; i < ps.length; i++)
+		rem.push($(ps[i]));
+    }
+    else if(title === 'Event Horizons' ||
+	    title === 'Consequences' ||
+	    title === 'Grounded' ||
+	    title === 'Paroxysm' ||
+	    title === 'The Nirvana Cage')
+    {
+    	var ps = $($('p:contains("If you have enjoyed the story so far")')[0]).prev().prev().prev().nextAll();
+
+	for(var i = 0; i < ps.length; i++)
+		rem.push($(ps[i]));
+    }
     
     params.purge(rem);
     next();
