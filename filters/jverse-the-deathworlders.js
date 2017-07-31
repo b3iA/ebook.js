@@ -151,7 +151,8 @@ function apply(params, next)
 	    title === 'Consequences' ||
 	    title === 'Grounded' ||
 	    title === 'Paroxysm' ||
-	    title === 'The Nirvana Cage')
+	    title === 'The Nirvana Cage' ||
+	    title === 'War On Two Worlds: Instigation')
     {
     	var ps = $($('p:contains("If you have enjoyed the story so far")')[0]).prev().prev().prev().nextAll();
 
