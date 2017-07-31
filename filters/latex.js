@@ -14,8 +14,9 @@ function l_esc(txt)
 
 function filter(p, txt)
 {
-	return l_esc(p.unescape_html(txt).replace(/—/g, '---')
-	                                 .replace(/–/g, '-'))
+	return l_esc(p.unescape_html(txt).replace(/—/g, ' -- ')
+	                                 .replace(/–/g, '--'))
+	                                 .replace(/’/g, '\'')
 	                                 .replace(/\\([^%\$#_\{\}&])/gm, '{\\textbackslash}$1')
 	                                 .replace(/\\$/g, '{\\textbackslash}')
 							         .replace(/~/g, '{\\textasciitilde}')
@@ -107,6 +108,7 @@ function apply(params, next)
 		'\\usepackage{csquotes}',
 		'\\usepackage{microtype}',
 		'\\usepackage{needspace}',
+		'\\usepackage{ifthen}',
 		'',
 		'\\title{' + title.replace(n_re, '\\\\\n') + '}',
 		'\\author{By ' + creator + (spec.patreon ? '\\\\ Donate securely to the author at \\href{' + l_esc(spec.patreon) + '}{Patreon}' : '') + '}',
@@ -144,6 +146,20 @@ function apply(params, next)
 		'	ItalicFont = LiberationMono-Italic,',
 		'	BoldItalicFont = LiberationMono-BoldItalic',
 		']{LiberationMono-Regular}',
+		'',
+		'\\makeatletter',
+		'\\newcommand{\\isitalic}[2]{\\ifthenelse{\\equal{\\f@shape}{it}}{#1}{#2}}',
+		'\\makeatother',
+		'',
+		'\\XeTeXinterchartokenstate=1',
+		'\\newXeTeXintercharclass \\SmallNClass',
+		'\\newXeTeXintercharclass \\SmallTClass',
+		'\\newXeTeXintercharclass \\ApostropheClass',
+		'\\XeTeXcharclass `n = \\SmallNClass',
+		'\\XeTeXcharclass `t = \\SmallTClass',
+		'\\XeTeXcharclass `\' = \\ApostropheClass',
+		'\\XeTeXinterchartoks \\SmallNClass \\ApostropheClass = {\\isitalic{\\kern -0.5pt}{}}',
+		'\\XeTeXinterchartoks \\ApostropheClass \\SmallTClass = {\\isitalic{\\kern 0.5pt}{}}',
 		'',
 		'\\def\\asterism{\\par\\begin{center}\\scalebox{2}{$\\cdots$}\\end{center}}',
 		'',
