@@ -12,6 +12,9 @@ function apply(params, next)
         
         if(el.text() === 'Previous' || el.text() === 'Next' || el.text().indexOf('Chapter') === 0)
         	rem.push(el);
+    
+    	if(el.prev().name === 'hr')
+    		rem.push($(el.prev()));
     });
     
     // Remove chapter headings
