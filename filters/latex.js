@@ -97,7 +97,16 @@ function apply(params, next)
     var title = l_esc(spec.title);
     var creator = l_esc(spec.creator);
     var n_re = /\n/g;
-    var d_str = (new Date()).toUTCString();
+    var d_str = (new Date()).toLocaleDateString('en-GB', 
+    { 
+    	day: 'numeric',
+    	month: 'long',
+    	year: 'numeric',
+    	hour: 'numeric',
+    	minute: 'numeric',
+    	timeZoneName: 'short',
+    	timeZone: 'UTC'
+    });
     var latex = [
 		'\\documentclass[a4paper,10pt]{article}',
 		'',
@@ -154,12 +163,19 @@ function apply(params, next)
 		'\\XeTeXinterchartokenstate=1',
 		'\\newXeTeXintercharclass \\SmallNClass',
 		'\\newXeTeXintercharclass \\SmallTClass',
+		'\\newXeTeXintercharclass \\SmallSClass',
+		'\\newXeTeXintercharclass \\SmallEClass',
 		'\\newXeTeXintercharclass \\ApostropheClass',
 		'\\XeTeXcharclass `n = \\SmallNClass',
 		'\\XeTeXcharclass `t = \\SmallTClass',
+		'\\XeTeXcharclass `s = \\SmallSClass',
+		'\\XeTeXcharclass `e = \\SmallEClass',
 		'\\XeTeXcharclass `\' = \\ApostropheClass',
 		'\\XeTeXinterchartoks \\SmallNClass \\ApostropheClass = {\\isitalic{\\kern -0.5pt}{}}',
 		'\\XeTeXinterchartoks \\ApostropheClass \\SmallTClass = {\\isitalic{\\kern 0.5pt}{}}',
+		'\\XeTeXinterchartoks \\SmallTClass \\ApostropheClass = {\\isitalic{\\kern -0.15pt}{}}',
+		'\\XeTeXinterchartoks \\SmallEClass \\ApostropheClass = {\\isitalic{\\kern -0.15pt}{}}',
+		'\\XeTeXinterchartoks \\ApostropheClass \\SmallSClass = {\\isitalic{\\kern 0.15pt}{}}',
 		'',
 		'\\def\\asterism{\\par\\begin{center}\\scalebox{2}{$\\cdots$}\\end{center}}',
 		'',
@@ -180,7 +196,7 @@ function apply(params, next)
 		'\\maketitle',
 		'\\thispagestyle{empty}',
 		'\\vfill',
-		'\\begin{center}Automatically typeset in\\\\Liberation Serif and Mono\\\\by EbookJS on ' + d_str.substr(5, d_str.length) + '\\end{center}',
+		'\\begin{center}Automatically typeset in\\\\Liberation Serif and Mono\\\\Using EbookJS on ' + d_str + '\\end{center}',
 		'',
 		'\\clearpage',
         '\\pagenumbering{Roman}',
