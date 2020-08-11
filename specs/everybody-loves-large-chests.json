@@ -1,0 +1,789 @@
+{
+	"title": "Everybody Loves Large Chests",
+	"creator": "Exterminatus",
+	"patreon": "https://www.patreon.com/ELLC",
+	"filters": [
+		"from-url",
+		"everybody-loves-large-chests",
+		"typography",
+		"finalize"
+	],
+	"filename": "Everybody Loves Large Chests",
+	"output": ["epub", "html", "latex"],
+    "css": "table { margin: auto; background-color: #ccc; padding: 4px; margin-top: 8px; margin-bottom: 8px; border: 1px solid #888; }",
+	"contents":
+	[
+        {
+	        "title": "Prologue",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/99919/prologue"
+        },
+        {
+	        "title": "Death Comes In Many Forms 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/99976/death-comes-in-many-forms-1"
+        },
+        {
+	        "title": "Death Comes In Many Forms 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/99986/death-comes-in-many-forms-2"
+        },
+        {
+	        "title": "Death Comes In Many Forms 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/99997/death-comes-in-many-forms-3"
+        },
+        {
+	        "title": "Death Comes In Many Forms 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/100003/death-comes-in-many-forms-4"
+        },
+        {
+	        "title": "Death Comes In Many Forms 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/100161/death-comes-in-many-forms-5"
+        },
+        {
+	        "title": "Death Comes In Many Forms 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/100167/death-comes-in-many-forms-6"
+        },
+        {
+	        "title": "Eat And Grow 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/100254/eat-and-grow-1"
+        },
+        {
+	        "title": "Eat And Grow 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/100411/eat-and-grow-2"
+        },
+        {
+	        "title": "Eat And Grow 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/100617/eat-and-grow-3"
+        },
+        {
+	        "title": "Eat And Grow 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/100826/eat-and-grow-4"
+        },
+        {
+	        "title": "Eat And Grow 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/100967/eat-and-grow-5"
+        },
+        {
+	        "title": "Eat And Grow 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/101120/eat-and-grow-6"
+        },
+        {
+	        "title": "Eat And Grow 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/101186/eat-and-grow-7"
+        },
+        {
+	        "title": "Eat And Grow 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/101585/eat-and-grow-8"
+        },
+        {
+	        "title": "Eat And Grow 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/101896/eat-and-grow-9"
+        },
+        {
+	        "title": "Interlude - A Cheap Drink",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/101935/interlude-a-cheap-drink"
+        },
+        {
+	        "title": "Urges 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/102148/urges-1"
+        },
+        {
+	        "title": "Urges 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/102196/urges-2"
+        },
+        {
+	        "title": "Urges 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/102400/urges-3"
+        },
+        {
+	        "title": "Urges 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/102639/urges-4"
+        },
+        {
+	        "title": "Urges 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/102742/urges-5"
+        },
+        {
+	        "title": "Urges 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/102994/urges-6"
+        },
+        {
+	        "title": "Urges 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/103174/urges-7"
+        },
+        {
+	        "title": "Urges 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/103314/urges-8"
+        },
+        {
+	        "title": "Urges 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/103467/urges-9"
+        },
+        {
+	        "title": "Urges 10",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/103782/urges-10"
+        },
+        {
+	        "title": "Interlude - A little fisting goes a long way",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/103817/interlude-a-little-fisting-goes-a-long-w"
+        },
+        {
+	        "title": "Science!!! 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/103975/science-1"
+        },
+        {
+	        "title": "Science!!! 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/104266/science-2"
+        },
+        {
+	        "title": "Science!!! 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/104534/science-3"
+        },
+        {
+	        "title": "Science!!! 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/104880/science-4"
+        },
+        {
+	        "title": "Science!!! 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/105223/science-5"
+        },
+        {
+	        "title": "Science!!! 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/105610/science-6"
+        },
+        {
+	        "title": "Science!!! 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/105742/science-7"
+        },
+        {
+	        "title": "Science!!! 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/105839/science-8"
+        },
+        {
+	        "title": "Interlude - Turnabout is fair play",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/106663/interlude-turnabout-is-fair-play"
+        },
+        {
+	        "title": "Interlude - Justice demands retribution",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/107161/interlude-justice-demands-retribution"
+        },
+        {
+	        "title": "Gainful Employment 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/107872/gainful-employment-1"
+        },
+        {
+	        "title": "Gainful Employment 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/107951/gainful-employment-2"
+        },
+        {
+	        "title": "Gainful Employment 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/108107/gainful-employment-3"
+        },
+        {
+	        "title": "Gainful Employment 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/108306/gainful-employment-4"
+        },
+        {
+	        "title": "Gainful Employment 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/108385/gainful-employment-5"
+        },
+        {
+	        "title": "Gainful Employment 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/108569/gainful-employment-6"
+        },
+        {
+	        "title": "Gainful Employment 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/108674/gainful-employment-7"
+        },
+        {
+	        "title": "Gainful Employment 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/108793/gainful-employment-8"
+        },
+        {
+	        "title": "Gainful Employment 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/108875/gainful-employment-9"
+        },
+        {
+	        "title": "Interlude - That nagging feeling",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109027/interlude-that-nagging-feeling"
+        },
+        {
+	        "title": "Chaos 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109034/chaos-1"
+        },
+        {
+	        "title": "Uncertainty 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109152/uncertainty-2"
+        },
+        {
+	        "title": "Instability 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109270/instability-3"
+        },
+        {
+	        "title": "Fluctuation 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109407/fluctuation-4"
+        },
+        {
+	        "title": "Unpredictability 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109426/unpredictability-5"
+        },
+        {
+	        "title": "Chaos 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109489/chaos-6"
+        },
+        {
+	        "title": "Chance 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109741/chance-7"
+        },
+        {
+	        "title": "Unforeseen Consequences 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/109939/unforeseen-consequences-8"
+        },
+        {
+	        "title": "Coincidences 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/110238/coincidences-9"
+        },
+        {
+	        "title": "Randomness 10",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/110554/randomness-10"
+        },
+        {
+	        "title": "Volatility 11",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/110757/volatility-11"
+        },
+        {
+	        "title": "Interlude - The Shadow of Death",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/110871/interlude-the-shadow-of-death"
+        },
+        {
+	        "title": "Unleashed 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/110961/unleashed-1"
+        },
+        {
+	        "title": "Unleashed 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/111125/unleashed-2"
+        },
+        {
+	        "title": "Unleashed 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/111219/unleashed-3"
+        },
+        {
+	        "title": "Unleashed 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/111421/unleashed-4"
+        },
+        {
+	        "title": "Unleashed 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/111713/unleashed-5"
+        },
+        {
+	        "title": "Unleashed 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/112073/unleashed-6"
+        },
+        {
+	        "title": "Unleashed 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/112333/unleashed-7"
+        },
+        {
+	        "title": "Unleashed 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/112667/unleashed-8"
+        },
+        {
+	        "title": "Unleashed 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/112764/unleashed-9"
+        },
+        {
+	        "title": "Core Values 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/113046/core-values-1"
+        },
+        {
+	        "title": "Core Values 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/113199/core-values-2"
+        },
+        {
+	        "title": "Core Values 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/113508/core-values-3"
+        },
+        {
+	        "title": "Core Values 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/113600/core-values-4"
+        },
+        {
+	        "title": "Core Values 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/113733/core-values-5"
+        },
+        {
+	        "title": "Core Values 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/114046/core-values-6"
+        },
+        {
+	        "title": "Interlude - A Neighborly Chat",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/114352/interlude-a-neighborly-chat"
+        },
+        {
+	        "title": "Death Comes In Many Shapes 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/114994/death-comes-in-many-shapes-1"
+        },
+        {
+	        "title": "Death Comes In Many Shapes 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/115525/death-comes-in-many-shapes-2"
+        },
+        {
+	        "title": "Death Comes In Many Shapes 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/115839/death-comes-in-many-shapes-3"
+        },
+        {
+	        "title": "Death Comes In Many Shapes 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/116134/death-comes-in-many-shapes-4"
+        },
+        {
+	        "title": "Death Comes In Many Shapes 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/116548/death-comes-in-many-shapes-5"
+        },
+        {
+	        "title": "Death Comes In Many Shapes 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/116868/death-comes-in-many-shapes-6"
+        },
+        {
+	        "title": "Death Comes In Many Shapes 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/117249/death-comes-in-many-shapes-7"
+        },
+        {
+	        "title": "Interlude - An ASS out of U and ME",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/117632/interlude-an-ass-out-of-u-and-me"
+        },
+        {
+	        "title": "Moonlighting 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/117826/moonlighting-1"
+        },
+        {
+	        "title": "Moonlighting 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/118021/moonlighting-2"
+        },
+        {
+	        "title": "Moonlighting 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/118160/moonlighting-3"
+        },
+        {
+	        "title": "Moonlighting 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/118461/moonlighting-4"
+        },
+        {
+	        "title": "Moonlighting 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/118654/moonlighting-5"
+        },
+        {
+	        "title": "Moonlighting 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/118830/moonlighting-6"
+        },
+        {
+	        "title": "Moonlighting 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/118993/moonlighting-7"
+        },
+        {
+	        "title": "Moonlighting 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/119107/moonlighting-8"
+        },
+        {
+	        "title": "Interlude - Good news travels slowly. Bad news has wings.",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/119144/interlude-good-news-travels-slowly-bad-n"
+        },
+        {
+	        "title": "All That Glitters 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/119276/all-that-glitters-1"
+        },
+        {
+	        "title": "All That Glitters 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/119515/all-that-glitters-2"
+        },
+        {
+	        "title": "All That Glitters 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/119840/all-that-glitters-3"
+        },
+        {
+	        "title": "All That Glitters 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/120083/all-that-glitters-4"
+        },
+        {
+	        "title": "All That Glitters 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/120240/all-that-glitters-5"
+        },
+        {
+	        "title": "All That Glitters 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/120480/all-that-glitters-6"
+        },
+        {
+	        "title": "All That Glitters 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/121026/all-that-glitters-7"
+        },
+        {
+	        "title": "All That Glitters 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/121401/all-that-glitters-8"
+        },
+        {
+	        "title": "All That Glitters 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/121790/all-that-glitters-9"
+        },
+        {
+	        "title": "Interlude - Stalking does not count as a long-distance relationship",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/121833/interlude-stalking-does-not-count-as-a-l"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/122268/veni-vidi-edi-1"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/122425/veni-vidi-edi-2"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/122650/veni-vidi-edi-3"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/122786/veni-vidi-edi-4"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/123007/veni-vidi-edi-5"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/123172/veni-vidi-edi-6"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/123359/veni-vidi-edi-7"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/123759/veni-vidi-edi-8"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/123960/veni-vidi-edi-9"
+        },
+        {
+	        "title": "Veni, Vidi, Edi 10",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/124137/veni-vidi-edi-10"
+        },
+        {
+	        "title": "Those Who Are Right 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/124287/those-who-are-right-1"
+        },
+        {
+	        "title": "Those Who Are Right 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/124355/those-who-are-right-2"
+        },
+        {
+	        "title": "Those Who Are Right 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/124440/those-who-are-right-3"
+        },
+        {
+	        "title": "Those Who Are Right 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/124678/those-who-are-right-4"
+        },
+        {
+	        "title": "Those Who Are Right 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/124885/those-who-are-right-5"
+        },
+        {
+	        "title": "Those Who Are Right 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/125646/those-who-are-right-6"
+        },
+        {
+	        "title": "Those Who Are Right 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/125812/those-who-are-right-7"
+        },
+        {
+	        "title": "Interlude - Barking Up The Wrong Tree",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/125970/interlude-barking-up-the-wrong-tree"
+        },
+        {
+	        "title": "Those Who Are Left 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/126666/those-who-are-left-1"
+        },
+        {
+	        "title": "Those Who Are Left 1 (April Fools)",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/127376/those-who-are-left-1-april-fools"
+        },
+        {
+	        "title": "Those Who Are Left 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/127380/those-who-are-left-2"
+        },
+        {
+	        "title": "Those Who Are Left 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/127781/those-who-are-left-3"
+        },
+        {
+	        "title": "Those Who Are Left 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/127986/those-who-are-left-4"
+        },
+        {
+	        "title": "Those Who Are Left 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/128266/those-who-are-left-5"
+        },
+        {
+	        "title": "Those Who Are Left 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/128498/those-who-are-left-6"
+        },
+        {
+	        "title": "Those Who Are Left 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/129307/those-who-are-left-7"
+        },
+        {
+	        "title": "Those Who Are Left 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/129725/those-who-are-left-8"
+        },
+        {
+	        "title": "Those Who Are Left 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/130286/those-who-are-left-9"
+        },
+        {
+	        "title": "Those Who Are Left 10",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/130528/those-who-are-left-10"
+        },
+        {
+	        "title": "Interlude - Once is an accident. Twice is coincidence. Three times - a pattern.",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/130672/interlude-once-is-an-accident-twice-is-coincidence"
+        },
+        {
+	        "title": "Hypocrisy 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/131096/hypocrisy-1"
+        },
+        {
+	        "title": "Duality 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/131663/duality-2"
+        },
+        {
+	        "title": "Ambiguity 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/132225/ambiguity-3"
+        },
+        {
+	        "title": "Duplicity 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/132463/duplicity-4"
+        },
+        {
+	        "title": "Mockery 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/132753/mockery-5"
+        },
+        {
+	        "title": "Fraud 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/133425/fraud-6"
+        },
+        {
+	        "title": "Facade 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/134063/facade-7"
+        },
+        {
+	        "title": "Ambiguity 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/134552/ambiguity-8"
+        },
+        {
+	        "title": "Plausible Deniability 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/134928/plausible-deniability-9"
+        },
+        {
+	        "title": "Omission 10",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/135446/omission-10"
+        },
+        {
+	        "title": "Underhandedness 11",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/135849/underhandedness-11"
+        },
+        {
+	        "title": "Subversion 12",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/136427/subversion-12"
+        },
+        {
+	        "title": "Deception 13",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/136812/deception-13"
+        },
+        {
+	        "title": "Hypocrisy 14",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/137128/hypocrisy-14"
+        },
+        {
+	        "title": "Hypocrisy 15",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/137253/hypocrisy-15"
+        },
+        {
+	        "title": "Interlude - Happy Thoughts",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/137533/interlude-happy-thoughts"
+        },
+        {
+	        "title": "A Hero's Burden 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/137880/a-heros-burden-1"
+        },
+        {
+	        "title": "A Hero's Burden 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/138233/a-heros-burden-2"
+        },
+        {
+	        "title": "A Hero's Burden 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/138533/a-heros-burden-3"
+        },
+        {
+	        "title": "A Hero's Burden 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/138823/a-heros-burden-4"
+        },
+        {
+	        "title": "A Hero's Burden 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/139263/a-heros-burden-5"
+        },
+        {
+	        "title": "A Hero's Burden 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/139481/a-heros-burden-6"
+        },
+        {
+	        "title": "A Hero's Burden 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/141125/a-heros-burden-7"
+        },
+        {
+	        "title": "A Hero's Burden 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/142214/a-heros-burden-8"
+        },
+        {
+	        "title": "A Hero's Burden 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/143931/a-heros-burden-9"
+        },
+        {
+	        "title": "A Hero's Burden 10",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/144659/a-heros-burden-10"
+        },
+        {
+	        "title": "Interlude - You Reap What You Sow",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/145610/interlude-you-reap-what-you-sow"
+        },
+        {
+	        "title": "Upheaval 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/145693/upheaval-1"
+        },
+        {
+	        "title": "Upheaval 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/146569/upheaval-2"
+        },
+        {
+	        "title": "Upheaval 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/146760/upheaval-3"
+        },
+        {
+	        "title": "Upheaval 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/147190/upheaval-4"
+        },
+        {
+	        "title": "Upheaval 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/147420/upheaval-5"
+        },
+        {
+	        "title": "Upheaval 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/147977/upheaval-6"
+        },
+        {
+	        "title": "Upheaval 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/148244/upheaval-7"
+        },
+        {
+	        "title": "Upheaval 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/148797/upheaval-8"
+        },
+        {
+	        "title": "Upheaval 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/149069/upheaval-9"
+        },
+        {
+	        "title": "Upheaval 10",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/149169/upheaval-10"
+        },
+        {
+	        "title": "Upheaval 11",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/149567/upheaval-11"
+        },
+        {
+	        "title": "Interlude - Another day at the office",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/149836/interlude-another-day-at-the-office"
+        },
+        {
+	        "title": "Services Rendered 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/150773/services-rendered-1"
+        },
+        {
+	        "title": "Services Rendered 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/151087/services-rendered-2"
+        },
+        {
+	        "title": "Services Rendered 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/152007/services-rendered-3"
+        },
+        {
+	        "title": "Services Rendered 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/153430/services-rendered-4"
+        },
+        {
+	        "title": "Services Rendered 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/154360/services-rendered-5"
+        },
+        {
+	        "title": "Services Rendered 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/155087/services-rendered-6"
+        },
+        {
+	        "title": "Services Rendered 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/155946/services-rendered-7"
+        },
+        {
+	        "title": "Services Rendered 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/157654/services-rendered-8"
+        },
+        {
+	        "title": "Services Rendered 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/158704/services-rendered-9"
+        },
+        {
+	        "title": "Interlude - House Call",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/159497/interlude-house-call"
+        },
+        {
+	        "title": "Winter's Bite 1",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/160609/winters-bite-1"
+        },
+        {
+	        "title": "Winter's Bite 2",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/161021/winters-bite-2"
+        },
+        {
+	        "title": "Winter's Bite 3",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/161628/winters-bite-3"
+        },
+        {
+	        "title": "Winter's Bite 4",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/162732/winters-bite-4"
+        },
+        {
+	        "title": "Winter's Bite 5",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/163141/winters-bite-5"
+        },
+        {
+	        "title": "Winter's Bite 6",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/163688/winters-bite-6"
+        },
+        {
+	        "title": "Winter's Bite 7",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/163953/winters-bite-7"
+        },
+        {
+	        "title": "Winter's Bite 8",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/164453/winters-bite-8"
+        },
+        {
+	        "title": "Winter's Bite 9",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/165212/winters-bite-9"
+        },
+        {
+	        "title": "Interlude - Professional Courtesy",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/165531/interlude-professional-courtesy"
+        },
+        {
+	        "title": "Interlude - An Honest Review",
+	        "src": "http://royalroadl.com/fiction/8894/everybody-loves-large-chests/chapter/166163/interlude-an-honest-review"
+        }
+	]
+}
