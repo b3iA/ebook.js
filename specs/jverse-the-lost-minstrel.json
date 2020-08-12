@@ -64,6 +64,7 @@
         },
         {
             "title": "The Lost Minstrel - 13",
+			"no-preamble-treshold": 0,
             "src": "http://www.reddit.com/r/HFY/comments/48cj01/ocjverse_the_lost_minstrel_13/"
         },
         {
@@ -76,6 +77,7 @@
         },
         {
             "title": "The Lost Minstrel - 16",
+			"no-preamble-treshold": 0,
             "src": "http://www.reddit.com/r/HFY/comments/4f617y/ocjverse_the_lost_minstrel_16/"
         }
 	]
