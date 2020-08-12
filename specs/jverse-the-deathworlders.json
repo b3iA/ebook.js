@@ -399,6 +399,54 @@
 			"filters": "hfy-archive",
 			"no-preamble-treshold": 0,
 			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation"
+		},
+		{
+			"title": "War On Two Worlds: Escalation",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation/pt2-escalation"
+		},
+		{
+			"title": "War On Two Worlds: Consolidation",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation/pt3-consolidation"
+		},
+		{
+			"title": "War On Two Worlds: Retaliation",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation/pt4-retaliation"
+		},
+		{
+			"title": "War On Two Worlds: Cremation",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation/pt5-cremation"
+		},
+		{
+			"title": "Pyrophytes",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-41-pyrophytes"
+		},
+		{
+			"title": "Big Questions",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-42-big-questions"
+		},
+		{
+			"title": "Scars Both Old And New",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-43-scars-both-old-and-new"
+		},
+		{
+			"title": "Samsara",
+			"filters": "hfy-archive",
+			"no-preamble-treshold": 0,
+			"src": "http://hfy-archive.org/book/deathworlders/chapter-44-samsara"
 		}
 	]
 }
