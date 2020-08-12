@@ -1,11 +1,10 @@
-var request = require('request');
-var cheerio = require('cheerio');
-var child_process = require('child_process');
-var fs = require('fs');
+const request = require('request');
+const cheerio = require('cheerio');
+const fs = require('fs');
 
 function uriToId(uri)
 {
-    return decodeURI(uri.replace(/http:\/\/|www\.|[\?=&#%]/g, '').replace(/[\.\/]/g, '_'));
+    return decodeURI(uri.replace(/http[s]?:\/\/|www\.|[\?=&#%]/g, '').replace(/[\.\/]/g, '_'));
 };
 
 function get(params, callback)
@@ -33,7 +32,6 @@ function get(params, callback)
         params.chap.dom = cheerio.load(body, params.cheerio_flags);
         fs.writeFileSync(__dirname + '/../cache/' + params.chap.id, body, encoding = 'utf-8');
         
-        child_process.execSync("sleep 1");
         callback();
     }}(params, callback, this));
 };
