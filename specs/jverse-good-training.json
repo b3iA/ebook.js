@@ -6,7 +6,6 @@
 			"from-reddit-post",
 			"clean-reddit",
 			"custom-break-to-hr",
-			"no-preamble",
 			"jverse-good-training",
 			"typography",
 			"finalize"
@@ -15,7 +14,6 @@
 			"from-hfy-archive",
 			"clean-reddit",
 			"custom-break-to-hr",
-			"no-preamble",
 			"jverse-good-training",
 			"typography",
 			"finalize"
@@ -101,69 +99,79 @@
 			"src": "http://www.reddit.com/r/HFY/comments/4g6cgw/jverse_good_training_the_locals"
 		},
 		{
-			"title": "The Champions: Prologue",
+			"title": "The Champions Pt I: Prologue",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-i/prologue"
 		},
 		{
-			"title": "The Champions: Tooth & Claw",
+			"title": "The Champions Pt I: Tooth & Claw",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-i/tooth-claw"
 		},
 		{
-			"title": "The Champions: Longest Prefix Match",
+			"title": "The Champions Pt I: Longest Prefix Match",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-i/longest-prefix-match"
 		},
 		{
-			"title": "The Champions: Gametime",
+			"title": "The Champions Pt I: Gametime",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-i/gametime"
 		},
 		{
-			"title": "The Champions: Pounce",
+			"title": "The Champions Pt II: Pounce",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-ii/1-pounce"
 		},
 		{
-			"title": "The Champions: Kin and Clan",
+			"title": "The Champions Pt II: Kin and Clan",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-ii/2-kin-and-clan"
 		},
 		{
-			"title": "The Champions: Tall Tales",
+			"title": "The Champions Pt II: Tall Tales",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-ii/3-tall-tales"
 		},
 		{
-			"title": "The Champions: The First Ring",
+			"title": "The Champions Pt II: The First Ring",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-ii/4-first-ring"
 		},
 		{
-			"title": "The Champions: Plans and Plots",
+			"title": "The Champions Pt II: Plans and Plots",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-ii/5-plans-and-plots"
 		},
 		{
-			"title": "The Champions: Beginnings and Endings",
+			"title": "The Champions Pt II: Beginnings and Endings",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-ii/6-beginnings-and-endings"
 		},
 		{
-			"title": "The Champions: Doom and Gloom",
+			"title": "The Champions Pt II: Doom and Gloom",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-ii/7-doom-and-gloom"
 		},
 		{
-			"title": "The Champions: Tidying Up",
+			"title": "The Champions Pt II: Tidying Up",
 			"filters": "hfy-archive",
 			"src": "http://hfy-archive.org/book/good-training-champions-pt-ii/8-tidying"
 		},
 		{
-			"title": "Pecking Order",
+			"title": "Good Training: Pecking Order",
 			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/5bqqxo/jverse_good_training_pecking_order"
+			"src": "http://www.reddit.com/r/HFY/comments/5bqqxo/jverse_good_training_pecking_order/"
+		},
+		{
+			"title": "Good Training: April Fool's",
+			"filters": "reddit",
+			"src": "http://www.reddit.com/r/HFY/comments/62x6gt/jverse_good_training_april_fools/"
+		},
+		{
+			"title": "Good Training: Survival",
+			"filters": "hfy-archive",
+			"src": "http://hfy-archive.org/book/good-training/survival"
 		}
 	]
 }
