@@ -4,7 +4,6 @@
 	"filters": [
 		"from-reddit-post",
 		"clean-reddit",
-		"no-preamble",
 		"jverse-mia",
 		"typography",
 		"finalize"
