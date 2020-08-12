@@ -1,12 +1,12 @@
-var cheerio = require('cheerio');
+const cheerio = require('cheerio');
 
 function filterText($, e)
 {
     if(e.type === 'tag')
     {
-        var c = $(e).contents();
+        const c = $(e).contents();
         
-        for(var i = 0; i < c.length; i++)
+        for(let i = 0; i < c.length; i++)
             filterText($, c[i]);
     }
     else if(e.type === 'text')
@@ -21,8 +21,8 @@ function filterText($, e)
 
 function apply(params, next)
 {
-    var $ = params.chap.dom;
-    var cont = $($('.entry-content')[0].children);
+    const $ = params.chap.dom;
+    const cont = $($('.entry-content')[0].children);
     
     $._root.children = [];
     $.root().append(cont);
@@ -37,8 +37,8 @@ function apply(params, next)
     
     $('p').each(function(i, e)
     {
-        var el = $(e);
-        var t = el.text();
+        const el = $(e);
+        const t = el.text();
         
         if(t.replace(/&nbsp;/g, '').trim() === '')
         {
@@ -55,15 +55,15 @@ function apply(params, next)
         delete e.attribs['ltr'];
         delete e.attribs['style'];
     
-        var c = el.children();
+        const c = el.children();
         
         if(c.length < 1)
             return;
         
-        c = c[c.length - 1];
+        let lc = c[c.length - 1];
         
-        if(c.type === 'tag' && c.name === 'br')
-            $(c).remove();
+        if(lc.type === 'tag' && lc.name === 'br')
+            $(lc).remove();
     });
     
     $('i').each(function(i, e)
@@ -78,20 +78,20 @@ function apply(params, next)
 
     $('em').each(function(i, e)
     {
-        var c = $(e).children();
+        const c = $(e).children();
         
         if(c.length < 1)
             return;
             
-        c = c[c.length - 1];
+        let lc = c[c.length - 1];
         
-        if(c.type === 'tag' && c.name === 'br')
-            $(c).remove();
+        if(lc.type === 'tag' && lc.name === 'br')
+            $(lc).remove();
     });
     
     if(params.chap.title === '1.01')
     {
-        var ps = $('p');
+        const ps = $('p');
         
         $(ps[0]).remove();
         $(ps[1]).remove();
@@ -101,16 +101,16 @@ function apply(params, next)
     {
         $('strong').each(function(i, e)
         {
-            var el = $(e);
+            const el = $(e);
             
             if(el.text() === '')
                 el.remove();
         });
     }
     
-    var c = $.root().children();
+    const c = $.root().children();
     
-    for(var i = 0; i < c.length; i++)
+    for(let i = 0; i < c.length; i++)
         filterText($, c[i]);
     
     next();
