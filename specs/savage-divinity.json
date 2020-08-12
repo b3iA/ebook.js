@@ -1,0 +1,1076 @@
+{
+   "title": "Savage Divinity",
+   "creator": "RuffWriter",
+   "filename": "Savage Divinity",
+   "output": ["html", "epub", "latex"],
+   "filters":
+   [
+		"from-url",
+		"savage-divinity",
+		"typography",
+		"finalize"
+	],
+	"contents":
+	[
+		{
+			"title": "New Beginnings: Chapter 01",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-1/"
+		},
+		{
+			"title": "New Beginnings: Chapter 02",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-2/"
+		},
+		{
+			"title": "New Beginnings: Chapter 03",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-3/"
+		},
+		{
+			"title": "New Beginnings: Chapter 04",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-4/"
+		},
+		{
+			"title": "New Beginnings: Chapter 05",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-5/"
+		},
+		{
+			"title": "New Beginnings: Chapter 06",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-6/"
+		},
+		{
+			"title": "New Beginnings: Chapter 07",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-7/"
+		},
+		{
+			"title": "New Beginnings: Chapter 08",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-8/"
+		},
+		{
+			"title": "New Beginnings: Chapter 09",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-9/"
+		},
+		{
+			"title": "New Beginnings: Chapter 10",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-10/"
+		},
+		{
+			"title": "New Beginnings: Chapter 11",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-11/"
+		},
+		{
+			"title": "New Beginnings: Chapter 12",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-12/"
+		},
+		{
+			"title": "New Beginnings: Chapter 13",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-13/"
+		},
+		{
+			"title": "New Beginnings: Chapter 14",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/07/savage-divinity-chapter-14/"
+		},
+		{
+			"title": "New Beginnings: Chapter 15",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-15/"
+		},
+		{
+			"title": "New Beginnings: Chapter 16",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-16/"
+		},
+		{
+			"title": "New Beginnings: Chapter 17",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-17/"
+		},
+		{
+			"title": "New Beginnings: Chapter 18",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-18/"
+		},
+		{
+			"title": "New Beginnings: Chapter 19",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-19/"
+		},
+		{
+			"title": "Convictions: Chapter 20",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-20/"
+		},
+		{
+			"title": "Convictions: Chapter 21",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-21/"
+		},
+		{
+			"title": "Convictions: Chapter 22",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-22/"
+		},
+		{
+			"title": "Convictions: Chapter 23",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-23/"
+		},
+		{
+			"title": "Convictions: Chapter 24",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-24/"
+		},
+		{
+			"title": "Convictions: Chapter 25",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-25/"
+		},
+		{
+			"title": "Convictions: Chapter 26",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-26/"
+		},
+		{
+			"title": "Convictions: Chapter 27",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-27/"
+		},
+		{
+			"title": "Convictions: Chapter 28",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-28/"
+		},
+		{
+			"title": "Convictions: Chapter 29",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-29/"
+		},
+		{
+			"title": "Convictions: Chapter 30",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-30/"
+		},
+		{
+			"title": "Convictions: Chapter 31",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-31/"
+		},
+		{
+			"title": "Convictions: Chapter 32",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-32/"
+		},
+		{
+			"title": "Convictions: Chapter 33",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-33/"
+		},
+		{
+			"title": "Convictions: Chapter 34",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-34/"
+		},
+		{
+			"title": "Convictions: Chapter 35",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-35/"
+		},
+		{
+			"title": "Convictions: Chapter 36",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-36/"
+		},
+		{
+			"title": "Transgressions: Chapter 37",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-37/"
+		},
+		{
+			"title": "Transgressions: Chapter 38",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-38/"
+		},
+		{
+			"title": "Transgressions: Chapter 39",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-39/"
+		},
+		{
+			"title": "Transgressions: Chapter 40",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/08/savage-divinity-chapter-40/"
+		},
+		{
+			"title": "Transgressions: Chapter 41",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/09/savage-divinity-chapter-41/"
+		},
+		{
+			"title": "Transgressions: Chapter 42",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/11/savage-divinity-chapter-42/"
+		},
+		{
+			"title": "Transgressions: Chapter 43",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/12/savage-divinity-chapter-43/"
+		},
+		{
+			"title": "Transgressions: Chapter 44",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/13/savage-divinity-chapter-44/"
+		},
+		{
+			"title": "Transgressions: Chapter 45",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/14/savange-divinity-chapter-45/"
+		},
+		{
+			"title": "Transgressions: Chapter 46",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/15/savage-divinity-chapter-46/"
+		},
+		{
+			"title": "Transgressions: Chapter 47",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/16/savage-divinity-chapter-47/"
+		},
+		{
+			"title": "Transgressions: Chapter 48",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/18/savage-divinity-chapter-48/"
+		},
+		{
+			"title": "Transgressions: Chapter 49",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/19/savage-divinity-chapter-49/"
+		},
+		{
+			"title": "Transgressions: Chapter 50",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/20/savage-divinity-chapter-50/"
+		},
+		{
+			"title": "Transgressions: Chapter 51",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/21/savage-divinity-chapter-51/"
+		},
+		{
+			"title": "Transgressions: Chapter 52",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/22/savage-divinity-chapter-52/"
+		},
+		{
+			"title": "Transgressions: Chapter 53",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/23/savage-divinity-chapter-53/"
+		},
+		{
+			"title": "Transgressions: Chapter 54",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/25/savage-divinity-chapter-54/"
+		},
+		{
+			"title": "Transgressions: Chapter 55",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/26/savage-divinity-chapter-55/"
+		},
+		{
+			"title": "Transgressions: Chapter 56",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/27/savage-divinity-chapter-56/"
+		},
+		{
+			"title": "Transgressions: Chapter 57",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/28/savage-divinity-chapter-57/"
+		},
+		{
+			"title": "Transgressions: Chapter 58",
+			"src": "https://ruffwriterblog.wordpress.com/2016/04/29/savage-divinity-chapter-58/"
+		},
+		{
+			"title": "Conflicts: Chapter 59",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/02/savage-divinity-chapter-59-conflict/"
+		},
+		{
+			"title": "Conflicts: Chapter 60",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/03/savage-divinity-chapter-60/"
+		},
+		{
+			"title": "Conflicts: Chapter 61",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/04/savage-divinity-chapter-61/"
+		},
+		{
+			"title": "Conflicts: Chapter 62",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/05/savage-divinity-chapter-62/"
+		},
+		{
+			"title": "Conflicts: Chapter 63",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/06/savage-divinity-chapter-63/"
+		},
+		{
+			"title": "Conflicts: Chapter 64",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/07/savage-divinity-chapter-64/"
+		},
+		{
+			"title": "Conflicts: Chapter 65",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/09/savage-divinity-chapter-65/"
+		},
+		{
+			"title": "Conflicts: Chapter 66",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/11/savage-divinity-chapter-66/"
+		},
+		{
+			"title": "Conflicts: Chapter 67",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/13/savage-divinity-chapter-67/"
+		},
+		{
+			"title": "Conflicts: Chapter 68",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/16/savage-divinity-chapter-68/"
+		},
+		{
+			"title": "Conflicts: Chapter 69",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/18/savage-divinity-chapter-69/"
+		},
+		{
+			"title": "Conflicts: Chapter 70",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/20/savage-divinity-chapter-70/"
+		},
+		{
+			"title": "Conflicts: Chapter 71",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/23/savage-divinity-chapter-71/"
+		},
+		{
+			"title": "Conflicts: Chapter 72",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/25/savage-divinity-chapter-72/"
+		},
+		{
+			"title": "Conflicts: Chapter 73",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/27/savage-divinity-chapter-73/"
+		},
+		{
+			"title": "Conflicts: Chapter 74",
+			"src": "https://ruffwriterblog.wordpress.com/2016/05/30/savage-divinity-chapter-74/"
+		},
+		{
+			"title": "Conflicts: Chapter 75",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/01/savage-divinity-chapter-75/"
+		},
+		{
+			"title": "Conflicts: Chapter 76",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/03/savage-divinity-chapter-76/"
+		},
+		{
+			"title": "Conflicts: Chapter 77",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/06/savage-divinity-chapter-77/"
+		},
+		{
+			"title": "Conflicts: Chapter 78",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/08/savage-divinity-chapter-78/"
+		},
+		{
+			"title": "Trials: Chapter 79",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/10/savage-divinity-chapter-79/"
+		},
+		{
+			"title": "Trials: Chapter 80",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/13/savage-divinity-chapter-80/"
+		},
+		{
+			"title": "Trials: Chapter 81",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/15/savage-divinity-chapter-81/"
+		},
+		{
+			"title": "Trials: Chapter 82",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/17/savage-divinity-chapter-82/"
+		},
+		{
+			"title": "Trials: Chapter 83",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/20/savage-divinity-chapter-83/"
+		},
+		{
+			"title": "Trials: Chapter 84",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/22/savage-divinity-chapter-84/"
+		},
+		{
+			"title": "Trials: Chapter 85",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/24/savage-divinity-chapter-85/"
+		},
+		{
+			"title": "Trials: Chapter 86",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/27/savage-divinity-chapter-86/"
+		},
+		{
+			"title": "Trials: Chapter 87",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/29/savage-divinity-chapter-87/"
+		},
+		{
+			"title": "Trials: Chapter 88",
+			"src": "https://ruffwriterblog.wordpress.com/2016/06/30/savage-divinity-chapter-88/"
+		},
+		{
+			"title": "Trials: Chapter 89",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/04/savage-divinity-chapter-89/"
+		},
+		{
+			"title": "Trials: Chapter 90",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/06/savage-divinity-chapter-90/"
+		},
+		{
+			"title": "Trials: Chapter 91",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/08/savage-divinity-chapter-91/"
+		},
+		{
+			"title": "Trials: Chapter 92",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/11/savage-divinity-chapter-92/"
+		},
+		{
+			"title": "Trials: Chapter 93",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/13/savage-divinity-chapter-93/"
+		},
+		{
+			"title": "Trials: Chapter 94",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/15/savage-divinity-chapter-94/"
+		},
+		{
+			"title": "Trials: Chapter 95",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/18/savage-divinity-chapter-95/"
+		},
+		{
+			"title": "Trials: Chapter 96",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/20/savage-divinity-chapter-96/"
+		},
+		{
+			"title": "Trials: Chapter 97",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/22/savage-divinity-chapter-97/"
+		},
+		{
+			"title": "Trials: Chapter 98",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/25/savage-divinity-chapter-98/"
+		},
+		{
+			"title": "Trials: Chapter 99",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/27/savage-divinity-chapter-99/"
+		},
+		{
+			"title": "Trials: Chapter 100",
+			"src": "https://ruffwriterblog.wordpress.com/2016/07/29/savage-divinity-chapter-100/"
+		},
+		{
+			"title": "Resolution: Chapter 101",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/01/savage-divinity-chapter-101/"
+		},
+		{
+			"title": "Resolution: Chapter 102",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/03/savage-divinity-chapter-102/"
+		},
+		{
+			"title": "Resolution: Chapter 103",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/05/savage-divinity-chapter-103/"
+		},
+		{
+			"title": "Resolution: Chapter 104",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/08/savage-divinity-chapter-104/"
+		},
+		{
+			"title": "Resolution: Chapter 105",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/10/savage-divinity-chapter-105/"
+		},
+		{
+			"title": "Resolution: Chapter 106",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/12/savage-divinity-chapter-106/"
+		},
+		{
+			"title": "Resolution: Chapter 107",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/15/savage-divinity-chapter-107/"
+		},
+		{
+			"title": "Resolution: Chapter 108",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/17/savage-divinity-chapter-108/"
+		},
+		{
+			"title": "Resolution: Chapter 109",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/18/savage-divinity-chapter-109/"
+		},
+		{
+			"title": "Resolution: Chapter 110",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/22/savage-divinity-chapter-110/"
+		},
+		{
+			"title": "Resolution: Chapter 111",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/23/savage-divinity-chapter-111/"
+		},
+		{
+			"title": "Resolution: Chapter 112",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/26/savage-divinity-chapter-112/"
+		},
+		{
+			"title": "Resolution: Chapter 113",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/29/savage-divinity-chapter-113/"
+		},
+		{
+			"title": "Resolution: Chapter 114",
+			"src": "https://ruffwriterblog.wordpress.com/2016/08/31/savage-divinity-chapter-114/"
+		},
+		{
+			"title": "Resolution: Chapter 115",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/02/savage-divinity-chapter-115/"
+		},
+		{
+			"title": "Resolution: Chapter 116",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/05/savage-divinity-chapter-116/"
+		},
+		{
+			"title": "Resolution: Chapter 117",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/07/savage-divinity-chapter-117/"
+		},
+		{
+			"title": "Baptism: Chapter 118",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/12/savage-divinity-chapter-118/"
+		},
+		{
+			"title": "Baptism: Chapter 119",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/19/chapter-119/"
+		},
+		{
+			"title": "Baptism: Chapter 120",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/21/savage-divinity-chapter-120/"
+		},
+		{
+			"title": "Baptism: Chapter 121",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/23/savage-divinity-chapter-121/"
+		},
+		{
+			"title": "Baptism: Chapter 122",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/26/savage-divinity-chapter-122/"
+		},
+		{
+			"title": "Baptism: Chapter 123",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/28/savage-divinity-chapter-125/"
+		},
+		{
+			"title": "Baptism: Chapter 124",
+			"src": "https://ruffwriterblog.wordpress.com/2016/09/30/savage-divinity-chapter-124/"
+		},
+		{
+			"title": "Baptism: Chapter 125",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/03/savage-divinity-chapter-125-2/"
+		},
+		{
+			"title": "Baptism: Chapter 126",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/05/2042/"
+		},
+		{
+			"title": "Baptism: Chapter 127",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/07/savage-divinity-chapter-127/"
+		},
+		{
+			"title": "Baptism: Chapter 128",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/10/savage-divinity-chapter-128/"
+		},
+		{
+			"title": "Baptism: Chapter 129",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/12/2068/"
+		},
+		{
+			"title": "Baptism: Chapter 130",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/14/savage-divinity-chapter-130/"
+		},
+		{
+			"title": "Baptism: Chapter 131",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/17/savage-divinity-chapter-131/"
+		},
+		{
+			"title": "Baptism: Chapter 132",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/19/savage-divinity-chapter-132/"
+		},
+		{
+			"title": "Baptism: Chapter 133",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/21/savage-divinity-chapter-133/"
+		},
+		{
+			"title": "Baptism: Chapter 134",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/24/savage-divinity-chapter-134/"
+		},
+		{
+			"title": "Baptism: Chapter 135",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/26/savage-divinity-chapter-135/"
+		},
+		{
+			"title": "Baptism: Chapter 136",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/28/savage-divinity-chapter-136/"
+		},
+		{
+			"title": "Reflections: Chapter 137",
+			"src": "https://ruffwriterblog.wordpress.com/2016/10/31/savage-divinity-chapter-137-reflections/"
+		},
+		{
+			"title": "Reflections: Chapter 138",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/02/savage-divinity-chapter-138/"
+		},
+		{
+			"title": "Reflections: Chapter 139",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/04/savage-divinity-chapter-139/"
+		},
+		{
+			"title": "Reflections: Chapter 140",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/07/savage-divinity-chapter-140/"
+		},
+		{
+			"title": "Reflections: Chapter 141",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/09/savage-divinity-chapter-141/"
+		},
+		{
+			"title": "Reflections: Chapter 142",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/11/savage-divinity-chapter-142/"
+		},
+		{
+			"title": "Reflections: Chapter 143",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/14/savage-divinity-chapter-143/"
+		},
+		{
+			"title": "Reflections: Chapter 144",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/16/savage-divinity-chapter-144-2/"
+		},
+		{
+			"title": "Reflections: Chapter 145",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/18/savage-divinity-chapter-145/"
+		},
+		{
+			"title": "Reflections: Chapter 146",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/21/2189/"
+		},
+		{
+			"title": "Reflections: Chapter 147",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/23/savage-divinity-chapter-147/"
+		},
+		{
+			"title": "Reflections: Chapter 148",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/25/savage-divinity-chapter-148/"
+		},
+		{
+			"title": "Reflections: Chapter 149",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/28/savage-divinity-chapter-149/"
+		},
+		{
+			"title": "Reflections: Chapter 150",
+			"src": "https://ruffwriterblog.wordpress.com/2016/11/30/savage-divinity-chapter-150/"
+		},
+		{
+			"title": "Reflections: Chapter 151",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/02/savage-divinity-chapter-151/"
+		},
+		{
+			"title": "Reflections: Chapter 152",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/05/savage-divinity-chapter-152/"
+		},
+		{
+			"title": "Reflections: Chapter 153",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/08/savage-divinity-chapter-153/"
+		},
+		{
+			"title": "Reflections: Chapter 154",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/09/savage-divinity-chapter-154/"
+		},
+		{
+			"title": "Reflections: Chapter 155",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/13/savage-divinity-chapter-155/"
+		},
+		{
+			"title": "Reflections: Chapter 156",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/13/savage-divinity-chapter-156/"
+		},
+		{
+			"title": "Reflections: Chapter 157",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/13/savage-divinity-chapter-157/"
+		},
+		{
+			"title": "Reflections: Chapter 158",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/13/savage-divinity-chapter-158/"
+		},
+		{
+			"title": "Purge: Chapter 159",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/09/savage-divinity-chapter-159/"
+		},
+		{
+			"title": "Purge: Chapter 160",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/11/savage-divinity-chapter-160/"
+		},
+		{
+			"title": "Purge: Chapter 161",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/13/savage-divinity-chapter-161/"
+		},
+		{
+			"title": "Purge: Chapter 162",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/16/savage-divinity-chapter-162/"
+		},
+		{
+			"title": "Purge: Chapter 163",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/18/savage-divinity-chapter-163/"
+		},
+		{
+			"title": "Purge: Chapter 164",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/20/savage-divinity-chapter-164/"
+		},
+		{
+			"title": "Purge: Chapter 165",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/23/savage-divinity-chapter-165/"
+		},
+		{
+			"title": "Purge: Chapter 166",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/25/savage-divinity-chapter-166/"
+		},
+		{
+			"title": "Purge: Chapter 167",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/27/savage-divinity-chapter-167/"
+		},
+		{
+			"title": "Purge: Chapter 168",
+			"src": "https://ruffwriterblog.wordpress.com/2017/01/30/2819/"
+		},
+		{
+			"title": "Purge: Chapter 169",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/01/savage-divinity-chapter-169/"
+		},
+		{
+			"title": "Purge: Chapter 170",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/06/2846/"
+		},
+		{
+			"title": "Purge: Chapter 171",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/09/savage-divinity-chapter-171/"
+		},
+		{
+			"title": "Purge: Chapter 172",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/13/savage-divinity-chapter-172/"
+		},
+		{
+			"title": "Purge: Chapter 173",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/15/savage-divinity-chapter-173/"
+		},
+		{
+			"title": "Purge: Chapter 174",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/17/savage-divinity-chapter-174/"
+		},
+		{
+			"title": "Purge: Chapter 175",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/20/savage-divinity-chapter-175/"
+		},
+		{
+			"title": "Dissonance: Chapter 176",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/22/savage-divinity-chapter-176-dissonance/"
+		},
+		{
+			"title": "Dissonance: Chapter 177",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/24/savage-divinity-chapter-177/"
+		},
+		{
+			"title": "Dissonance: Chapter 178",
+			"src": "https://ruffwriterblog.wordpress.com/2017/02/27/savage-divinity-chapter-178/"
+		},
+		{
+			"title": "Dissonance: Chapter 179",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/01/savage-divinity-chapter-179/"
+		},
+		{
+			"title": "Dissonance: Chapter 180",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/03/savage-divinity-chapter-180/"
+		},
+		{
+			"title": "Dissonance: Chapter 181",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/08/savage-divinity-chapter-181/"
+		},
+		{
+			"title": "Dissonance: Chapter 182",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/10/savage-divinity-chapter-182/"
+		},
+		{
+			"title": "Dissonance: Chapter 183",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/13/savage-divinity-chapter-183/"
+		},
+		{
+			"title": "Dissonance: Chapter 184",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/15/savage-divinity-chapter-184/"
+		},
+		{
+			"title": "Dissonance: Chapter 185",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/17/savage-divinity-chapter-185/"
+		},
+		{
+			"title": "Dissonance: Chapter 186",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/20/savage-divinity-chapter-186/"
+		},
+		{
+			"title": "Dissonance: Chapter 187",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/22/savage-divinity-chapter-187/"
+		},
+		{
+			"title": "Dissonance: Chapter 188",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/25/savage-divinity-chapter-188/"
+		},
+		{
+			"title": "Dissonance: Chapter 189",
+			"src": "https://ruffwriterblog.wordpress.com/2017/03/28/savage-divinity-chapter-189/"
+		},
+		{
+			"title": "Dissonance: Chapter 190",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/03/savage-divinity-chapter-190/"
+		},
+		{
+			"title": "Dissonance: Chapter 191",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/05/savage-divinity-chapter-191/"
+		},
+		{
+			"title": "Dissonance: Chapter 192",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/07/savage-divinity-chapter-192/"
+		},
+		{
+			"title": "Turmoil: Chapter 193",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/10/savage-divinity-chapter-193-purify/"
+		},
+		{
+			"title": "Turmoil: Chapter 194",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/12/savage-divinity-chapter-194/"
+		},
+		{
+			"title": "Turmoil: Chapter 195",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/17/savage-divinity-chapter-195/"
+		},
+		{
+			"title": "Turmoil: Chapter 196",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/19/savage-divinity-chapter-196/"
+		},
+		{
+			"title": "Turmoil: Chapter 197",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/21/savage-divinity-chapter-197/"
+		},
+		{
+			"title": "Turmoil: Chapter 198",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/24/savage-divinity-chapter-198/"
+		},
+		{
+			"title": "Turmoil: Chapter 199",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/26/savage-divinity-chapter-199/"
+		},
+		{
+			"title": "Turmoil: Chapter 200",
+			"src": "https://ruffwriterblog.wordpress.com/2017/04/28/savage-divinity-chapter-200/"
+		},
+		{
+			"title": "Turmoil: Chapter 201",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/01/savage-divinity-chapter-201/"
+		},
+		{
+			"title": "Turmoil: Chapter 202",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/03/savage-divinity-chapter-202/"
+		},
+		{
+			"title": "Turmoil: Chapter 203",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/05/savage-divinity-chapter-203/"
+		},
+		{
+			"title": "Turmoil: Chapter 204",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/08/savage-divinity-chapter-204/"
+		},
+		{
+			"title": "Turmoil: Chapter 205",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/10/savage-divinity-chapter-205/"
+		},
+		{
+			"title": "Turmoil: Chapter 206",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/12/savage-divinity-chapter-206/"
+		},
+		{
+			"title": "Turmoil: Chapter 207",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/15/savage-divinity-chapter-207/"
+		},
+		{
+			"title": "Turmoil: Chapter 208",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/17/savage-divinity-chapter-208/"
+		},
+		{
+			"title": "Turmoil: Chapter 209",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/19/savage-divinity-chapter-209/"
+		},
+		{
+			"title": "Turmoil: Chapter 210",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/24/savage-divinity-chapter-210/"
+		},
+		{
+			"title": "Turmoil: Chapter 211",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/26/savage-divinity-chapter-211/"
+		},
+		{
+			"title": "Turmoil: Chapter 212",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/29/savage-divinity-chapter-212/"
+		},
+		{
+			"title": "Purify: Chapter 213",
+			"src": "https://ruffwriterblog.wordpress.com/2017/05/31/savage-divinity-chapter-213-purify/"
+		},
+		{
+			"title": "Purify: Chapter 214",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/02/savage-divinity-chapter-214/"
+		},
+		{
+			"title": "Purify: Chapter 215",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/05/savage-divinity-chapter-215/"
+		},
+		{
+			"title": "Purify: Chapter 216",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/07/savage-divinity-chapter-216/"
+		},
+		{
+			"title": "Purify: Chapter 217",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/10/savage-divinity-chapter-217/"
+		},
+		{
+			"title": "Purify: Chapter 218",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/12/savage-divinity-chapter-218/"
+		},
+		{
+			"title": "Purify: Chapter 219",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/14/savage-divinity-chapter-219/"
+		},
+		{
+			"title": "Purify: Chapter 220",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/16/savage-divinity-chapter-220/"
+		},
+		{
+			"title": "Purify: Chapter 221",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/21/savage-divinity-chapter-221/"
+		},
+		{
+			"title": "Purify: Chapter 222",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/23/savage-divinity-chapter-222/"
+		},
+		{
+			"title": "Purify: Chapter 223",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/27/savage-divinity-chapter-213/"
+		},
+		{
+			"title": "Purify: Chapter 224",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/28/savage-divinity-chapter-224/"
+		},
+		{
+			"title": "Purify: Chapter 225",
+			"src": "https://ruffwriterblog.wordpress.com/2017/06/30/savage-divinity-chapter-225/"
+		},
+		{
+			"title": "Purify: Chapter 226",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/03/savage-divinity-chapter-226/"
+		},
+		{
+			"title": "Purify: Chapter 227",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/05/savage-divinity-chapter-227/"
+		},
+		{
+			"title": "Purify: Chapter 228",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/07/savage-divinity-chapter-228/"
+		},
+		{
+			"title": "Purify: Chapter 229",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/10/savage-divinity-chapter-229/"
+		},
+		{
+			"title": "Purify: Chapter 230",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/12/savage-divinity-chapter-230/"
+		},
+		{
+			"title": "Purify: Chapter 231",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/15/savage-divinity-chapter-231/"
+		},
+		{
+			"title": "Purify: Chapter 232",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/17/savage-divinity-chapter-232/"
+		},
+		{
+			"title": "Introspection: Chapter 233",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/31/savage-divinity-chapter-233-introspection/"
+		},
+		{
+			"title": "Introspection: Chapter 234",
+			"src": "https://ruffwriterblog.wordpress.com/2017/08/02/savage-divinity-chapter-234/"
+		},
+		{
+			"title": "Introspection: Chapter 235",
+			"src": "https://ruffwriterblog.wordpress.com/2017/08/04/6655/"
+		},
+		{
+			"title": "Introspection: Chapter 236",
+			"src": "https://ruffwriterblog.wordpress.com/2017/08/21/6791/"
+		},
+		{
+			"title": "Introspection: Chapter 237",
+			"src": "https://ruffwriterblog.wordpress.com/2017/08/23/savage-divinity-chapter-237/"
+		},
+		{
+			"title": "Introspection: Chapter 238",
+			"src": "https://ruffwriterblog.wordpress.com/2017/08/25/savage-divinity-chapter-238/"
+		},
+		{
+			"title": "Introspection: Chapter 239",
+			"src": "https://ruffwriterblog.wordpress.com/2017/08/28/savage-divinity-chapter-239/"
+		},
+		{
+			"title": "Introspection: Chapter 240",
+			"src": "https://ruffwriterblog.wordpress.com/2017/08/30/savage-divinity-chapter-240/"
+		},
+		{
+			"title": "Introspection: Chapter 241",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/01/savage-divinity-chapter-241/"
+		},
+		{
+			"title": "Introspection: Chapter 242",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/04/savage-divinity-chapter-242/"
+		},
+		{
+			"title": "Introspection: Chapter 243",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/07/savage-divinity-chapter-243/"
+		},
+		{
+			"title": "Introspection: Chapter 244",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/08/savage-divinity-chapter-244/"
+		},
+		{
+			"title": "Introspection: Chapter 245",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/11/savage-divinity-chapter-245/"
+		},
+		{
+			"title": "Introspection: Chapter 246",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/13/savage-divinity-chapter-246/"
+		},
+		{
+			"title": "Introspection: Chapter 247",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/15/savage-divinity-chapter-247/"
+		},
+		{
+			"title": "Introspection: Chapter 248",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/18/savage-divinity-chapter-248/"
+		},
+		{
+			"title": "Introspection: Chapter 249",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/20/savage-divinity-chapter-249/"
+		},
+		{
+			"title": "TBD: Chapter 250",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/22/savage-divinity-chapter-250/"
+		},
+		{
+			"title": "TBD: Chapter 251",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/25/savage-divinity-chapter-251/"
+		},
+		{
+			"title": "TBD: Chapter 252",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/27/savage-divinity-chapter-252/"
+		},
+		{
+			"title": "TBD: Chapter 253",
+			"src": "https://ruffwriterblog.wordpress.com/2017/09/29/savage-divinity-chapter-253/"
+		},
+		{
+			"title": "TBD: Chapter 254",
+			"src": "https://ruffwriterblog.wordpress.com/2017/10/02/8320/"
+		},
+		{
+			"title": "TBD: Chapter 255",
+			"src": "https://ruffwriterblog.wordpress.com/2017/10/04/savage-divinity-chapter-255/"
+		},
+		{
+			"title": "TBD: Chapter 256",
+			"src": "https://ruffwriterblog.wordpress.com/2017/10/06/savage-divinity-chapter-256/"
+		},
+		{
+			"title": "TBD: Chapter 257",
+			"src": "https://ruffwriterblog.wordpress.com/2017/10/11/savage-divinity-chapter-257/"
+		},
+		{
+			"title": "TBD: Chapter 258",
+			"src": "https://ruffwriterblog.wordpress.com/2017/10/13/savage-divinity-chapter-258/"
+		},
+		{
+			"title": "Side Stories: SS 01",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/23/savage-divinity-short-story-1/"
+		},
+		{
+			"title": "Side Stories: SS 02",
+			"src": "https://ruffwriterblog.wordpress.com/2016/12/30/savage-divinity-side-story-02/"
+		},
+		{
+			"title": "Side Stories: SS 03",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/19/savage-divinity-side-story-03/"
+		},
+		{
+			"title": "Side Stories: SS 04",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/21/savage-divinity-side-story-04/"
+		},
+		{
+			"title": "Side Stories: SS 05",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/24/savage-divinity-side-story-05/"
+		},
+		{
+			"title": "Side Stories: SS 06",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/26/savage-divinity-side-story-06/"
+		},
+		{
+			"title": "Side Stories: SS 07",
+			"src": "https://ruffwriterblog.wordpress.com/2017/07/28/savage-divinity-side-story-07/"
+		}
+	]
+}
