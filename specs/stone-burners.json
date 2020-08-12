@@ -1,0 +1,547 @@
+{
+	"title": "Stone Burners",
+	"creator": "syphaxbox",
+	"filters": [
+		"from-url",
+		"stone-burners",
+		"typography",
+		"finalize"
+	],
+	"filename": "Stone Burners",
+	"output": ["epub", "latex", "html"],
+	"contents":
+	[
+        {
+	        "title": "Start",
+	        "src": "https://stoneburners.wordpress.com/2013/10/27/start/"
+        },
+        {
+	        "title": "Day Two",
+	        "src": "https://stoneburners.wordpress.com/2013/10/28/in-the-beginning-day-two/"
+        },
+        {
+	        "title": "Wheeeee!!!",
+	        "src": "https://stoneburners.wordpress.com/2013/11/04/in-the-beginning-wheeeee/"
+        },
+        {
+	        "title": "Slice",
+	        "src": "https://stoneburners.wordpress.com/2013/11/08/in-the-beginning-slice/"
+        },
+        {
+	        "title": "Skulker",
+	        "src": "https://stoneburners.wordpress.com/2013/11/11/in-the-beginning-skulker/"
+        },
+        {
+	        "title": "Silver Eye",
+	        "src": "https://stoneburners.wordpress.com/2013/11/15/in-the-beginning-silver-eye/"
+        },
+        {
+	        "title": "Ready to Fall",
+	        "src": "https://stoneburners.wordpress.com/2013/11/18/blood-red-ready-to-fall/"
+        },
+        {
+	        "title": "Delta",
+	        "src": "https://stoneburners.wordpress.com/2013/11/22/blood-red-delta/"
+        },
+        {
+	        "title": "Spiral",
+	        "src": "https://stoneburners.wordpress.com/2013/11/25/blood-red-spiral/"
+        },
+        {
+	        "title": "Nomad",
+	        "src": "https://stoneburners.wordpress.com/2013/12/02/blood-red-nomad/"
+        },
+        {
+	        "title": "Long Pork",
+	        "src": "https://stoneburners.wordpress.com/2013/12/06/blood-red-long-pork/"
+        },
+        {
+	        "title": "Right Outside Your Door",
+	        "src": "https://stoneburners.wordpress.com/2013/12/16/hunting-season-right-outside-your-door/"
+        },
+        {
+	        "title": "Black and White",
+	        "src": "https://stoneburners.wordpress.com/2013/12/20/hunting-season-black-and-white/"
+        },
+        {
+	        "title": "This Just In",
+	        "src": "https://stoneburners.wordpress.com/2013/12/27/hunting-season-this-just-in/"
+        },
+        {
+	        "title": "Bones",
+	        "src": "https://stoneburners.wordpress.com/2013/12/30/hunting-season-bones/"
+        },
+        {
+	        "title": "Miyahuatl",
+	        "src": "https://stoneburners.wordpress.com/2014/01/03/hunting-season-miyahuatl/"
+        },
+        {
+	        "title": "Boom",
+	        "src": "https://stoneburners.wordpress.com/2014/01/06/hunting-season-boom/"
+        },
+        {
+	        "title": "Hide or Seek",
+	        "src": "https://stoneburners.wordpress.com/2014/01/13/hunting-season-hide-or-seek/"
+        },
+        {
+	        "title": "Guns, Guns, Guns!",
+	        "src": "https://stoneburners.wordpress.com/2014/01/17/hunting-season-guns-guns-guns/"
+        },
+        {
+	        "title": "Warpath",
+	        "src": "https://stoneburners.wordpress.com/2014/01/24/assemblage-warpath/"
+        },
+        {
+	        "title": "Q & A",
+	        "src": "https://stoneburners.wordpress.com/2014/01/27/assemblage-q-a/"
+        },
+        {
+	        "title": "On the Other Side",
+	        "src": "https://stoneburners.wordpress.com/2014/01/31/assemblage-on-the-other-side/"
+        },
+        {
+	        "title": "USMHD",
+	        "src": "https://stoneburners.wordpress.com/2014/02/07/assemblage-usmhd/"
+        },
+        {
+	        "title": "Gears",
+	        "src": "https://stoneburners.wordpress.com/2014/02/10/assemblage-gears/"
+        },
+        {
+	        "title": "Prestidigitation",
+	        "src": "https://stoneburners.wordpress.com/2014/02/14/assemblage-prestidigitation/"
+        },
+        {
+	        "title": "Synergistic Solutions",
+	        "src": "https://stoneburners.wordpress.com/2014/03/10/contract-synergistic-solutions/"
+        },
+        {
+	        "title": "Trickle Down",
+	        "src": "https://stoneburners.wordpress.com/2014/03/14/contract-trickle-down/"
+        },
+        {
+	        "title": "Expedite",
+	        "src": "https://stoneburners.wordpress.com/2014/03/17/contract-expedite/"
+        },
+        {
+	        "title": "Collaborative Restructure",
+	        "src": "https://stoneburners.wordpress.com/2014/03/24/contract-collaborative-restructure/"
+        },
+        {
+	        "title": "Decentralize",
+	        "src": "https://stoneburners.wordpress.com/2014/03/31/contract-decentralize/"
+        },
+        {
+	        "title": "Employee Dynamics",
+	        "src": "https://stoneburners.wordpress.com/2014/04/07/contract-employee-dynamics/"
+        },
+        {
+	        "title": "Crowdsourcing",
+	        "src": "https://stoneburners.wordpress.com/2014/04/14/contract-crowdsourcing/"
+        },
+        {
+	        "title": "Fast Track",
+	        "src": "https://stoneburners.wordpress.com/2014/04/21/contract-fast-track/"
+        },
+        {
+	        "title": "Real Time Cash Flows",
+	        "src": "https://stoneburners.wordpress.com/2014/04/28/479/"
+        },
+        {
+	        "title": "Velociraptors",
+	        "src": "https://stoneburners.wordpress.com/2014/05/12/animal-control-velociraptors/"
+        },
+        {
+	        "title": "Cuttlefish",
+	        "src": "https://stoneburners.wordpress.com/2014/05/19/animal-control-cuttlefish/"
+        },
+        {
+	        "title": "Dragon",
+	        "src": "https://stoneburners.wordpress.com/2014/05/23/animal-control-dragon/"
+        },
+        {
+	        "title": "Jaguars",
+	        "src": "https://stoneburners.wordpress.com/2014/05/26/animal-control-jaguars/"
+        },
+        {
+	        "title": "Kittens",
+	        "src": "https://stoneburners.wordpress.com/2014/06/02/animal-control-kittens/"
+        },
+        {
+	        "title": "Vigilante",
+	        "src": "https://stoneburners.wordpress.com/2014/06/16/john-doe-vigilante/"
+        },
+        {
+	        "title": "Bad Alcohol",
+	        "src": "https://stoneburners.wordpress.com/2014/06/23/john-doe-bad-alcohol/"
+        },
+        {
+	        "title": "Mask",
+	        "src": "https://stoneburners.wordpress.com/2014/07/04/john-doe-mask/"
+        },
+        {
+	        "title": "Lights Out",
+	        "src": "https://stoneburners.wordpress.com/2014/07/07/john-doe-lights-out/"
+        },
+        {
+	        "title": "Break",
+	        "src": "https://stoneburners.wordpress.com/2014/07/14/john-doe-break/"
+        },
+        {
+	        "title": "Status Quo",
+	        "src": "https://stoneburners.wordpress.com/2014/07/21/john-doe-status-quo/"
+        },
+        {
+	        "title": "Riot",
+	        "src": "https://stoneburners.wordpress.com/2014/07/31/john-doe-riot/"
+        },
+        {
+	        "title": "Security Measures",
+	        "src": "https://stoneburners.wordpress.com/2014/08/05/down-south-security-measures/"
+        },
+        {
+	        "title": "Feral",
+	        "src": "https://stoneburners.wordpress.com/2014/08/11/down-south-feral/"
+        },
+        {
+	        "title": "Doctor’s Orders",
+	        "src": "https://stoneburners.wordpress.com/2014/08/18/697/"
+        },
+        {
+	        "title": "Houston",
+	        "src": "https://stoneburners.wordpress.com/2014/08/25/down-south-houston/"
+        },
+        {
+	        "title": "Asylum",
+	        "src": "https://stoneburners.wordpress.com/2014/09/03/down-south-asylum/"
+        },
+        {
+	        "title": "Contact",
+	        "src": "https://stoneburners.wordpress.com/2014/09/15/down-south-contact/"
+        },
+        {
+	        "title": "Hand That Feeds",
+	        "src": "https://stoneburners.wordpress.com/2014/09/22/down-south-hand-that-feeds/"
+        },
+        {
+	        "title": "Drown Out",
+	        "src": "https://stoneburners.wordpress.com/2014/09/29/down-south-drown-out/"
+        },
+        {
+	        "title": "Phoenix",
+	        "src": "https://stoneburners.wordpress.com/2014/10/06/down-south-phoenix/"
+        },
+        {
+	        "title": "Family Matters",
+	        "src": "https://stoneburners.wordpress.com/2014/10/20/ash-family-matters/"
+        },
+        {
+	        "title": "Old Blood",
+	        "src": "https://stoneburners.wordpress.com/2014/10/27/ash-old-blood/"
+        },
+        {
+	        "title": "A Car Battery",
+	        "src": "https://stoneburners.wordpress.com/2014/11/04/ash-a-car-battery/"
+        },
+        {
+	        "title": "Testify",
+	        "src": "https://stoneburners.wordpress.com/2014/11/10/ash-testify/"
+        },
+        {
+	        "title": "Golden",
+	        "src": "https://stoneburners.wordpress.com/2014/11/18/ash-golden/"
+        },
+        {
+	        "title": "Fire, Fire!",
+	        "src": "https://stoneburners.wordpress.com/2014/12/01/ash-fire-fire/"
+        },
+        {
+	        "title": "Silence",
+	        "src": "https://stoneburners.wordpress.com/2014/12/08/ash-silence/"
+        },
+        {
+	        "title": "Keep Away",
+	        "src": "https://stoneburners.wordpress.com/2014/12/17/ash-keep-away/"
+        },
+        {
+	        "title": "Toxic",
+	        "src": "https://stoneburners.wordpress.com/2015/01/05/ash-toxic/"
+        },
+        {
+	        "title": "In the Eye",
+	        "src": "https://stoneburners.wordpress.com/2015/01/19/ash-in-the-eye/"
+        },
+        {
+	        "title": "Gearbox",
+	        "src": "https://stoneburners.wordpress.com/2015/01/26/ash-gearbox/"
+        },
+        {
+	        "title": "Mercy",
+	        "src": "https://stoneburners.wordpress.com/2015/02/02/ash-mercy/"
+        },
+        {
+	        "title": "Dinner",
+	        "src": "https://stoneburners.wordpress.com/2015/02/09/loaded-dinner/"
+        },
+        {
+	        "title": "Awake",
+	        "src": "https://stoneburners.wordpress.com/2015/02/16/loaded-awake/"
+        },
+        {
+	        "title": "Grand Theft Auto",
+	        "src": "https://stoneburners.wordpress.com/2015/02/23/952/"
+        },
+        {
+	        "title": "Morphine",
+	        "src": "https://stoneburners.wordpress.com/2015/03/02/loaded-morphine/"
+        },
+        {
+	        "title": "Westward",
+	        "src": "https://stoneburners.wordpress.com/2015/03/09/loaded-westward/"
+        },
+        {
+	        "title": "Spider",
+	        "src": "https://stoneburners.wordpress.com/2015/03/16/loaded-spider/"
+        },
+        {
+	        "title": "Pater Familias",
+	        "src": "https://stoneburners.wordpress.com/2015/03/30/loaded-pater-familias/"
+        },
+        {
+	        "title": "Cake",
+	        "src": "https://stoneburners.wordpress.com/2015/04/06/loaded-cake/"
+        },
+        {
+	        "title": "Dominoes",
+	        "src": "https://stoneburners.wordpress.com/2015/04/13/loaded-dominoes/"
+        },
+        {
+	        "title": "White Light",
+	        "src": "https://stoneburners.wordpress.com/2015/04/27/overlords-robotic-legions-white-light-2/"
+        },
+        {
+	        "title": "Demon",
+	        "src": "https://stoneburners.wordpress.com/2015/05/04/overlords-robotic-legions-demon/"
+        },
+        {
+	        "title": "Mechanized",
+	        "src": "https://stoneburners.wordpress.com/2015/05/25/overlords-robotic-legions-mechanized/"
+        },
+        {
+	        "title": "Empire",
+	        "src": "https://stoneburners.wordpress.com/2015/06/01/overlords-robotic-legions-empire/"
+        },
+        {
+	        "title": "Revenant",
+	        "src": "https://stoneburners.wordpress.com/2015/06/08/overlords-robotic-legions-revenant/"
+        },
+        {
+	        "title": "Flatline",
+	        "src": "https://stoneburners.wordpress.com/2015/06/15/overlords-robotic-legions-flatline/"
+        },
+        {
+	        "title": "Scab",
+	        "src": "https://stoneburners.wordpress.com/2015/06/23/overlords-robotic-legions-scab/"
+        },
+        {
+	        "title": "Cyrus",
+	        "src": "https://stoneburners.wordpress.com/2015/07/01/overlords-robotic-legions-cyrus/"
+        },
+        {
+	        "title": "Professional",
+	        "src": "https://stoneburners.wordpress.com/2015/07/07/community-service-professional/"
+        },
+        {
+	        "title": "Blunt Force Trauma",
+	        "src": "https://stoneburners.wordpress.com/2015/08/10/community-service-blunt-force-trauma/"
+        },
+        {
+	        "title": "Patriot",
+	        "src": "https://stoneburners.wordpress.com/2015/08/17/community-service-patriot/"
+        },
+        {
+	        "title": "Bunker 7-16",
+	        "src": "https://stoneburners.wordpress.com/2015/08/24/community-service-bunker-7-16/"
+        },
+        {
+	        "title": "Mirror",
+	        "src": "https://stoneburners.wordpress.com/2015/09/07/community-service-mirror/"
+        },
+        {
+	        "title": "Titan",
+	        "src": "https://stoneburners.wordpress.com/2015/09/14/community-service-titan/"
+        },
+        {
+	        "title": "Fallout",
+	        "src": "https://stoneburners.wordpress.com/2015/09/21/homecoming-fallout/"
+        },
+        {
+	        "title": "Hunter",
+	        "src": "https://stoneburners.wordpress.com/2015/10/05/homecoming-hunter/"
+        },
+        {
+	        "title": "Hand of God",
+	        "src": "https://stoneburners.wordpress.com/2015/10/19/homecoming-hand-of-god/"
+        },
+        {
+	        "title": "Diffusion",
+	        "src": "https://stoneburners.wordpress.com/2015/10/26/homecoming-diffusion-i/"
+        },
+        {
+	        "title": "Calcified",
+	        "src": "https://stoneburners.wordpress.com/2015/11/02/homecoming-calcified/"
+        },
+        {
+	        "title": "Needle in a Haystack",
+	        "src": "https://stoneburners.wordpress.com/2015/11/17/homecoming-needle-in-a-haystack/"
+        },
+        {
+	        "title": "Breadcrumbs",
+	        "src": "https://stoneburners.wordpress.com/2015/11/30/homecoming-breadcrumbs/"
+        },
+        {
+	        "title": "Truth",
+	        "src": "https://stoneburners.wordpress.com/2015/12/22/homecoming-truth/"
+        },
+        {
+	        "title": "Steel",
+	        "src": "https://stoneburners.wordpress.com/2015/12/29/mercenary-steel/"
+        },
+        {
+	        "title": "Suit",
+	        "src": "https://stoneburners.wordpress.com/2016/01/05/mercenary-suit/"
+        },
+        {
+	        "title": "Ward",
+	        "src": "https://stoneburners.wordpress.com/2016/01/13/mercenary-ward/"
+        },
+        {
+	        "title": "Whiplash",
+	        "src": "https://stoneburners.wordpress.com/2016/01/26/mercenary-whiplash/"
+        },
+        {
+	        "title": "State of Mind",
+	        "src": "https://stoneburners.wordpress.com/2016/02/03/mercenary-state-of-mind/"
+        },
+        {
+	        "title": "Innocence",
+	        "src": "https://stoneburners.wordpress.com/2016/02/16/mercenary-innocence/"
+        },
+        {
+	        "title": "Prophet",
+	        "src": "https://stoneburners.wordpress.com/2016/03/01/mercenary-prophet/"
+        },
+        {
+	        "title": "Gamble",
+	        "src": "https://stoneburners.wordpress.com/2016/03/08/for-the-record-gamble/"
+        },
+        {
+	        "title": "Trespasser",
+	        "src": "https://stoneburners.wordpress.com/2016/03/16/for-the-record-trespasser/"
+        },
+        {
+	        "title": "Insider",
+	        "src": "https://stoneburners.wordpress.com/2016/03/30/for-the-record-insider/"
+        },
+        {
+	        "title": "Source",
+	        "src": "https://stoneburners.wordpress.com/2016/04/12/for-the-record-source/"
+        },
+        {
+	        "title": "Hive",
+	        "src": "https://stoneburners.wordpress.com/2016/04/26/for-the-record-hive/"
+        },
+        {
+	        "title": "Smiley",
+	        "src": "https://stoneburners.wordpress.com/2016/05/03/for-the-record-smiley/"
+        },
+        {
+	        "title": "Fortress",
+	        "src": "https://stoneburners.wordpress.com/2016/05/31/for-the-record-fortress/"
+        },
+        {
+	        "title": "Red Flag",
+	        "src": "https://stoneburners.wordpress.com/2016/06/07/rip-out-my-beating-heart-red-flag/"
+        },
+        {
+	        "title": "Storm",
+	        "src": "https://stoneburners.wordpress.com/2016/06/14/rip-out-my-beating-heart-storm/"
+        },
+        {
+	        "title": "Obsidian",
+	        "src": "https://stoneburners.wordpress.com/2016/07/26/rip-out-my-beating-heart-obsidian/"
+        },
+        {
+	        "title": "Butterfly",
+	        "src": "https://stoneburners.wordpress.com/2016/11/22/rip-out-my-beating-heart-butterfly/"
+        },
+        {
+	        "title": "Shadow",
+	        "src": "https://stoneburners.wordpress.com/2017/01/02/rip-out-my-beating-heart-shadow/"
+        },
+        {
+	        "title": "Plans",
+	        "src": "https://stoneburners.wordpress.com/2017/03/05/rip-out-my-beating-heart-plans/"
+        },
+        {
+	        "title": "Flower",
+	        "src": "https://stoneburners.wordpress.com/2017/03/19/rip-out-my-beating-heart-flower/"
+        },
+        {
+	        "title": "Warrior",
+	        "src": "https://stoneburners.wordpress.com/2017/04/23/rip-out-my-beating-heart-warrior/"
+        },
+        {
+	        "title": "Respite",
+	        "src": "https://stoneburners.wordpress.com/2017/06/20/rip-out-my-beating-heart-respite/"
+        },
+        {
+	        "title": "Aftershock",
+	        "src": "https://stoneburners.wordpress.com/2017/08/06/rip-out-my-beating-heart-aftershock/"
+        },
+        {
+	        "title": "Sacrifice",
+	        "src": "https://stoneburners.wordpress.com/2017/09/13/rip-out-my-beating-heart-sacrifice/"
+        },
+        {
+	        "title": "One Day I",
+	        "src": "https://stoneburners.wordpress.com/2013/12/09/one-day-i/"
+        },
+        {
+	        "title": "One Day II",
+	        "src": "https://stoneburners.wordpress.com/2013/12/13/one-day-ii/"
+        },
+        {
+	        "title": "Sand Box",
+	        "src": "https://stoneburners.wordpress.com/2014/01/20/sand-box/"
+        },
+        {
+	        "title": "Imperial I",
+	        "src": "https://stoneburners.wordpress.com/2014/02/24/imperial-i/"
+        },
+        {
+	        "title": "Imperial II",
+	        "src": "https://stoneburners.wordpress.com/2014/03/03/349/"
+        },
+        {
+	        "title": "Sand Man",
+	        "src": "https://stoneburners.wordpress.com/2014/05/05/sand-man/"
+        },
+        {
+	        "title": "2416",
+	        "src": "https://stoneburners.wordpress.com/2014/06/09/2416/"
+        },
+        {
+	        "title": "Loaded – Pyrite",
+	        "src": "https://stoneburners.wordpress.com/2015/04/01/loaded/"
+        },
+        {
+	        "title": "Cataphracts",
+	        "src": "https://stoneburners.wordpress.com/2015/05/29/cataphracts/"
+        },
+        {
+	        "title": "For the Record – Pyrite",
+	        "src": "https://stoneburners.wordpress.com/2016/04/01/for-the-record/"
+        }
+	]
+}
