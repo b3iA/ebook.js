@@ -1,0 +1,144 @@
+{
+	"title": "The Good Student",
+	"creator": "V Moody",
+	"patreon": "https://www.patreon.com/mooderino",
+	"filters": [
+		"from-url",
+		"the-good-student",
+		"typography",
+		"finalize"
+	],
+	"filename": "The Good Student",
+	"output": ["epub", "html", "latex"],
+	"contents":
+	[
+	    {
+		    "title": "Chapter 1",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-1"
+	    },
+	    {
+		    "title": "Chapter 2",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-2"
+	    },
+	    {
+		    "title": "Chapter 3",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-3"
+	    },
+	    {
+		    "title": "Chapter 4",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-4"
+	    },
+	    {
+		    "title": "Chapter 5",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-5"
+	    },
+	    {
+		    "title": "Chapter 6",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-6"
+	    },
+	    {
+		    "title": "Chapter 7",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-7"
+	    },
+	    {
+		    "title": "Chapter 8",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-8"
+	    },
+	    {
+		    "title": "Chapter 9",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-9"
+	    },
+	    {
+		    "title": "Chapter 10",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-10"
+	    },
+	    {
+		    "title": "Chapter 11",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-11"
+	    },
+	    {
+		    "title": "Chapter 12",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-12"
+	    },
+	    {
+		    "title": "Chapter 13",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-13"
+	    },
+	    {
+		    "title": "Chapter 14",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-14"
+	    },
+	    {
+		    "title": "Chapter 15",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-15"
+	    },
+	    {
+		    "title": "Chapter 16",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-16"
+	    },
+	    {
+		    "title": "Chapter 17",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-17"
+	    },
+	    {
+		    "title": "Chapter 18",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-18"
+	    },
+	    {
+		    "title": "Chapter 19",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-19"
+	    },
+	    {
+		    "title": "Chapter 20",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-20"
+	    },
+	    {
+		    "title": "Chapter 21",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-21"
+	    },
+	    {
+		    "title": "Chapter 22",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-22"
+	    },
+	    {
+		    "title": "Chapter 23",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-23"
+	    },
+	    {
+		    "title": "Chapter 24",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-24"
+	    },
+	    {
+		    "title": "Chapter 25",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-25"
+	    },
+	    {
+		    "title": "Chapter 26",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-26"
+	    },
+	    {
+		    "title": "Chapter 27",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-27"
+	    },
+	    {
+		    "title": "Chapter 28",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-28"
+	    },
+	    {
+		    "title": "Chapter 29",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-29"
+	    },
+	    {
+		    "title": "Chapter 30",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-30"
+	    },
+	    {
+		    "title": "Chapter 31",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-31"
+	    },
+	    {
+		    "title": "Chapter 32",
+		    "src": "http://gravitytales.com/novel/the-good-student/tgs-chapter-32"
+	    }
+	]
+}
