@@ -1,14 +1,14 @@
 function apply(params, next)
 {
-    var chap = params.chap;
-    var $ = chap.dom;
-	var ps = $('p');
-	var rem = [];
+    const chap = params.chap;
+    const $ = chap.dom;
+	const ps = $('p');
+	const rem = [];
 	
     // Remove chapter links
     $('p a').each(function(i, e)
     {
-        var el = $(e);
+        const el = $(e);
         
         if(el.text() === 'Previous' || el.text() === 'Next' || el.text().indexOf('Chapter') === 0)
         	rem.push(el);
@@ -20,7 +20,7 @@ function apply(params, next)
     // Remove chapter headings
     $('p').each(function(i, e)
     {
-    	var el = $(e);
+    	const el = $(e);
     	
     	if(el.text()[0] === '#')
     		rem.push(el);
