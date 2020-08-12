@@ -1,5 +1,5 @@
-var cheerio = require('cheerio');
-var fs = require('fs');
+const cheerio = require('cheerio');
+const fs = require('fs');
 
 function l_esc(txt)
 {
@@ -26,12 +26,12 @@ function filter(p, txt)
 
 function tolatex(p, $, e, brk)
 {
-	var latex = '';
+	let latex = '';
 
 	e.contents().each(function(i, el)
 	{
-		var elem = $(el);
-        var l = '';
+		const elem = $(el);
+        let   l = '';
         
 		// console.log(id + el.type);
 
@@ -49,7 +49,7 @@ function tolatex(p, $, e, brk)
 				l += '\\href{' + l_esc(el.attribs['href']) + '}{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'p')
 			{
-				var t = tolatex(p, $, elem);
+				const t = tolatex(p, $, elem);
 
 				if(elem.attr('class') === 'center')
 				{
@@ -59,7 +59,14 @@ function tolatex(p, $, e, brk)
 					    l += '\\begin{center}' + t + '\\end{center}';
 				}
 				else
-				    l += t.replace(/\n\n?/g, '\n') + (t.indexOf('\\star') > -1 ? '' : '\n');
+				{
+				    let tmp = t.replace(/\n\n?/g, '\n') + (t.indexOf('\\star') > -1 ? '' : '\n');
+				    
+				    if(tmp.length > 1 && (tmp[tmp.length-1] !== '\n' || tmp[tmp.length-2] !== '\n'))
+				        tmp += '\n';
+				    
+				    l += tmp;
+			    }
 			}
             else if(el.name === 'blockquote')
                 l += '\\begin{displayquote}\n' + tolatex(p, $, elem) + '\n\\end{displayquote}';
@@ -92,12 +99,12 @@ function tolatex(p, $, e, brk)
 
 function apply(params, next)
 {
-    var spec = params.spec;
-    var oname = 'output/' + spec.filename + '.tex';
-    var title = l_esc(spec.title);
-    var creator = l_esc(spec.creator);
-    var n_re = /\n/g;
-    var d_str = (new Date()).toLocaleDateString('en-GB', 
+    const spec = params.spec;
+    const oname = 'output/' + spec.filename + '.tex';
+    const title = l_esc(spec.title);
+    const creator = l_esc(spec.creator);
+    const n_re = /\n/g;
+    const d_str = (new Date()).toLocaleDateString('en-GB', 
     { 
     	day: 'numeric',
     	month: 'long',
@@ -107,10 +114,11 @@ function apply(params, next)
     	timeZoneName: 'short',
     	timeZone: 'UTC'
     });
-    var latex = [
+    
+    let latex = [
 		'\\documentclass[a4paper,10pt]{article}',
 		'',
-		'\\usepackage{fontspec,xunicode}',
+		'\\usepackage{fontspec}',
 		'\\usepackage[normalem]{ulem}',
 		'\\usepackage{tocloft}',
 		'\\usepackage{hyperref}',
@@ -156,7 +164,7 @@ function apply(params, next)
 		'	BoldItalicFont = LiberationMono-BoldItalic',
 		']{LiberationMono-Regular}',
 		'',
-		'\\def\\asterism{\\par\\begin{center}\\scalebox{2}{$\\cdots$}\\end{center}}',
+		'\\def\\asterism{\\par\\begin{center}\\vspace{-1em}\\huge{$\\cdots$}\\end{center}}',
 		'',
 		'\\newcommand{\\monosp}[1]{\\texttt{{#1}}\\vspace{5mm}}',
 		'\\renewcommand{\\cftsecfont}{\\normalfont}',
@@ -175,7 +183,7 @@ function apply(params, next)
 		'\\maketitle',
 		'\\thispagestyle{empty}',
 		'\\vfill',
-		'\\begin{center}\\textsc{Automatically typeset in\\\\Liberation Serif and Mono\\\\Using EbookJS on ' + d_str + '}\\end{center}',
+		'\\begin{center}\\textsc{Automatically typeset in\\\\Linux Libertine and Liberation Mono\\\\Using EbookJS on ' + d_str + '}\\end{center}',
 		'',
 		'\\clearpage',
         '\\pagenumbering{Roman}',
@@ -190,15 +198,15 @@ function apply(params, next)
 
     console.log('Building ' + oname);
 
-    for(var i = 0; i < spec.contents.length; i++)
+    for(let i = 0; i < spec.contents.length; i++)
     {
-        var chap = spec.contents[i];
-        var title = l_esc(chap.title);
+        const chap = spec.contents[i];
+        const c_title = l_esc(chap.title);
 
-        latex += '\n\\clearpage\n\\section{\\textsc{' + title + '}}\n';
+        latex += '\n\\clearpage\n\\section{\\textsc{' + c_title + '}}\n';
 
         if(chap.byline)
-        	latex += '\\vspace{-2em}By ' + l_esc(chap.byline) + '\\vspace{1em}\\\\*\n';
+        	latex += '\\vspace{-2em}\\textsc{By ' + l_esc(chap.byline) + '}\\vspace{1em}\\\\*\n';
 
         latex += tolatex(params, chap.dom, chap.dom.root());
     }
