@@ -6,8 +6,8 @@ var DEBUG = false;
 
 if(process.argv.length < 3)
 {
-    console.log('Usage: ebook.js <spec.json>');
-    return;
+	console.log('Usage: ebook.js <spec.json>');
+	return;
 }
 
 function ensure_dir(dir)
@@ -47,13 +47,13 @@ function decode_crs(s)
 
 function unescape_html(html)
 {
-    return decode_crs(html.replace(/&amp;/g, '&'))
-                          .replace(/&quot;/g, '"')
-    	                  .replace(/&apos;/g, '\'')
-    	                  .replace(/&nbsp;/g, ' ')
-    	                  .replace(/&#39;/g, '\'')
-    	                  .replace(/&amp;#39;/g, '\'')
-    	                  .replace(/&amp;/g, '&');
+	return decode_crs(html.replace(/&amp;/g, '&'))
+						  .replace(/&quot;/g, '"')
+						  .replace(/&apos;/g, '\'')
+						  .replace(/&nbsp;/g, ' ')
+						  .replace(/&#39;/g, '\'')
+						  .replace(/&amp;#39;/g, '\'')
+						  .replace(/&amp;/g, '&');
 }
 
 function purge(set)
@@ -71,79 +71,79 @@ function purge(set)
 
 function UriCache()
 {
-    this.cache = [];
-
-    var files = fs.readdirSync(__dirname + '/cache');
-
-    for(var i = 0; i < files.length; i++)
-        this.cache.push(files[i]);
+	this.cache = [];
+	
+	var files = fs.readdirSync(__dirname + '/cache');
+	
+	for(var i = 0; i < files.length; i++)
+		this.cache.push(files[i]);
 }
 
 function FilterManager()
 {
-    this.filters = {};
-
-    var files = fs.readdirSync(__dirname + '/filters');
-
-    for(var i = 0; i < files.length; i++)
-    {
-        var fname = files[i];
-        var fid = fname.substr(0, fname.length - 3);
-
-        this.filters[fid] = require('./filters/' + fid);
-    }
+	this.filters = {};
+	
+	var files = fs.readdirSync(__dirname + '/filters');
+	
+	for(var i = 0; i < files.length; i++)
+	{
+		var fname = files[i];
+		var fid = fname.substr(0, fname.length - 3);
+		
+		this.filters[fid] = require('./filters/' + fid);
+	}
 }
 
 FilterManager.prototype.get = function(fid)
 {
-    var filter = this.filters[fid];
-
-    if(!filter)
-    {
-        console.log(ERROR_TAG + 'No such filter: ' + fid);
-        process.exit();
-    }
-
-    return filter.apply;
+	var filter = this.filters[fid];
+	
+	if(!filter)
+	{
+		console.log(ERROR_TAG + 'No such filter: ' + fid);
+		process.exit();
+	}
+	
+	return filter.apply;
 };
 
 var filter_mgr = new FilterManager();
 
 function Finalize(params)
 {
-    var spec = params.spec;
-
-    if(++spec.loaded === spec.contents.length)
-    {
-        params.chap = null;
-
-        if(spec.output.constructor === String)
-            filter_mgr.get(spec.output)(params, function(){});
-        else if(spec.output instanceof Array)
-        {
-            var ops = [];
-
-            for(var i = 0; i < spec.output.length; i++)
-                ops.push(filter_mgr.get(spec.output[i]));
-
-            Sequence(ops, params);
-        }
-        else
-            console.log(ERROR_TAG + 'Unable to interpret the output filter reference. It must be either a string or array of strings.');
-    }
+	var spec = params.spec;
+	
+	if(++spec.loaded === spec.contents.length)
+	{
+		params.chap = null;
+		
+		if(spec.output.constructor === String)
+		    filter_mgr.get(spec.output)(params, function(){});
+		else if(spec.output instanceof Array)
+		{
+			var ops = [];
+			
+			for(var i = 0; i < spec.output.length; i++)
+				ops.push(filter_mgr.get(spec.output[i]));
+			
+			Sequence(ops, params);
+		}
+		else
+			console.log(ERROR_TAG + 'Unable to interpret the output filter reference. It must be either a string or array of strings.');
+	}
 }
 
 function Sequence(ops, params, cb)
 {
-    if(ops.length < 2)
-        throw new Exception(ERROR_TAG + 'Cannot create a sequence of less than two operations.');
-
-    var last = function(params, cb) { return function() { Finalize(params); if(cb) cb(); }; }(params, cb);
-
-    for(var i = ops.length - 1; i >= 0; i--)
-        last = function(cur, nxt) { return function() { cur(params, nxt); }; }(ops[i], last);
-
-    last();
+	if(ops.length < 2)
+		throw new Exception(ERROR_TAG + 'Cannot create a sequence of less than two operations.');
+	
+	var last = function(params, cb) { return function() { Finalize(params); if(cb) cb(); }; }(params, cb);
+	
+	for(var i = ops.length - 1; i >= 0; i--)
+		last = function(cur, nxt) { return function() { cur(params, nxt); }; }(ops[i], last);
+	
+	last();
 }
 
 // Load the spec. Start processing.
@@ -156,39 +156,39 @@ spec.loaded = 0;
 for(var i = 0; i < spec.contents.length; i++)
 {
 	var chap = spec.contents[i];
-    var params = {
-        spec: spec,
-        chap: chap,
-    	unescape_html: unescape_html,
-    	decode_crs: decode_crs,
-    	purge: purge,
-    	uri_cache: uri_cache,
-    	cheerio_flags: { decodeEntities: false }
-    };
-
-    if(typeof(chap.title) !== 'string')
-    {
-    	console.log(ERROR_TAG + 'Each chapter must contain a "title" property (string).');
-    	return;
-    }
-    
-    if(typeof(chap.src) !== 'string')
-    {
-    	console.log(ERROR_TAG + 'Each chapter must contain a "src" property (string).');
-    	return;
-    }
-
-    params.chap.id = '' + i;
-    params.chap.dom = cheerio.load('');
-
-    var ops = [];
+	var params = {
+		spec: spec,
+		chap: chap,
+		unescape_html: unescape_html,
+		decode_crs: decode_crs,
+		purge: purge,
+		uri_cache: uri_cache,
+		cheerio_flags: { decodeEntities: false }
+	};
+	
+	if(typeof(chap.title) !== 'string')
+	{
+		console.log(ERROR_TAG + 'Each chapter must contain a "title" property (string).');
+		return;
+	}
+	
+	if(typeof(chap.src) !== 'string')
+	{
+		console.log(ERROR_TAG + 'Each chapter must contain a "src" property (string).');
+		return;
+	}
+	
+	params.chap.id = '' + i;
+	params.chap.dom = cheerio.load('');
+	
+	var ops = [];
 	var filter_type = Object.prototype.toString.call(spec.filters);
 	
-    if(filter_type === '[object Array]')
-    {
+	if(filter_type === '[object Array]')
+	{
 		for(var fi = 0; fi < spec.filters.length; fi++)
-		    ops.push(filter_mgr.get(spec.filters[fi]));
-    }
+			ops.push(filter_mgr.get(spec.filters[fi]));
+	}
 	else if(filter_type === '[object Object]')
 	{
 		
@@ -207,7 +207,7 @@ for(var i = 0; i < spec.contents.length; i++)
 		var filters = spec.filters[chap.filters];
 		
 		for(var fi = 0; fi < filters.length; fi++)
-		    ops.push(filter_mgr.get(filters[fi]));
+			ops.push(filter_mgr.get(filters[fi]));
 	}
 	else
 	{
@@ -215,10 +215,10 @@ for(var i = 0; i < spec.contents.length; i++)
 		return;
 	}
 		
-    if(chap.src in sched)
-    	sched[chap.src].push([ops, params]);
- 	else
- 		sched[chap.src] = [[ops, params]];
+	if(chap.src in sched)
+		sched[chap.src].push([ops, params]);
+	else
+		sched[chap.src] = [[ops, params]];
 }
 
 for(var src in sched)
