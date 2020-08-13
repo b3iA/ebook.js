@@ -1,3 +1,5 @@
+const utils = require('./utils');
+
 function processText($, fn)
 {
 	$('p').each(function(idx, e)
@@ -36,22 +38,29 @@ function apply(params, next)
 		});
 	}
 	
-	const rem = [];
-	const ps = $('p');
-	const prune_chapter = [
-		'The Fittest',
-		'The Rabbit Hole',
-		'Solve for X-plosion',
-		'Going Without',
-		'Lost Futures'
-	].includes(chap.title);
-	
-	if(prune_chapter)
+	$('h1').each(function(i, e)
 	{
-		for(let i = 0; i < 2; i++)
-			rem.push($(ps[i]));
-	}
+		let el = $(e);
+		
+		el.replaceWith($('<p><strong>' + el.text() + '</strong></p>'));
+	});
 	
+	const rem = [];
+	
+	utils.pruneParagraphs(chap, rem, {
+		'The Fittest': [2, 0],
+		'The Rabbit Hole': [2, 0],
+		'Solve for X-plosion': [2, 0],
+		'Going Without': [2, 0],
+		'Lost Futures': [2, 0],
+		'Taking Stock': [44, 0],
+		'A Menacing Glow in the Sky': [9, 0],
+		'New Centre of the Universe': [9, 0],
+		'Cryin\' Sun': [9, 0],
+		'Rising Power': [6, 0]
+	});
+	
+	const ps = $('p');
 	const fp = $(ps[ps.length - 1]);
 	
 	if(fp.text() === 'END OF CHAPTER' || fp.text() === 'End of Chapter' || fp.text() === 'Chapter End')
