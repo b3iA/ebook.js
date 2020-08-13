@@ -9,32 +9,32 @@ function l_esc(txt)
 			  .replace(/_/g, '\\_')
 			  .replace(/\{/g, '\\{')
 			  .replace(/\}/g, '\\}')
-              .replace(/&/g, '\\&');
+			  .replace(/&/g, '\\&');
 }
 
 function filter(p, txt)
 {
 	return l_esc(p.unescape_html(txt).replace(/—/g, ' -- ')
-	                                 .replace(/–/g, '--'))
-	                                 .replace(/’/g, '\'')
-	                                 .replace(/\\([^%\$#_\{\}&])/gm, '{\\textbackslash}$1')
-	                                 .replace(/\\$/g, '{\\textbackslash}')
-							         .replace(/~/g, '{\\textasciitilde}')
-							         .replace(/\^/g, '{\\textasciicircum}')
-                                     .replace(/…/g, '{\\ldots}');
+									 .replace(/–/g, '--'))
+									 .replace(/’/g, '\'')
+									 .replace(/\\([^%\$#_\{\}&])/gm, '{\\textbackslash}$1')
+									 .replace(/\\$/g, '{\\textbackslash}')
+									 .replace(/~/g, '{\\textasciitilde}')
+									 .replace(/\^/g, '{\\textasciicircum}')
+									 .replace(/…/g, '{\\ldots}');
 }
 
 function tolatex(p, $, e, brk)
 {
 	let latex = '';
-
+	
 	e.contents().each(function(i, el)
 	{
 		const elem = $(el);
-        let   l = '';
-        
+		let   l = '';
+		
 		// console.log(id + el.type);
-
+		
 		if(el.type === 'text')
 			l += filter(p, el.data);
 		else if(el.type === 'tag')
@@ -42,7 +42,7 @@ function tolatex(p, $, e, brk)
 			if(el.name === 'em')
 				l += '\\textit{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'strong')
-			    l += '\\textbf{' + tolatex(p, $, elem) + '}';
+				l += '\\textbf{' + tolatex(p, $, elem) + '}';
 			else if(el.name === 'pre' || el.name === 'code')
 				l += '\\monosp{' + tolatex(p, $, elem).replace(/\n/g, '\\\\*') + '}';
 			else if(el.name === 'a')
@@ -50,26 +50,26 @@ function tolatex(p, $, e, brk)
 			else if(el.name === 'p')
 			{
 				const t = tolatex(p, $, elem);
-
+				
 				if(elem.attr('class') === 'center')
 				{
-				    if(t === '⁂')
-					    l += '\\asterism\n';
-				    else
-					    l += '\\begin{center}' + t + '\\end{center}';
+					if(t === '⁂')
+						l += '\\asterism\n';
+					else
+						l += '\\begin{center}' + t + '\\end{center}';
 				}
 				else
 				{
-				    let tmp = t.replace(/\n\n?/g, '\n') + (t.indexOf('\\star') > -1 ? '' : '\n');
-				    
-				    if(tmp.length > 1 && (tmp[tmp.length-1] !== '\n' || tmp[tmp.length-2] !== '\n'))
-				        tmp += '\n';
-				    
-				    l += tmp;
-			    }
+					let tmp = t.replace(/\n\n?/g, '\n') + (t.indexOf('\\star') > -1 ? '' : '\n');
+					
+					if(tmp.length > 1 && (tmp[tmp.length-1] !== '\n' || tmp[tmp.length-2] !== '\n'))
+						tmp += '\n';
+					
+					l += tmp;
+				}
 			}
-            else if(el.name === 'blockquote')
-                l += '\\begin{displayquote}\n' + tolatex(p, $, elem) + '\n\\end{displayquote}';
+			else if(el.name === 'blockquote')
+				l += '\\begin{displayquote}\n' + tolatex(p, $, elem) + '\n\\end{displayquote}';
 			else if(el.name === 'span')
 				l += tolatex(p, $, elem);
 			else if(el.name === 'li')
@@ -91,31 +91,31 @@ function tolatex(p, $, e, brk)
 			}
 		}
 		
-	    latex += el.type !== 'tag' || el.name !== 'p' ? l.replace(/\n\n?/g, '\n') : l;
+		latex += el.type !== 'tag' || el.name !== 'p' ? l.replace(/\n\n?/g, '\n') : l;
 	});
-
+	
 	return latex;
 }
 
 function apply(params, next)
 {
-    const spec = params.spec;
-    const oname = 'output/' + spec.filename + '.tex';
-    const title = l_esc(spec.title);
-    const creator = l_esc(spec.creator);
-    const n_re = /\n/g;
-    const d_str = (new Date()).toLocaleDateString('en-GB', 
-    { 
-    	day: 'numeric',
-    	month: 'long',
-    	year: 'numeric',
-    	hour: 'numeric',
-    	minute: 'numeric',
-    	timeZoneName: 'short',
-    	timeZone: 'UTC'
-    });
-    
-    let latex = [
+	const spec = params.spec;
+	const oname = 'output/' + spec.filename + '.tex';
+	const title = l_esc(spec.title);
+	const creator = l_esc(spec.creator);
+	const n_re = /\n/g;
+	const d_str = (new Date()).toLocaleDateString('en-GB', 
+	{ 
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+		timeZoneName: 'short',
+		timeZone: 'UTC'
+	});
+	
+	let latex = [
 		'\\documentclass[a4paper,10pt]{article}',
 		'',
 		'\\usepackage{fontspec}',
@@ -134,11 +134,11 @@ function apply(params, next)
 		'\\hypersetup{',
 		'  pdftitle = {' + title.replace(n_re, ' - ') + '},',
 		'  pdfauthor = {' + spec.creator + '},',
-        '  pdfproducer = {EbookJS},',
-        '  colorlinks = true,',
-        '  linkcolor = [rgb]{0.09,0.15,0.588},',
-        '  urlcolor = [rgb]{0.09,0.15,0.588},',
-        '  pdfborder = {0 0 0}',
+		'  pdfproducer = {EbookJS},',
+		'  colorlinks = true,',
+		'  linkcolor = [rgb]{0.09,0.15,0.588},',
+		'  urlcolor = [rgb]{0.09,0.15,0.588},',
+		'  pdfborder = {0 0 0}',
 		'}',
 		'',
 		'\\setlength{\\parskip}{\\baselineskip}',
@@ -176,48 +176,48 @@ function apply(params, next)
 		'\\setcounter{secnumdepth}{-2}',
 		'',
 		'\\begin{document}',
-        '\\pagestyle{plain}',
+		'\\pagestyle{plain}',
 		'',
-        '\\addcontentsline{toc}{section}{\\protect{\\textsc{Title}}}',
-        '\\sectionmark{Title}',
+		'\\addcontentsline{toc}{section}{\\protect{\\textsc{Title}}}',
+		'\\sectionmark{Title}',
 		'\\maketitle',
 		'\\thispagestyle{empty}',
 		'\\vfill',
 		'\\begin{center}\\textsc{Automatically typeset in\\\\Linux Libertine and Liberation Mono\\\\Using EbookJS on ' + d_str + '}\\end{center}',
 		'',
 		'\\clearpage',
-        '\\pagenumbering{Roman}',
+		'\\pagenumbering{Roman}',
 		'\\tableofcontents',
 		'',
 		'\\clearpage',
-        '\\newcounter{storedpage}',
-        '\\setcounter{storedpage}{\\value{page}}',
-        '\\pagenumbering{arabic}',
-        '\\setcounter{page}{\\value{storedpage}}'
+		'\\newcounter{storedpage}',
+		'\\setcounter{storedpage}{\\value{page}}',
+		'\\pagenumbering{arabic}',
+		'\\setcounter{page}{\\value{storedpage}}'
 	].join('\n');
-
-    console.log('Building ' + oname);
-
-    for(let i = 0; i < spec.contents.length; i++)
-    {
-        const chap = spec.contents[i];
-        const c_title = l_esc(chap.title);
-
-        latex += '\n\\clearpage\n\\section{\\textsc{' + c_title + '}}\n';
-
-        if(chap.byline)
-        	latex += '\\vspace{-2em}\\textsc{By ' + l_esc(chap.byline) + '}\\vspace{1em}\\\\*\n';
-
-        latex += tolatex(params, chap.dom, chap.dom.root());
-    }
-
-    latex += '\\end{document}'
-
-    fs.writeFileSync(oname, latex, 'utf-8');
-    next();
+	
+	console.log('Building ' + oname);
+	
+	for(let i = 0; i < spec.contents.length; i++)
+	{
+		const chap = spec.contents[i];
+		const c_title = l_esc(chap.title);
+		
+		latex += '\n\\clearpage\n\\section{\\textsc{' + c_title + '}}\n';
+		
+		if(chap.byline)
+			latex += '\\vspace{-2em}\\textsc{By ' + l_esc(chap.byline) + '}\\vspace{1em}\\\\*\n';
+		
+		latex += tolatex(params, chap.dom, chap.dom.root());
+	}
+	
+	latex += '\\end{document}'
+	
+	fs.writeFileSync(oname, latex, 'utf-8');
+	next();
 }
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

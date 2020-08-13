@@ -2,7 +2,7 @@ const utils = require('./utils');
 
 function apply(params, next)
 {
-    const chap = params.chap;
+	const chap = params.chap;
 	const $ = chap.dom;
 	const rem = [];
 	
@@ -23,36 +23,36 @@ function apply(params, next)
 		'The Lost Minstrel - 15': [1, 0],
 		'The Lost Minstrel - 16': [2, 0]
 	});
-		
+	
 	$('h2').each(function(i, e)
 	{
 		e.name = 'strong';
 	});
 	
-    const date_re = /^##.*##$/;
-    
-    $('p').each(function(i, e)
-    {
-        const el = $(e);
-        const t = el.text();
-        
-        if(t.search(date_re) === 0)
-        {
-            el.text('');
-            el.append('<strong>' + t.substr(2, t.length-4) + '</strong>');
-        }
-        else if(t === '6y 11m 3w 2d BV')
-        {
-            el.text('');
-            el.append('<strong>' + t + '</strong>');
-        }
-    });
-    
-    params.purge(rem);
+	const date_re = /^##.*##$/;
+
+	$('p').each(function(i, e)
+	{
+		const el = $(e);
+		const t = el.text();
+		
+		if(t.search(date_re) === 0)
+		{
+			el.text('');
+			el.append('<strong>' + t.substr(2, t.length-4) + '</strong>');
+		}
+		else if(t === '6y 11m 3w 2d BV')
+		{
+			el.text('');
+			el.append('<strong>' + t + '</strong>');
+		}
+	});
+	
+	params.purge(rem);
 	next();
 }
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

@@ -2,7 +2,7 @@ function to_html($, el, ctx)
 {
 	const cont = el.contents();
 	let   html = '';
-		
+	
 	for(let i = 0; i < cont.length; i++)
 	{
 		const c = cont[i];
@@ -44,11 +44,11 @@ function to_html($, el, ctx)
 		else if(c.type === 'text')
 		{
 			const txt = c.data.replace(/[\t]/g, '')
-	                          .replace(/[\n]/g, ' ')
-	                          .replace(/  +/g, ' ')
-	                          .replace(/[….][….][….]+/g, '...')
-	                          .replace(/\"\"/g, '"')
-	                          .replace(/\[\/?i\]/g, '');
+							  .replace(/[\n]/g, ' ')
+							  .replace(/  +/g, ' ')
+							  .replace(/[….][….][….]+/g, '...')
+							  .replace(/\"\"/g, '"')
+							  .replace(/\[\/?i\]/g, '');
 			
 			html += txt;
 			ctx.have_text = txt.length > 0;
@@ -60,8 +60,8 @@ function to_html($, el, ctx)
 
 function apply(params, next)
 {
-    const $ = params.chap.dom;
-    const partidx = params.chap['sw-part-index'] + 1;
+	const $ = params.chap.dom;
+	const partidx = params.chap['sw-part-index'] + 1;
 	const table = $($('#pagecontent > table')[partidx]);
 	const trs = table.children();
 	const c_row = $(trs[trs.length > 4 ? 2 : 1]);
@@ -86,5 +86,5 @@ function apply(params, next)
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

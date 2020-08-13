@@ -1,6 +1,6 @@
 function apply(params, next)
 {
-    const chap = params.chap;
+	const chap = params.chap;
 	const $ = chap.dom;
 	const rem = [];
 	
@@ -69,5 +69,5 @@ function apply(params, next)
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

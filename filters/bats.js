@@ -7,7 +7,7 @@ function apply(params, next)
 	const rem = [];
 	
 	utils.removeMatching($, rem, 'p', /^continued in (the )*comments/gi); 
-
+	
 	if(['Help I Accidentally the Princess', 'How I Kept Him From Making the Big Orc Cry'].includes(chap.title))
 		utils.removeLast($, rem, 'p', 1);
 	
@@ -17,5 +17,5 @@ function apply(params, next)
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

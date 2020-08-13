@@ -3,17 +3,17 @@
 // It should always be used as the final stage.
 function apply(params, next)
 {
-    const $ = params.chap.dom;
-
+	const $ = params.chap.dom;
+	
 	// Remove any empty paragraphs
 	$('p').each(function(i, e)
 	{
 		const p = $(e);
 		
 		if(p.text().trim() === '')
-            p.remove();
+			p.remove();
 	});
-
+	
 	// Removal of DOM elements tends to leave surrounding
 	// newline text nodes, resulting in large gaps in the root.
 	const newl = /^\n*$/;
@@ -35,18 +35,18 @@ function apply(params, next)
 			rem = false;
 	}
 	
-    // That may leave a single trailing newline
-    roots = $.root().contents();
+	// That may leave a single trailing newline
+	roots = $.root().contents();
 	
 	const last = roots[roots.length-1];
 	
 	if(last.type === 'text' && last.data.search(newl) > -1)
 		$(last).remove();
-	    
-    next();
+	
+	next();
 }
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

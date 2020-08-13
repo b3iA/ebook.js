@@ -59,5 +59,5 @@ function apply(params, next)
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

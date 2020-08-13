@@ -26,13 +26,13 @@ function display($, indent, root)
 
 function apply(params, next)
 {
-    const $ = params.chap.dom;
-
-    display($, '', $.root());
-    next();
+	const $ = params.chap.dom;
+	
+	display($, '', $.root());
+	next();
 }
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

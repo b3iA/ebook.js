@@ -2,8 +2,8 @@ const utils = require('./utils');
 
 function apply(params, next)
 {
-    const chap = params.chap;
-    const $ = chap.dom;
+	const chap = params.chap;
+	const $ = chap.dom;
 	const rem = [];
 	
 	utils.pruneParagraphs(chap, rem, {
@@ -43,13 +43,13 @@ function apply(params, next)
 		'The Human Experience': [1, 0]
 	});
 		
-    if(rem.length)
-	    params.purge(rem);
+	if(rem.length)
+		params.purge(rem);
 	
-    next();
+	next();
 }
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };

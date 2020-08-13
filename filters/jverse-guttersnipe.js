@@ -2,7 +2,7 @@ const utils = require('./utils');
 
 function apply(params, next)
 {
-    const chap = params.chap;
+	const chap = params.chap;
 	const $ = chap.dom;
 	const rem = [];
 	
@@ -16,7 +16,7 @@ function apply(params, next)
 		
 		if(nxt.length && nxt[0].name === 'hr')
 			rem.push($(nxt));
-
+		
 		e.name = 'strong';
 		
 		const el = $(e);
@@ -27,7 +27,7 @@ function apply(params, next)
 		
 		if(f.type === 'text')
 			f.data = f.data.replace(wsre, '');
-	
+		
 		const txt = el.text();
 		
 		if(['Previous Chapter', 'Next Chapter'].includes(txt))
@@ -45,8 +45,8 @@ function apply(params, next)
 			if(c.type === 'text')
 			{
 				c.data = c.data.replace(wsre, '')
-				               .replace(qtre, '”')
-				               .replace(spre, '“');
+							   .replace(qtre, '”')
+							   .replace(spre, '“');
 			}
 		}
 	});
@@ -62,32 +62,32 @@ function apply(params, next)
 		'Part 8': [3, 0],
 		'Part 9': [4, 0]
 	});
-    
-    if(chap.title === 'Part 4')
-    	$('*:contains("Davi was scrambling through the vent")')[0].name = 'p';
-    else if(chap.title === 'Part 7')
-    	$('*:contains("Bobi, for his part, agreed.")')[0].name = 'p';
-    
-    $('strong').each(function(i, e)
-    {
-    	const el = $(e);
-    	const p = $($.parseHTML('<p></p>'));
-    	
-    	el.replaceWith(p);
-    	p.before('<hr/>');
-    	p.append(el);
-    });
-    
-    $('p:contains("+++++")').replaceWith('<hr/>');
-    
-    params.purge(rem);
-
+	
+	if(chap.title === 'Part 4')
+		$('*:contains("Davi was scrambling through the vent")')[0].name = 'p';
+	else if(chap.title === 'Part 7')
+		$('*:contains("Bobi, for his part, agreed.")')[0].name = 'p';
+	
+	$('strong').each(function(i, e)
+	{
+		const el = $(e);
+		const p = $($.parseHTML('<p></p>'));
+		
+		el.replaceWith(p);
+		p.before('<hr/>');
+		p.append(el);
+	});
+	
+	$('p:contains("+++++")').replaceWith('<hr/>');
+	
+	params.purge(rem);
+	
 	$('*').contents().each(function(i, e)
 	{
-	    if(e.type !== 'text')
-	        return;
-	        
-	    e.data = e.data.replace(/&#xA0;/gi, '');
+		if(e.type !== 'text')
+			return;
+		
+		e.data = e.data.replace(/&#xA0;/gi, '');
 	});
 	
 	next();
@@ -95,5 +95,5 @@ function apply(params, next)
 
 module.exports =
 {
-    apply: apply
+	apply: apply
 };
