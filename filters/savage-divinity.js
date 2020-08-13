@@ -25,6 +25,13 @@ function apply(params, next)
 			p.replaceWith($('<hr/>'));
 	});
 	
+	$('h1').each(function(i, e)
+	{
+		let el = $(e);
+		
+		el.replaceWith($('<p><strong>' + el.text() + '</strong></p>'));
+	});
+	
 	params.purge(rem);
 	next();
 }
