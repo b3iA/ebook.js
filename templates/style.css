@@ -2,9 +2,9 @@ body
 {
 	color: black;
 	background-color: white;
-    font-family: Georgia, Times New Roman, Times, serif;
-    font-size: 16px;
-    line-height: 1.43;
+	font-family: Georgia, Times New Roman, Times, serif;
+	font-size: 16px;
+	line-height: 1.43;
 	text-align: left;
 	text-indent: 0em;
 	border: 0 none;
@@ -16,8 +16,8 @@ body
 	-webkit-line-break: after-white-space;
 	oeb-column-number: 1; /* Never display in multiple columns */
 	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: geometricPrecision;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: geometricPrecision;
 }
 
 .chapter
