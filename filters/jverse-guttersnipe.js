@@ -60,7 +60,9 @@ function apply(params, next)
 		'Part 6': [2, 1],
 		'Part 7': [2, 0],
 		'Part 8': [3, 0],
-		'Part 9': [4, 0]
+		'Part 9': [4, 0],
+		'Part 10': [3, 0],
+		'Part 11': [2, 0]
 	});
 	
 	if(chap.title === 'Part 4')
