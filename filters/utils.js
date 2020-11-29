@@ -41,6 +41,25 @@ function removeMatching($, coll, selector, rexp)
 	});
 }
 
+function removeSet($, coll, set)
+{
+	for(let i = 0; i < set.length; i++)
+		coll.push($(set[i]));
+}
+
+function removeFrom($, coll, selector)
+{
+	let elems = $(selector);
+	
+	if(elems.length > 0)
+	{
+		$(elems[0]).prev().nextAll().each((i, e) =>
+		{
+			coll.push($(e));
+		});
+	}
+}
+
 function pruneParagraphs(chap, coll, params)
 {
 	let $ = chap.dom;
@@ -78,5 +97,7 @@ module.exports =
 	removeSingle: removeSingle,
 	removeAll: removeAll,
 	removeMatching: removeMatching,
+	removeSet: removeSet,
+	removeFrom: removeFrom,
 	pruneParagraphs: pruneParagraphs
 };
