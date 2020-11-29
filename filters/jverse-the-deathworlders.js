@@ -1,3 +1,5 @@
+const utils = require('./utils');
+
 function apply(params, next)
 {
 	const chap = params.chap;
@@ -5,161 +7,70 @@ function apply(params, next)
 	const $ = chap.dom;
 	const rem = [];
 	
-	// Remove 'continued in' paragraphs
-	$('p span').each(function(i, e)
-	{
-		const p = $(e).parent();
-		const t = p.text();
-		
-		if(t.indexOf('Continued ') === 0 || t.indexOf('Concluded ') === 0)
-			rem.push(p);
+	let content = $('article').contents();
+	
+	$.root().children().remove();
+	$.root().append(content);
+	$('h1').remove();
+	$('aside').remove();
+	$($.root().contents()[0]).remove(); // Remove doctype tag
+	
+	utils.pruneParagraphs(chap, rem, {
+		'Chapter 0: The Kevin Jenkins Experience': [5, 0]
 	});
 	
-	$('p').each(function(i, e)
+	utils.removeAll($, rem, 'h2');
+	
+	// Fix use of HTML 'fractions', e.g. "<sup>nom</sup>&frasl;<sub>denom</sub>" -> "nom/denom"
+	let frac_parents = [];
+	
+	$('sub').each(function(i, e)
 	{
-		const p = $(e);
+		let el = $(e);
+
+		if(!(el.parent() in frac_parents))
+			frac_parents.push(el.parent())
 		
-		if(p.text().trim() === '')
-			rem.push(p);
+		el.replaceWith(el.text());
 	});
 	
-	const end_m = /^\+*end (chapter|part) \d/i;
-	const end_m2 = /^\+\+end([  ]|&nbsp;)(of )*chapter/i;
-	const cont_m = /^Continued in Chapter/i;
-	
-	$('p, p strong').each(function(i, e)
+	for(const parent of frac_parents)
 	{
-		const p = $(e);
-		const t = p.text();
+		parent.text(parent.text().replace('&frasl;', '/'));
+	}
+	
+	$('div').each((i, e) =>
+	{
+		const el = $(e);
 		
-		if(t.search(end_m2) === 0)
-		{
-			rem.concat(p.nextAll());
-			rem.push(p);
-		}
-		else if(t.search(end_m) === 0)
-			rem.push(p);
-		else if(t.search(cont_m) === 0)
-			rem.push(p);
-		
-		if(title === 'Deliverance')
-		{
-			if(t === 'Four years previously.')
-				p.parent().html('<strong>Four years previously.</strong>');
-			else if(t === '__' || t === 'End chapter 5')
-				rem.push(p);
-		}
+		e.name = 'p';
+		el.removeAttr('style');
+		el.attr('align', 'right');
 	});
 	
-	if(title === 'Run, little monster')
+	if(title == 'Chapter 65: Leaps of Faith')
 	{
-		const fp = $($('p')[0]);
-		
-		fp.text('"' + fp.text());
-	}
-	else if(title === 'Interlude/Ultimatum')
-	{
-		$('pre > code').each(function(i, e)
+		const tag_name = 'dl';
+
+		$('dl').each(function(i, e)
 		{
-			$(e).parent().replaceWith($('<hr/>'));
-		});
-	}
-	else if(title === 'The Hornet\'s Nest')
-	{
-		$($('p:contains("As you say, Four.")')[0])
-			.replaceWith('<p><strong>+0006+:</strong> As you say, Four.</p>');
-	}
-	else if(title === 'Firebird (pt. 1)')
-	{
-		$($('p:contains("I don’t know about you, but this looks like imprisonment")')[0])
-			.replaceWith('<p>♪♫<em>"I don’t know about you, but this looks like imprisonment/ what’s worse is that the prisoners don’t know that they’re prisoners/ even defend the…"</em>♫♪</p>');
-	}
-	else if(title === 'Firebird (pt. 2)')
-	{
-		$($('p:contains("in orbit around Cimbrean.")')[0])
-			.replaceWith('<p><strong>HMS <em>Myrmidon</em>, in orbit around Cimbrean.</strong></p>');
-	}
-	else if(title === 'Battles (pt. 4)')
-	{
-		$($('p:contains("landed on Planet Ikbrzk.")')[0])
-			.replaceWith('<p><strong>“<em>Sanctuary</em>”, landed on Planet Ikbrzk.</strong></p>');
-	}
-	else if(title === 'Baggage (pt. 3)')
-	{
-		$($('p:contains("Deep Space, The Frontier Worlds")')[0])
-			.replaceWith('<p><strong>Starship <em>Sanctuary</em>, Deep Space, The Frontier Worlds</strong></p>');
-	}
-	else if(title === 'Baggage (pt. 4)')
-	{
-		$($('p:contains("orbiting Cimbrean, The Far Reaches")')[0])
-			.replaceWith('<p><strong><em>Firebird</em>, orbiting Cimbrean, The Far Reaches</strong></p>');
-	}
-	else if(title === 'Baptisms (pt. 2)')
-	{
-		$($('p:contains("Clan Fastpaw Orbital Defence")')[0])
-			.replaceWith('<p><strong>Clan Fastpaw Orbital Defence station “<em>Pride and Vision</em>”, Orbiting Planet Gorai.</strong></p>');
-	}
-	else if(['Exorcisms (pt. 4)', 'Exorcisms (pt. 5)'].includes(title))
-	{
-		const ps = $('p');
-		
-		rem.push($(ps[ps.length - 1]));
-	}
-	else if(title === 'Dragon Dreams (pt. 4)')
-	{
-		const ps = $('p');
-		
-		for(let i = ps.length - 6; i < ps.length; i++)
-			rem.push($(ps[i]));
-	}
-	else if(['Operation NOVA HOUND', 'Back Down To Earth', 'Metadyskolia'].includes(title))
-	{
-		const ps = $('p');
-		
-		for(let i = ps.length - 2; i < ps.length; i++)
-			rem.push($(ps[i]));
-	}
-	else if(title.indexOf('Warhorse') > -1)
-	{
-		const ps = $('p');
-		const ws_re = /[ \t\r\n]+/g;
-		
-		ps.each(function(i, e)
-		{
-			const cont = $(e).contents();
+			let html = '';
 			
-			for(let i = 0; i < cont.length; i++)
+			$('dt', e).each((dli, dle) =>
 			{
-				const c = cont[i];
-				
-				if(c.type === 'text')
-					c.data = c.data.replace(ws_re, ' ');
-			}
+				html += '<p>' + $(dle).text() + '</p>\n';
+			});
+			
+			$(e).replaceWith($(html));
 		});
-		
-		rem.push($(ps[ps.length - 1]));
-	}
-	else if(title === 'Event Horizons')
-	{
-		const ps = $($('p:contains("patreon.com")')[0]).prev().nextAll();
-		
-		for(let i = 0; i < ps.length; i++)
-			rem.push($(ps[i]));
 	}
 	
-	if(['Event Horizons',
-		'Consequences',
-		'Grounded',
-		'Paroxysm',
-		'The Nirvana Cage',
-		'War On Two Worlds: Instigation',
-		'War On Two Worlds: Escalation'].includes(title))
-	{
-		const ps = $($('p:contains("If you have enjoyed the story so far")')[0]).prev().prev().prev().nextAll();
-		
-		for(let i = 0; i < ps.length; i++)
-			rem.push($(ps[i]));
-	}
+	utils.removeFrom($, rem, $('p:contains("END CHAPTER")'));
+	utils.removeFrom($, rem, $('p:contains("End Chapter")'));
+	utils.removeFrom($, rem, $('p:contains("++End Ch")'));
+	utils.removeSet($, rem, $('p:contains("Thank you for reading!")'));
+	utils.removeSet($, rem, $('p:contains("will continue in chapter")'));
+	utils.removeSet($, rem, $('p:contains("will continue in Chapter")'));
 	
 	params.purge(rem);
 	next();
