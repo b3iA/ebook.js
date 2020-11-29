@@ -1,5 +1,4 @@
 cache
-cache.bak
 output
 node_modules
 build-pdfs
@@ -8,3 +7,4 @@ build-all
 build-clean
 build-epubcheck
 page-count
+package-lock.json
