@@ -60,6 +60,12 @@ function apply(params, next)
 {
 	params.chap.id = uriToId(params.chap.src);
 	
+	if(params.is_cleaning)
+	{
+		params.clean(params.chap.id);
+		return;
+	}
+	
 	get(params, function()
 	{
 		next();

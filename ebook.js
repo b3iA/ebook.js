@@ -2,12 +2,18 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 
 var ERROR_TAG = '[\033[91mError\033[0m]: ';
+var ERASE_TAG = '[\033[91mDeleting\033[0m]: ';
 var DEBUG = false;
+var CLEAN = false;
 
 if(process.argv.length < 3)
 {
 	console.log('Usage: ebook.js <spec.json>');
 	return;
+}
+else if(process.argv.length > 3)
+{
+	CLEAN = process.argv[3] == 'clean';
 }
 
 function ensure_dir(dir)
@@ -67,6 +73,14 @@ function purge(set)
 			
 		e.remove();
 	}
+}
+
+function clean(cache_id)
+{
+	const fname = __dirname + '/cache/' + cache_id;
+	
+	console.log(ERASE_TAG + cache_id);
+	fs.unlinkSync(fname);
 }
 
 function UriCache()
@@ -162,6 +176,7 @@ for(var i = 0; i < spec.contents.length; i++)
 		unescape_html: unescape_html,
 		decode_crs: decode_crs,
 		purge: purge,
+		clean: clean,
 		uri_cache: uri_cache,
 		cheerio_flags: { decodeEntities: false }
 	};
@@ -228,14 +243,26 @@ for(var src in sched)
 	
 	var chapters = sched[src];
 	
-	if(chapters.length === 1)
-		Sequence(chapters[0][0], chapters[0][1]);
+	if(CLEAN)
+	{
+		const loader = chapters[0][0][0];
+		const params = chapters[0][1];
+		
+		params.is_cleaning = true;
+		
+		loader(params, function(){});
+	}
 	else
 	{
-		Sequence(chapters[0][0], chapters[0][1], function(chapters) { return function()
+		if(chapters.length === 1)
+			Sequence(chapters[0][0], chapters[0][1]);
+		else
 		{
-			for(var ci = 1; ci < chapters.length; ci++)
-				Sequence(chapters[ci][0], chapters[ci][1]);
-		}}(chapters));
+			Sequence(chapters[0][0], chapters[0][1], function(chapters) { return function()
+			{
+				for(var ci = 1; ci < chapters.length; ci++)
+					Sequence(chapters[ci][0], chapters[ci][1]);
+			}}(chapters));
+		}
 	}
 }
