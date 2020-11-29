@@ -1,452 +1,372 @@
 {
 	"title": "The Deathworlders",
 	"creator": "Hambone3110",
-	"patreon": "https://www.patreon.com/HamboneHFY",
-	"filters": {
-		"reddit": [
-			"from-reddit-post",
-			"clean-reddit",
-			"custom-break-to-hr",
-			"no-preamble",
-			"jverse-the-deathworlders",
-			"typography",
-			"finalize"
-		],
-		"hfy-archive": [
-			"from-hfy-archive",
-			"clean-reddit",
-			"custom-break-to-hr",
-			"no-preamble",
-			"jverse-the-deathworlders",
-			"typography",
-			"finalize"
-		]
-	},
 	"filename": "The Deathworlders",
-	"output": ["epub", "latex", "html"],
+	"output": ["html", "epub", "latex"],
+	"patreon": "https://www.patreon.com/HamboneHFY",
+	"filters": [
+		"from-url",
+		"jverse-the-deathworlders",
+		"typography",
+		"finalize"
+	],
 	"contents":
 	[
 		{
-			"title": "The Kevin Jenkins Experience 1",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2ftcpy/"
+			"title": "Chapter 0: The Kevin Jenkins Experience",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-00-kevin-jenkins-experience/"
 		},
 		{
-			"title": "The Kevin Jenkins Experience 2",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2ftdrl/text_the_kevin_jenkins_experience_chapter_1_part/"
+			"title": "Chapter 1: Run, Little Monster",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-01-run-little-monster/"
 		},
 		{
-			"title": "The Kevin Jenkins Experience 3",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2ftevq/text_the_kevin_jenkins_experience_chapter_2/"
+			"title": "Chapter 2: Aftermath",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-02-aftermath/"
 		},
 		{
-			"title": "The Kevin Jenkins Experience 4",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2ftfyo/text_the_kevin_jenkins_experience_chapter_3/"
+			"title": "Chapter 3: An Eventful Month",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-03-eventful-month/"
 		},
 		{
-			"title": "Run, little monster",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2fuo5o/oc_run_little_monster/"
+			"title": "Chapter 4: Quarantine",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-04-quarantine/"
 		},
 		{
-			"title": "Aftermath",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-03-aftermath"
+			"title": "Chapter 5: Deliverance",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-05-deliverance/"
 		},
 		{
-			"title": "An Eventful Month",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2h6grb/oc_kevin_jenkins_an_eventful_month/"
+			"title": "Chapter 5.5: Interlude/Ultimatum",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-05.5-interlude-ultimatum/"
 		},
 		{
-			"title": "Quarantine",
-			"filters": "reddit",
-			"no-preamble-treshold": 200,
-			"src": "http://www.reddit.com/r/HFY/comments/2inz1g/jenkinsverse_4_quarantine/"
+			"title": "Chapter 6: Taking Back the Sky",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-06-taking-back-sky/"
 		},
 		{
-			"title": "Deliverance",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2j054a/oc_jenkinsverse_5_deliverance/"
+			"title": "Chapter 6.5: Interlude/Jargon",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-06.5-interlude-jargon/"
 		},
 		{
-			"title": "Interlude/Ultimatum",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2jf769/jenkinsverse_55_interlude_and_ultimatum/"
+			"title": "Chapter 7: Tensions",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-07-tensions/"
 		},
 		{
-			"title": "Taking Back the Sky",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2k1nrq/jenkinsvers_6_taking_back_the_sky/"
+			"title": "Chapter 8: Alternatives",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-08-alternatives/"
 		},
 		{
-			"title": "Interlude/Jargon",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2kc8ls/oc_jenkinsverse_65_interludejargon/"
+			"title": "Chapter 9: Gains and Losses",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-09-gains-losses/"
 		},
 		{
-			"title": "Tensions",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2kmpir/oc_jenkinsverse_7_tensions/"
+			"title": "Chapter 10: Legwork",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-10-legwork/"
 		},
 		{
-			"title": "Alternatives",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2kxvhw/jenkinsverse_8_alternatives/"
+			"title": "Chapter 11: Direct Delivery",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-11-direct-delivery/"
 		},
 		{
-			"title": "Gains and losses",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2lkrph/jenkinsverse_9_gains_and_losses/"
+			"title": "Chapter 12: Only Human",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-12-only-human/"
 		},
 		{
-			"title": "Legwork",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2lxm6o/jenkinsverse_10_legwork/"
+			"title": "Chapter 13: Tall Tales",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-13-tall-tales/"
 		},
 		{
-			"title": "Direct Delivery",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2mbr44/jenkinsverse_11_direct_delivery/"
+			"title": "Chapter 14: The Hornet’s Nest",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-14-hornets-nest/"
 		},
 		{
-			"title": "Only Human",
-			"filters": "reddit",
-			"no-preamble-treshold": 0,
-			"src": "http://www.reddit.com/r/HFY/comments/2nffzi/jenkinsverse_12_only_human/"
+			"title": "Chapter 15: Forever Changed",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-15-forever-changed/"
 		},
 		{
-			"title": "Tall Tales",
-			"filters": "reddit",
-			"no-preamble-treshold": 500,
-			"src": "http://www.reddit.com/r/HFY/comments/2oxj1e/oc_jenkinsverse_13_tall_tales/"
+			"title": "Chapter 16: Firebird",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-16-firebird/"
 		},
 		{
-			"title": "The Hornet's Nest",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2pz3tf/oc_jenkinsverse_14_the_hornets_nest/"
+			"title": "Chapter 17: Battles",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-17-battles/"
 		},
 		{
-			"title": "Forever Changed (pt. 1)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2qhp6k/oc_jenkinsverse_15_forever_changed_pt_1/"
+			"title": "Chapter 18: Baggage",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-18-baggage/"
 		},
 		{
-			"title": "Forever Changed (pt. 2)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2qhp6u/oc_jenkinsverse_15_forever_changed_pt_2/"
+			"title": "Chapter 19: Baptisms",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-19-baptisms/"
 		},
 		{
-			"title": "Forever Changed (pt. 3)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2qhp70/oc_jenkinsverse_15_forever_changed_pt_3/"
+			"title": "Chapter 20: Exorcisms",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-20-exorcisms/"
 		},
 		{
-			"title": "Firebird (pt. 1)",
-			"filters": "reddit",
-			"no-preamble-treshold": 200,
-			"src": "http://www.reddit.com/r/HFY/comments/2tsitq/ocjenkinsverse16_firebird_pt_12/"
+			"title": "Chapter 21: Dragon Dreams",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-21-dragon-dreams/"
 		},
 		{
-			"title": "Firebird (pt. 2)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2tsmxm/ocjenkinsverse_16_firebird_pt_22/"
+			"title": "Chapter 21.5: Interlude/d4 d5, c4 dxc4",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-21.5-interlude-d4-d5-c4-dxc4/"
 		},
 		{
-			"title": "Battles (pt. 1)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2vpp5v/ocjverse_17_battles_part_14/"
+			"title": "Chapter 22: Warhorse Part 1—The First Year",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-22-warhorse-pt1-first-year/"
 		},
 		{
-			"title": "Battles (pt. 2)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2vpp8e/ocjverse_17_battles_part_24/"
+			"title": "Chapter 22: Warhorse Part 2—The Second Year",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-22-warhorse-pt2-second-year/"
 		},
 		{
-			"title": "Battles (pt. 3)",
-			"filters": "reddit",
-			"no-preamble-treshold": 300,
-			"src": "http://www.reddit.com/r/HFY/comments/2vpp9m/ocjverse_17_battles_part_34/"
+			"title": "Chapter 22: Warhorse Part 3—The Third Year",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-22-warhorse-pt3-third-year/"
 		},
 		{
-			"title": "Battles (pt. 4)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2vppaj/ocjverse_17_battles_part_44/"
+			"title": "Chapter 22: Warhorse Part 4—The Fourth Year",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-22-warhorse-pt4-fourth-year/"
 		},
 		{
-			"title": "Baggage (pt. 1)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2ymy0x/ocjverse_18_baggage_part_1_of_4/"
+			"title": "Chapter 22: Warhorse Part 5—The Fifth Year",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-22-warhorse-pt5-fifth-year/"
 		},
 		{
-			"title": "Baggage (pt. 2)",
-			"filters": "reddit",
-			"no-preamble-treshold": 300,
-			"src": "http://www.reddit.com/r/HFY/comments/2ymy1g/ocjverse_18_baggage_part_2_of_4/"
+			"title": "Chapter 22: Warhorse Part 6—Operation NOVA HOUND",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-22-warhorse-pt6-operation-nova-hound/"
 		},
 		{
-			"title": "Baggage (pt. 3)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2ymy21/ocjverse_18_baggage_part_3_of_4/"
+			"title": "Chapter 22.5: Interlude/Outlets",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-22.5-interlude-outlets/"
 		},
 		{
-			"title": "Baggage (pt. 4)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/2ymy2d/ocjverse_18_baggage_part_4_of_4/"
+			"title": "Chapter 23: Back Down to Earth",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-23-back-down-earth/"
 		},
 		{
-			"title": "Baptisms (pt. 1)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/31cm1m/ocjverse_19_baptisms_part_1_of_4/"
+			"title": "Chapter 24: An Alien World",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-24-alien-world/"
 		},
 		{
-			"title": "Baptisms (pt. 2)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/31cm2c/ocjverse_19_baptisms_part_2_of_4/"
+			"title": "Chapter 25: Where We Stand",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-25-where-we-stand/"
 		},
 		{
-			"title": "Baptisms (pt. 3)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/31cm2v/ocjverse_19_baptisms_part_3_of_4/"
+			"title": "Chapter 26: Blood and Ash",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-26-blood-ash/"
 		},
 		{
-			"title": "Baptisms (pt. 4)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/31cm37/ocjverse_19_baptisms_part_4_of_4/"
+			"title": "Chapter 27: Playing with Fire",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-27-playing-fire/"
 		},
 		{
-			"title": "Exorcisms (pt. 1)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/33avr0/ocjverse_20_exorcisms_part_1_of_5/"
+			"title": "Chapter 28: Misfits",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-28-misfits/"
 		},
 		{
-			"title": "Exorcisms (pt. 2)",
-			"filters": "reddit",
-			"no-preamble-treshold": 400,
-			"src": "http://www.reddit.com/r/HFY/comments/33avrf/ocjverse_20_exorcisms_part_2_of_5/"
+			"title": "Chapter 29: Forges",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-29-forges/"
 		},
 		{
-			"title": "Exorcisms (pt. 3)",
-			"filters": "reddit",
-			"no-preamble-treshold": 400,
-			"src": "http://www.reddit.com/r/HFY/comments/33avs9/ocjverse_20_exorcisms_part_3_of_5/"
+			"title": "Chapter 30: Hearts and Minds",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-30-hearts-minds/"
 		},
 		{
-			"title": "Exorcisms (pt. 4)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/33avt0/ocjverse_20_exorcisms_part_4_of_5/"
+			"title": "Chapter 31: Touching Down",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-31-touching-down/"
 		},
 		{
-			"title": "Exorcisms (pt. 5)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/33avti/ocjverse_20_exorcisms_part_5_of_5/"
+			"title": "Chapter 32: Deep Wounds",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-32-deep-wounds/"
 		},
 		{
-			"title": "Dragon Dreams (pt. 1)",
-			"filters": "reddit",
-			"no-preamble-treshold": 200,
-			"src": "http://www.reddit.com/r/HFY/comments/36m6k0/ocjverse21_dragon_dreams_part_1_of_4/"
+			"title": "Chapter 33: Metadyskolia",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-33-metadyskolia/"
 		},
 		{
-			"title": "Dragon Dreams (pt. 2)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/36m6ll/ocjverse21_dragon_dreams_part_2_of_4/"
+			"title": "Chapter 34: States of Mind",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-34-states-mind/"
 		},
 		{
-			"title": "Dragon Dreams (pt. 3)",
-			"filters": "reddit",
-			"no-preamble-treshold": 400,
-			"src": "http://www.reddit.com/r/HFY/comments/36m6mo/ocjverse21_dragon_dreams_part_3_of_4/"
+			"title": "Chapter 35: Event Horizons",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-35-event-horizions/"
 		},
 		{
-			"title": "Dragon Dreams (pt. 4)",
-			"filters": "reddit",
-			"src": "http://www.reddit.com/r/HFY/comments/36m6nh/ocjverse21_dragon_dreams_part_4_of_4/"
+			"title": "Chapter 36: Consequences",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-36-consequences/"
 		},
 		{
-			"title": "Warhorse",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-22-warhorse"
+			"title": "Chapter 37: Grounded",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-37-grounded/"
 		},
 		{
-			"title": "Warhorse - The Second Year",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-22-warhorse/second-year"
+			"title": "Chapter 38: Paroxysm",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-38-paroxysm/"
 		},
 		{
-			"title": "Warhorse - The Third Year",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-22-warhorse/third-year"
+			"title": "Chapter 39: The Nirvana Cage",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-39-nirvana-cage/"
 		},
 		{
-			"title": "Warhorse - The Fourth Year",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-22-warhorse/fourth-year"
+			"title": "Chapter 40: War on Two Worlds, Part 1—Instigation",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-40-war-two-worlds-pt1-instigation/"
 		},
 		{
-			"title": "Warhorse - The Fifth Year",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-22-warhorse/fifth-year"
+			"title": "Chapter 40: War on Two Worlds, Part 2—Escalation",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-40-war-two-worlds-pt2-escalation/"
 		},
 		{
-			"title": "Warhorse - Operation NOVA HOUND",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-22-warhorse/operation-nova-hound"
+			"title": "Chapter 40: War on Two Worlds, Part 3—Consolidation",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-40-war-two-worlds-pt3-consolidation/"
 		},
 		{
-			"title": "Warhorse - Interlude: Outlets",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/225-interlude-outlets"
+			"title": "Chapter 40: War on Two Worlds, Part 4—Retaliation",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-40-war-two-worlds-pt4-retaliation/"
 		},
 		{
-			"title": "Back Down To Earth",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-23-back-down-earth"
+			"title": "Chapter 40: War on Two Worlds, Part 5—Cremation",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-40-war-two-worlds-pt5-cremation/"
 		},
 		{
-			"title": "An Alien World",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-24-alien-world"
+			"title": "Chapter 41: Pyrophytes",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-41-pyrophytes/"
 		},
 		{
-			"title": "Where We Stand",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-25-where-we-stand"
+			"title": "Chapter 42: Big Questions",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-42-big-questions/"
 		},
 		{
-			"title": "Blood and Ash",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-26-blood-and-ash"
+			"title": "Chapter 43: Scars Both Old and New",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-43-scars-both-old-new/"
 		},
 		{
-			"title": "Playing with Fire",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-27-playing-fire"
+			"title": "Chapter 44: Samsara",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-44-samsara/"
 		},
 		{
-			"title": "Misfits",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-28-misfits"
+			"title": "Chapter 45: We Need Each Other",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-45-we-need-each-other/"
 		},
 		{
-			"title": "Forges",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-29-forges"
+			"title": "Chapter 46: Hellfall",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-46-hellfall/"
 		},
 		{
-			"title": "Hearts and Minds",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-30-hearts-and-minds"
+			"title": "Chapter 47: Fallout",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-47-fallout/"
 		},
 		{
-			"title": "Touching Down",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-31-touching-down"
+			"title": "Chapter 48: Laid Bare",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-48-laid-bare/"
 		},
 		{
-			"title": "Deep Wounds",
-			"filters": "hfy-archive",
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-32-deep-wounds"
+			"title": "Chapter 49: Division",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-49-division/"
 		},
 		{
-			"title": "Metadyskolia",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-33-metadyskolia"
+			"title": "Chapter 50: Counterattack, pt.1 - Regroup",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-50-counterattack-pt1-regroup/"
 		},
 		{
-			"title": "States of Mind",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-34-states-mind"
+			"title": "Chapter 50: Counterattack, pt.2 - Homefront",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-50-counterattack-pt2-homefront/"
 		},
 		{
-			"title": "Event Horizons",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-35-event-horizons"
+			"title": "Chapter 50: Counterattack, pt.3 - Trigger",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-50-counterattack-pt3-trigger/"
 		},
 		{
-			"title": "Consequences",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-36-consequences"
+			"title": "Chapter 51: Anticlimax",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-51-anticlimax/"
 		},
 		{
-			"title": "Grounded",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-37-grounded"
+			"title": "Chapter 52: Autoimmune",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-52-autoimmune/"
 		},
 		{
-			"title": "Paroxysm",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-38-paroxysm"
+			"title": "Chapter 53: The Wild Hunt",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-53-the-wild-hunt/"
 		},
 		{
-			"title": "The Nirvana Cage",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-39-nirvana-cage"
+			"title": "Chapter 54: Here Be Dragons",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-54-here-be-dragons/"
 		},
 		{
-			"title": "War On Two Worlds: Instigation",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation"
+			"title": "Chapter 55: Reinvention",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-55-reinvention/"
 		},
 		{
-			"title": "War On Two Worlds: Escalation",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation/pt2-escalation"
+			"title": "Chapter 56: Dataquake",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-56-dataquake/"
 		},
 		{
-			"title": "War On Two Worlds: Consolidation",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation/pt3-consolidation"
+			"title": "Chapter 57: Cat and Mouse, pt.1: Hunter and Hunted",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-57-cat-and-mouse-pt1-hunter-and-hunted/"
 		},
 		{
-			"title": "War On Two Worlds: Retaliation",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation/pt4-retaliation"
+			"title": "Chapter 57: Cat and Mouse, pt.2: Worlds in the Dark",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-57-cat-and-mouse-pt2-worlds-in-the-dark/"
 		},
 		{
-			"title": "War On Two Worlds: Cremation",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-40-war-two-worlds-pt1-instigation/pt5-cremation"
+			"title": "Chapter 58: Gjallarhorn",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-58-gjallarhorn/"
 		},
 		{
-			"title": "Pyrophytes",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-41-pyrophytes"
+			"title": "Chapter 59: New Life",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-59-new-life/"
 		},
 		{
-			"title": "Big Questions",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-42-big-questions"
+			"title": "Chapter 60: The Calm and The Storm",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-60-the-calm-and-the-storm/"
 		},
 		{
-			"title": "Scars Both Old And New",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-43-scars-both-old-and-new"
+			"title": "Chapter 61: Violence",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-61-violence/"
 		},
 		{
-			"title": "Samsara",
-			"filters": "hfy-archive",
-			"no-preamble-treshold": 0,
-			"src": "http://hfy-archive.org/book/deathworlders/chapter-44-samsara"
+			"title": "Chapter 62: Tooth and Claw",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-62-tooth-and-claw/"
+		},
+		{
+			"title": "Chapter 63: Torn",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-63-torn/"
+		},
+		{
+			"title": "Chapter 64: Survive",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-64-survive/"
+		},
+		{
+			"title": "Chapter 65: Leaps of Faith",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-65-leaps-of-faith/"
+		},
+		{
+			"title": "Chapter 66: Unbowed",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-66-unbowed/"
+		},
+		{
+			"title": "Chapter 67: Resurgence",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-67-resurgence/"
+		},
+		{
+			"title": "Chapter 68: Nadir",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-68-nadir/"
+		},
+		{
+			"title": "Chapter 69: Lockdown",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-69-lockdown/"
+		},
+		{
+			"title": "Chapter 70: Death Eye, part 1",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-70-death-eye-pt1/"
+		},
+		{
+			"title": "Chapter 70: Death Eye, part 2",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-70-death-eye-pt2/"
+		},
+		{
+			"title": "Chapter 70: Death Eye, part 3",
+			"src": "https://deathworlders.com/books/deathworlders/chapter-70-death-eye-pt3/"
 		}
 	]
 }
