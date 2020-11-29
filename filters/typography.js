@@ -46,7 +46,7 @@ function apply(params, next)
 				   .replace(/&nbsp;/g, ' ');
 			
 			// Replace ordinary single and double quotes with their typographical
-			// equivalents. This approach assumes english content.
+			// equivalents. This approach assumes english-y content.
 			for(let i = 0; i < is.length; i++)
 			{
 				const c = is[i];
@@ -116,7 +116,7 @@ function apply(params, next)
 	$('pre > code').each(flatten_mono);
 	$('code > pre').each(flatten_mono);
 	
-	// Remove redundant horizontal rules
+	// Remove redundant horizontal rules.
 	let brem = false;
 	
 	$.root().children().each(function(i, e)
