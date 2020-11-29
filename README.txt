@@ -7,13 +7,18 @@ Run 'npm install' to install the dependencies, and you should be good to go.
 Usage
 -----
 
-node ebook.js <spec.json>
+node ebook.js <spec.json> [clean]
+
+If the optional parameter 'clean' is specified, the cache is cleaned of all files
+relating to the chapters of the specified spec.
+
+--
 
 Feel free to enjoy the resulting output files for personal consumption and to share any
 book specifications or filters you author with other users of this tool, but:
 
 PLEASE DO NOT DISTRIBUTE THE RESULTING OUTPUT FILES UNLESS YOU ARE THE AUTHOR OR OWNER
-OF THE RIGHTS TO ALL MATERIAL THEY CONTAIN, I.E. DON'T BE A... BAD PERSON.
+OF THE RIGHTS TO ALL THE MATERIAL THEY CONTAIN, I.E. DON'T BE A... BAD PERSON.
 
 
 Licence:
@@ -38,7 +43,7 @@ All input files are expected to be encoded as UTF-8. Similarly, intermediary and
 data is also encoded as UTF-8.
 
 This script will generate one or more ebooks when given a simple JSON file. These
-files will be referred to as 'specs', and have the following format:
+files will be referred to as specifications ('specs'), and have the following format:
 
 "title" (string):
     Used as the book title and as the basis for the output filename.
@@ -136,17 +141,28 @@ files will be referred to as 'specs', and have the following format:
 		    * Billy-Bob Space Trucker
 		    * Blessed Are The Simple
 		    * Builders In The Void: Peace / War
-		    * Client Stone: Freedom / Rebellion
+		    * Chrysalis
+		    * Clint Stone: Freedom / Rebellion / Warpath
+		    * Corridors
+		    * Deathworld Origins
+		    * Good Training
+		    * Guttersnipe
 		    * Henosis
+		    * HFY Anthology
 		    * Humans Don't Make Good Pets
 		    * MIA
+		    * Pact
 		    * Perspective
 		    * QED
 		    * Salvage
+		    * Savage Divinity
+		    * Stone Burners
 		    * The Deathworlders
 		    * The Fourth Wave
-		    * The Salvation War
+		    * The Lost Minstrel
+		    * The Salvation War (Armageddon / Pantheocide)
 		    * The Xiu Chang Saga
+		    * Worm
 
 "filename" (string):
 	Specifies the base name for emitted output files. Omits extension, since that
@@ -174,6 +190,10 @@ files will be referred to as 'specs', and have the following format:
             generated file has no external dependencies and can be uploaded or viewed
             as-is.
 
+"css" (string):
+	Additional CSS that will be appended to the CSS template ('templates/style.css')
+	before it is included in any generated HTML or EPUB files.
+	
 "content" (array of objects):
     Each element of the array is an object describing a chapter. Each of these
     instances contains the following fields:
@@ -220,7 +240,7 @@ directory. Each filter module must export exactly one function:
         Represents the current task to be performed by the filter. Has two members:
 
         * "spec" (object)
-            Represents the loaded specification file and contains members data as
+            Represents the loaded specification file and contains members as
             described above.
 
         * "chap" (object)
@@ -235,15 +255,30 @@ directory. Each filter module must export exactly one function:
                 Cheerio, refer to the documentation at:
 
                 https://github.com/cheeriojs/cheerio
+        
+        * "is_cleaning" (bool)
+        	If this flag is set to true, the filter *must* initialize 'param.chap.id'
+        	and call params.clean() with 'param.chap.id' as an argument, then immediately
+        	return without fetching the source data.
 
     * "next" (function())
         A function that must be called by the filter when it completes and any
         modifications to "params.chap.dom" have been completed.
 
-Thus, a minimal valid filter implementation is:
+Thus, a minimal valid filter implementation (that does nothing) is:
 
     function apply(params, next)
     {
+        params.chap.id = 'A valid globally unique filename for this chapter';
+        
+        if(params.is_cleaning)
+        {
+        	params.clean(params.chap.id);
+        	return;
+        }
+        
+        // ...
+        
         next();
     }
 
@@ -327,15 +362,3 @@ To wit:
         close to identical across all supported output formats.
     </p>
 </DOM>
-
-
-Performance
------------
-
-Pretty good. On my hardware (i7, 4 cores @ 1.60GHz), the current test-corpus (8053 pages when
-typeset as PDF) can be retrieved from cache, filterred, typeset and emitted to finished EPUB,
-LaTeX and HTML in 59 seconds. A 2-pass build of pdf files takes an additional 1 minute and
-30 seconds using XeTeX, resulting in a total of 52.5Mb of output data in 64 files.
-
-In short, unless you require sustained throughput of more than three average length books
-per minute, pretty much any reasonably modern computer will run this just fine.
