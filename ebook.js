@@ -150,7 +150,10 @@ function Finalize(params)
 function Sequence(ops, params, cb)
 {
 	if(ops.length < 2)
-		throw new Exception(ERROR_TAG + 'Cannot create a sequence of less than two operations.');
+	{
+		ops[0](params, () => {});
+		return;
+	}
 	
 	var last = function(params, cb) { return function() { Finalize(params); if(cb) cb(); }; }(params, cb);
 	
