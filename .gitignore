@@ -6,5 +6,6 @@ build-pdf
 build-all
 build-clean
 build-epubcheck
+make-dist
 page-count
 package-lock.json
