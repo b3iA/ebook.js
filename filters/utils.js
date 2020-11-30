@@ -60,6 +60,15 @@ function removeFrom($, coll, selector)
 	}
 }
 
+// Replaces the entire DOM with the selected elements.
+function replaceRootWith($, sel)
+{
+	const new_dom = $(sel).children();
+	
+	$._root.children = [];
+	$.root().append(new_dom);
+}
+
 function pruneParagraphs(chap, coll, params)
 {
 	let $ = chap.dom;
@@ -99,5 +108,6 @@ module.exports =
 	removeMatching: removeMatching,
 	removeSet: removeSet,
 	removeFrom: removeFrom,
+	replaceRootWith: replaceRootWith,
 	pruneParagraphs: pruneParagraphs
 };
