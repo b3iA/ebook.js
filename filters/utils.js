@@ -1,12 +1,14 @@
-function removeFirst($, coll, selector, count)
+// Match the first N elements matched by the supplied selector.
+exports.removeFirst = ($, coll, selector, count) =>
 {
 	let elems = $(selector);
 	
 	for(let i = 0; i < count; i++)
 		coll.push($(elems[i]));
-}
+};
 
-function removeLast($, coll, selector, count)
+// Match the last N elements matched by the supplied selector.
+exports.removeLast = ($, coll, selector, count) =>
 {
 	let elems = $(selector);
 	
@@ -14,22 +16,26 @@ function removeLast($, coll, selector, count)
 	
 	for(let i = elems.length - 1; i > elems.length - (count + 1); i--)
 		coll.push($(elems[i]));
-}
+};
 
-function removeSingle($, coll, selector)
+// Match the first element matching the supplied selector.
+exports.removeSingle = ($, coll, selector) =>
 {
 	coll.push($($(selector)[0]));
-}
+};
 
-function removeAll($, coll, selector)
+
+// Matches the supplied selector.
+exports.removeAll = ($, coll, selector) =>
 {
 	let elems = $(selector);
 	
 	for(let i = 0; i < elems.length; i++)
 		coll.push($(elems[i]));
-}
+};
 
-function removeMatching($, coll, selector, rexp)
+// Matches elements containing text matched by the supplied regexp.
+exports.removeMatching = ($, coll, selector, rexp) =>
 {
 	$(selector).each(function(i, e)
 	{
@@ -39,15 +45,10 @@ function removeMatching($, coll, selector, rexp)
 		if(t.search(rexp) === 0)
 			coll.push(el);
 	});
-}
+};
 
-function removeSet($, coll, set)
-{
-	for(let i = 0; i < set.length; i++)
-		coll.push($(set[i]));
-}
-
-function removeFrom($, coll, selector)
+// Matches the selected element(s) and any following sibling elements.
+exports.removeFrom = ($, coll, selector) =>
 {
 	let elems = $(selector);
 	
@@ -58,18 +59,28 @@ function removeFrom($, coll, selector)
 			coll.push($(e));
 		});
 	}
-}
+};
 
 // Replaces the entire DOM with the selected elements.
-function replaceRootWith($, sel)
+exports.replaceRootWith = ($, sel) =>
 {
 	const new_dom = $(sel).children();
 	
 	$._root.children = [];
 	$.root().append(new_dom);
-}
+};
 
-function pruneParagraphs(chap, coll, params)
+// Matches a specified number of leading and trailing paragraphs
+// from the specified chapter. Usually for pending removal.
+//
+// chap:   Chapter object instance
+// coll:   Collection to add matched element to
+// params: Object of arrays with the format:
+//         {
+//             "Chapter title": [number of paragraphs to delete from front of chapter, and from the end],
+//             ...
+//         }
+exports.pruneParagraphs = (chap, coll, params) =>
 {
 	let $ = chap.dom;
 	
@@ -97,17 +108,4 @@ function pruneParagraphs(chap, coll, params)
 			}
 		}
 	}
-}
-
-module.exports =
-{
-	removeFirst: removeFirst,
-	removeLast: removeLast,
-	removeSingle: removeSingle,
-	removeAll: removeAll,
-	removeMatching: removeMatching,
-	removeSet: removeSet,
-	removeFrom: removeFrom,
-	replaceRootWith: replaceRootWith,
-	pruneParagraphs: pruneParagraphs
 };

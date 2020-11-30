@@ -68,9 +68,9 @@ function apply(params, next)
 	utils.removeFrom($, rem, $('p:contains("END CHAPTER")'));
 	utils.removeFrom($, rem, $('p:contains("End Chapter")'));
 	utils.removeFrom($, rem, $('p:contains("++End Ch")'));
-	utils.removeSet($, rem, $('p:contains("Thank you for reading!")'));
-	utils.removeSet($, rem, $('p:contains("will continue in chapter")'));
-	utils.removeSet($, rem, $('p:contains("will continue in Chapter")'));
+	utils.removeAll($, rem, 'p:contains("Thank you for reading!")');
+	utils.removeAll($, rem, 'p:contains("will continue in chapter")');
+	utils.removeAll($, rem, 'p:contains("will continue in Chapter")');
 	
 	params.purge(rem);
 	next();
