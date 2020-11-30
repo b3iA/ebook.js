@@ -1,7 +1,7 @@
 // Match the first N elements matched by the supplied selector.
 exports.removeFirst = ($, coll, selector, count) =>
 {
-	let elems = $(selector);
+	const elems = $(selector);
 	
 	for(let i = 0; i < count; i++)
 		coll.push($(elems[i]));
@@ -10,7 +10,7 @@ exports.removeFirst = ($, coll, selector, count) =>
 // Match the last N elements matched by the supplied selector.
 exports.removeLast = ($, coll, selector, count) =>
 {
-	let elems = $(selector);
+	const elems = $(selector);
 	
 	count = Math.min(count, elems.length);
 	
@@ -28,21 +28,17 @@ exports.removeSingle = ($, coll, selector) =>
 // Matches the supplied selector.
 exports.removeAll = ($, coll, selector) =>
 {
-	let elems = $(selector);
-	
-	for(let i = 0; i < elems.length; i++)
-		coll.push($(elems[i]));
+	$(selector).each((i, e) => coll.push($(e)));
 };
 
 // Matches elements containing text matched by the supplied regexp.
 exports.removeMatching = ($, coll, selector, rexp) =>
 {
-	$(selector).each(function(i, e)
+	$(selector).each((i, e) =>
 	{
-		let el = $(e);
-		let t = el.text();
+		const el = $(e);
 		
-		if(t.search(rexp) === 0)
+		if(el.text().search(rexp) === 0)
 			coll.push(el);
 	});
 };
@@ -50,15 +46,10 @@ exports.removeMatching = ($, coll, selector, rexp) =>
 // Matches the selected element(s) and any following sibling elements.
 exports.removeFrom = ($, coll, selector) =>
 {
-	let elems = $(selector);
-	
-	if(elems.length > 0)
+	$(selector).each((i, e) =>
 	{
-		$(elems[0]).prev().nextAll().each((i, e) =>
-		{
-			coll.push($(e));
-		});
-	}
+		$(e).prev().nextAll().each((i2, e2) => coll.push($(e2)));
+	});
 };
 
 // Replaces the entire DOM with the selected elements.
@@ -82,12 +73,12 @@ exports.replaceRootWith = ($, sel) =>
 //         }
 exports.pruneParagraphs = (chap, coll, params) =>
 {
-	let $ = chap.dom;
+	const $ = chap.dom;
 	
 	if(chap.title in params)
 	{
-		let pr = params[chap.title];
-		let ps = $('p');
+		const pr = params[chap.title];
+		const ps = $('p');
 		
 		for(let i = 0; i < pr[0]; i++)
 			coll.push($(ps[i]));
