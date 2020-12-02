@@ -56,6 +56,7 @@ function table_tolatex(p, $, el)
 {
 	let l = '';
 	let mc = 0;
+	let rc = 0;
 	let cols = [];
 	
 	$('tr', el).each((i, e) =>
@@ -80,6 +81,8 @@ function table_tolatex(p, $, el)
 		
 		if(cc > mc)
 			mc = cc;
+			
+		rc++;
 	});
 	
 	l += '\\*\n\\begin{table}[h]\n\\centering\n\\begin{tabulary}{\\textwidth}{@{}' + cols.join('') + '@{}}\n\\toprule\n';
@@ -116,7 +119,7 @@ function table_tolatex(p, $, el)
 				cl += ' & ';
 		});
 		
-		l += cl + ' \\\\' + (pure_bold ? ' \\midrule ' : '') + '\n';
+		l += cl + ' \\\\' + (pure_bold && i !== rc - 1 ? ' \\midrule ' : '') + '\n';
 	});
 
 	l += '\\bottomrule\n\\end{tabulary}\\end{table}\n';
@@ -137,65 +140,75 @@ function tolatex(p, $, e, brk)
 			l += filter(p, el.data);
 		else if(el.type === 'tag')
 		{
-			const inner = el.name !== 'table' ? tolatex(p, $, elem) : undefined;
-			
-			if(inner === '')
-				return;
-			
-			if(el.name === 'em')
-				l += '\\textit{' + inner + '}';
-			else if(el.name === 'strong')
-				l += '\\textbf{' + inner + '}';
-			else if(el.name === 'pre' || el.name === 'code')
-				l += '\\monosp{' + inner.replace(/\n{2,}/g, '\\\\[\\baselineskip]').replace(/\n/g, '\\\\*') + '}';
-			else if(el.name === 'a')
-				l += '\\href{' + l_esc(el.attribs['href']) + '}{' + inner + '}';
-			else if(el.name === 'p')
+			if(el.name === 'br')
 			{
-				if(elem.attr('class') !== 'center')
-				{
-					const align_r = elem.attr('align') === 'right';
-					
-					if(align_r)
-						l+= '\\vspace{1em}\\hspace*{\\fill}\\begin{minipage}{0.75\\textwidth}\\begin{flushright}';
-					
-					l += newline_allowed(inner, inner.length) ? inner + '\\vspace{1em}\\\\*\n' : inner;
-					
-					if(align_r)
-						l += '\\end{flushright}\\end{minipage}';
-				}
-				else
-				{
-					if(inner === '⁂')
-						l += '\\asterism\n';
-					else
-						l += '\\begin{center}' + inner + '\\end{center}';
-				}
+				if(newline_allowed(l, l.length))
+					l += '\\\\*\n';
 			}
-			else if(el.name === 'blockquote')
-				l += '\\begin{displayquote}\n' + inner + '\n\\end{displayquote}';
-			else if(el.name === 'span')
-				l += inner;
-			else if(el.name === 'li')
-				l += '\\item ' + inner;
-			else if(el.name === 'ul')
-				l += '\\begin{itemize}' + inner + '\n\\end{itemize}';
-			else if(el.name === 'ol')
-				l += '\\begin{enumerate}' + inner + '\n\\end{enumerate}';
-			else if(el.name === 'br' && newline_allowed(l, l.length))
-				l += '\\\\*\n';
-			else if(el.name === 'center')
-				l += '\\begin{center}' + inner + '\\end{center}';
-			else if(el.name === 's' || el.name === 'del' || el.name === 'strike')
-				l += '\\sout{' + inner + '}';
-			else if(el.name === 'sup')
-				l += '\\textsuperscript{' + inner + '}';
 			else if(el.name === 'table')
+			{
 				l += table_tolatex(p, $, elem);
+			}
 			else
 			{
-				console.log('LaTeX: Unhandled tag: ' + el.name);
-				l += inner;
+				// Deal with element types that will (should) have children.
+				const inner = tolatex(p, $, elem);
+				
+				// Drop empty elements.
+				if(inner.replace(/\\\\\*/, '').replace(/\s/g, '') === '')
+					return;
+				
+				if(el.name === 'em')
+					l += '\\textit{' + inner + '}';
+				else if(el.name === 'strong')
+					l += '\\textbf{' + inner + '}';
+				else if(el.name === 'pre' || el.name === 'code')
+					l += '\\monosp{' + inner.replace(/\n{2,}/g, '\\\\[\\baselineskip]').replace(/\n/g, '\\\\*') + '}';
+				else if(el.name === 'a')
+					l += '\\href{' + l_esc(el.attribs['href']) + '}{' + inner + '}';
+				else if(el.name === 'p')
+				{
+					if(elem.attr('class') !== 'center')
+					{
+						const align_r = elem.attr('align') === 'right';
+						
+						if(align_r)
+							l+= '\\vspace{1em}\\hspace*{\\fill}\\begin{minipage}{0.75\\textwidth}\\begin{flushright}';
+						
+						l += newline_allowed(inner, inner.length) ? inner + '\\vspace{1em}\\\\*\n' : inner;
+						
+						if(align_r)
+							l += '\\end{flushright}\\end{minipage}';
+					}
+					else
+					{
+						if(inner === '⁂')
+							l += '\\asterism\n';
+						else
+							l += '\\begin{center}' + inner + '\\end{center}';
+					}
+				}
+				else if(el.name === 'blockquote')
+					l += '\\begin{displayquote}\n' + inner + '\n\\end{displayquote}';
+				else if(el.name === 'span')
+					l += inner;
+				else if(el.name === 'li')
+					l += '\\item ' + inner;
+				else if(el.name === 'ul')
+					l += '\\begin{itemize}' + inner + '\n\\end{itemize}';
+				else if(el.name === 'ol')
+					l += '\\begin{enumerate}' + inner + '\n\\end{enumerate}';
+				else if(el.name === 'center')
+					l += '\\begin{center}' + inner + '\\end{center}';
+				else if(el.name === 's' || el.name === 'del' || el.name === 'strike')
+					l += '\\sout{' + inner + '}';
+				else if(el.name === 'sup')
+					l += '\\textsuperscript{' + inner + '}';
+				else
+				{
+					console.log('LaTeX: Unhandled tag: ' + el.name);
+					l += inner;
+				}
 			}
 		}
 		
