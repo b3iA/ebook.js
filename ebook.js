@@ -158,7 +158,7 @@ function Sequence(ops, params, cb)
 	var last = function(params, cb) { return function() { Finalize(params); if(cb) cb(); }; }(params, cb);
 	
 	for(var i = ops.length - 1; i >= 0; i--)
-		last = function(cur, nxt) { return function() { cur(params, nxt); }; }(ops[i], last);
+		last = function(cur, nxt) { return function() { cur(params, nxt);}; }(ops[i], last);
 	
 	last();
 }
