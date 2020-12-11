@@ -18,7 +18,7 @@ function remove_whitespace($)
 {
 	const newl = /^[\n\s]*$/;
 	let   roots = $.root().contents();
-	let   rem = true;
+	let   rem = false;
 	
 
 	for(let i = 0; i < roots.length; i++)
@@ -33,7 +33,12 @@ function remove_whitespace($)
 			rem = true;
 		}
 		else
+		{
+			if(!rem)
+				$(r).before({ type: 'text', data: '\n' });
+			
 			rem = false;
+		}
 	}
 	
 	// That may leave a single trailing newline
