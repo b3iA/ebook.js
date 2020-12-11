@@ -246,7 +246,6 @@ function apply(params, next)
 		'\\usepackage{csquotes}',
 		'\\usepackage{microtype}',
 		'\\usepackage{needspace}',
-		'\\usepackage{ifthen}',
 		'\\usepackage{tabulary}',
 		'\\usepackage{booktabs}',
 		'\\usepackage{pbox}',
