@@ -111,9 +111,7 @@ function createXHTML(params, chap)
 		'    <div class="chapter">\n'
 	].join('\n');
 	
-	const chap_html = chap.dom.xml().replace('<html><head></head><body>', '')
-	                                .replace('</body></html>', '')
-	                                .trim('\n')
+	const chap_html = chap.dom.xml().trim('\n')
 	                                .replace(/^/g, '      ')
 	                                .replace(/\n/g, '\n      ');
 

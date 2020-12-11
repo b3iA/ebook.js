@@ -1,6 +1,7 @@
 const cheerio = require('cheerio');
 const marked = require('marked');
 const fs = require('fs');
+const utils = require('./utils');
 
 function apply(params, next)
 {
@@ -18,6 +19,7 @@ function apply(params, next)
 	
 	console.log('[\033[92mLoading\033[0m] ' + chap.src);
 	chap.dom = cheerio.load(marked(md), params.cheerio_flags);
+	utils.replaceRootWith(params.chap.dom, 'body');
 	next();
 }
 

@@ -2,6 +2,7 @@ const request = require('request');
 const cheerio = require('cheerio');
 const marked = require('marked');
 const fs = require('fs');
+const utils = require('./utils');
 
 marked.escape = function(html, encode)
 {
@@ -51,6 +52,7 @@ function get(params, callback)
 	{
 		console.log('[\033[92mCached\033[0m] ' + params.chap.id);
 		params.chap.dom = cheerio.load(fs.readFileSync(__dirname + '/../cache/' + params.chap.id, encoding = 'utf-8'), params.cheerio_flags);
+		utils.replaceRootWith(params.chap.dom, 'body');
 		callback();
 		return;
 	}
@@ -76,6 +78,7 @@ function get(params, callback)
 		params.chap.dom = cheerio.load(html, params.cheerio_flags);
 		
 		fs.writeFileSync(__dirname + '/../cache/' + params.chap.id, params.chap.dom.html(), encoding = 'utf-8');
+		utils.replaceRootWith(params.chap.dom, 'body');
 		
 		if(false)
 		{
