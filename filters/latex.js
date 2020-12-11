@@ -204,6 +204,10 @@ function tolatex(p, $, e, brk)
 					l += '\\sout{' + inner + '}';
 				else if(el.name === 'sup')
 					l += '\\textsuperscript{' + inner + '}';
+				else if(el.name === 'html' || el.name === 'head' || el.name === 'body')
+				{
+					l += inner;
+				}
 				else
 				{
 					console.log('LaTeX: Unhandled tag: ' + el.name);

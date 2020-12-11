@@ -54,8 +54,14 @@ function apply(params, next)
 		if(chap.byline)
 		    html += '    <p class="byline">By ' + chap.byline + '</p>\n';
 		
+		const chap_html = chap.dom.xml().replace('<html><head></head><body>', '')
+		                                .replace('</body></html>', '')
+		                                .trim('\n')
+		                                .replace(/^/g, '      ')
+		                                .replace(/\n/g, '\n      ');
+		
 		html += '    <div class="chapter">\n';
-		html += chap.dom.xml().replace(/^/g, '      ').replace(/\n/g, '\n      ') + '\n';
+		html += chap_html + '\n';
 		html += '    </div>\n' + (i < spec.contents.length - 1 ? '\n' : '');
 	}
 	
