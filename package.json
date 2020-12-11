@@ -1,9 +1,9 @@
 {
   "name": "ebook.js",
-  "version": "0.0.1",
-  "description": "Creates EPUB ebooks from filtered Markdown sources.",
-  "homepage": "https://www.reddit.com/r/hfy",
-  "author": "https://www.reddit.com/u/b3iAAoLZOH9Y265cujFhhLoXl",
+  "version": "0.9",
+  "description": "Creates EPUB, HTML and LaTeX ebooks from arbitrary sources.",
+  "homepage": "https://github.com/b3iA/ebook.js",
+  "author": "b3iA",
   "license": "MIT",
   "main": "ebook.js",
   "dependencies": {
@@ -14,7 +14,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {},
-  "readme": "README.txt",
+  "readme": "README.md",
   "private": true,
   "repository": ""
 }
