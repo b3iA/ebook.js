@@ -2,22 +2,35 @@ body
 {
 	color: black;
 	background-color: white;
-	font-family: Georgia, Times New Roman, Times, serif;
 	font-size: 16px;
 	line-height: 1.43;
 	text-align: left;
 	text-indent: 0em;
 	border: 0 none;
-	margin: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
 	padding: 1em;
 	text-align: left;
+	oeb-column-number: 1; /* Never display in multiple columns */
+	text-rendering: geometricPrecision;
+	font-kerning: normal;
+	font-variant: common-ligatures oldstyle-nums proportional-nums;
+	font-feature-settings: "kern", "liga", "clig", "onum", "pnum";
+}
+
+element
+{
+	adobe-hyphenate: none;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	-epub-hyphens: none;
+	hyphens: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	-epub-word-break: keep-all;
 	-webkit-nbsp-mode: space;
 	-webkit-line-break: after-white-space;
-	oeb-column-number: 1; /* Never display in multiple columns */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: geometricPrecision;
 }
 
 .chapter
@@ -26,34 +39,30 @@ body
 	margin-bottom: 6em;
 }
 
-h1
+h1, h2, h3
 {
-	font-size: 1.5em;
+	font-variant: common-ligatures lining-nums proportional-nums;
+	font-feature-settings: "kern", "liga", "clig", "lnum", "pnum";
 	line-height: 1em;
 	font-weight: bold;
 	margin-top: 0em;
 	margin-bottom: 0.1em;
 	text-align: left;
+}
+
+h1
+{
+	font-size: 1.5em;
 }
 
 h2
 {
 	font-size: 1.25em;
-	line-height: 1em;
-	font-weight: bold;
-	margin-top: 0em;
-	margin-bottom: 0.1em;
-	text-align: left;
 }
 
 h3
 {
 	font-size: 1em;
-	line-height: 1em;
-	font-weight: normal;
-	margin-top: 0em;
-	margin-bottom: 0.1em;
-	text-align: left;
 }
 
 p
@@ -75,6 +84,8 @@ pre
 	padding: 1em;
 	border: 0;
 	text-align: left;
+	font-variant: no-common-ligatures lining-nums;
+	font-feature-settings: "kern" 0, "liga" 0, "clig" 0, "lnum";
 }
 
 ol, ul
@@ -96,6 +107,8 @@ table
 	font-size: 1em;
 	line-height: 1.4em;
 	margin-top: 1em;
+	font-variant-numeric: lining-nums tabular-nums;
+	font-feature-settings: "kern", "lnum", "tnum";
 }
 
 li, dt, dd
@@ -127,6 +140,24 @@ a, a:link, a:visited
 	color: #02e;
 	text-decoration: none;
 	outline: none;
+}
+
+sub, sup
+{
+	font-size: 0.675em;
+	line-height: 1.2;
+}
+
+sub
+{
+	vertical-align: sub;
+	vertical-align: -20%;
+}
+
+sup
+{
+	vertical-align: super;
+	vertical-align: 35%;
 }
 
 .byline
