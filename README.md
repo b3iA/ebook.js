@@ -25,7 +25,6 @@ MIT
 Ebook.js is responsible for applying user-defined serial filter pipelines on chapter content in parallel and concatenating the output of each pipeline into one or more finished ebook(s). If the chapter content comes from a remote source, the source data is cached locally to reduce server load. If multiple chapters use the same remote source, the involved pipelines automatically block until the first download completes and all the requests can be served from the cache. The data-flow can be illustrated as:
 
 <pre style="line-height: 1.1">
-<code>
 ┌─────────┐   ┌──────────┐
 │  ebook  │   │          │
 │  spec.  ├──>│ ebook.js │                                                             ┌──────┐
@@ -39,12 +38,11 @@ Ebook.js is responsible for applying user-defined serial filter pipelines on cha
  └───────────┘   │   └─────────────┘    └───────────┘          └───────────┘   │   │   ┌───────┐
                  │                                                             │   └──>│ LaTeX │
      · · ·       ├── · · · · · · · · · · · · · · · · · · · · · · · · · · · · ──┤       └┬──────┘
-                 │                                                             │         
+                 │                                                             │        │
  ┌───────────┐   │   ┌─────────────┐    ┌───────────┐          ┌───────────┐   │    LuaLaTeX
- │ chapter N ├───┼──>│  chapter N  │    │ transform │          │ transform │   │            ┌─────┐
+ │ chapter N ├───┼──>│  chapter N  │    │ transform │          │ transform │   │        │   ┌─────┐
  │    src    │   └──>│ inp. filter ├───>│ filter #1 ├─ · · · ─>│ filter #N ├───┘        └──>│ PDF │ 
  └───────────┘       └─────────────┘    └───────────┘          └───────────┘                └─────┘
-</code>
 </pre>
 
 ## Specifications
