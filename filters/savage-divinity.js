@@ -19,20 +19,30 @@ function apply(params, next)
 	
 	$('p').each((i, e) =>
 	{
-		var p = $(e);
+		const p = $(e);
 		
 		if(break_re.test(p.text()))
 			p.replaceWith($('<hr/>'));
 	});
 	
-	$('h1').each(function(i, e)
+	$('br').remove();
+
+	$('h1').each((i, e) =>
 	{
-		let el = $(e);
+		const el = $(e);
 		
 		el.replaceWith($('<p><strong>' + el.text() + '</strong></p>'));
 	});
 	
+	$('span[style="font-weight:400;"]').each((i, e) =>
+	{
+		const el = $(e);
+		
+		el.replaceWith(el.contents());
+	});
+	
 	params.purge(rem);
+	
 	next();
 }
 
