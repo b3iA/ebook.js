@@ -16,7 +16,7 @@ function check_for_invalid_break($, e)
 
 function remove_whitespace($)
 {
-	const newl = /^\n*$/;
+	const newl = /^[\n\s]*$/;
 	let   roots = $.root().contents();
 	let   rem = true;
 	
