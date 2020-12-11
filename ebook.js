@@ -85,13 +85,7 @@ function clean(cache_id)
 
 function UriCache()
 {
-	// TODO!
-	this.cache = [];
-	
-	const files = fs.readdirSync(__dirname + '/cache');
-	
-	for(let i = 0; i < files.length; i++)
-		this.cache.push(files[i]);
+	this.cache = fs.readdirSync(__dirname + '/cache');
 }
 
 function FilterManager()
